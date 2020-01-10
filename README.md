@@ -1,5 +1,6 @@
 ## This is Dungeon Master Tools
-Hosting [GH pages](https://dmitrolov.github.io/dmt2/)
+#####Source [GitHub](https://github.com/dmitrolov/dmt2)
+#####Hosting [GitHub Pages](https://dmitrolov.github.io/dmt2/)
 
 
 ## Readme.md edit examples
