@@ -2,11 +2,50 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41acc593-3ae0-4c75-9a9e-0474381a0828" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/docs/precache-manifest.8e63d5e09b70391109b46cf7cdfccda5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/static/css/2.35f98baf.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/static/css/2.35f98baf.chunk.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/static/css/main.b811a0b8.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/static/css/main.b811a0b8.chunk.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/static/js/2.2816aad6.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/static/js/2.2816aad6.chunk.js.LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/static/js/2.2816aad6.chunk.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/static/js/main.17d201c0.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/static/js/main.17d201c0.chunk.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/asset-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/build/asset-manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/build/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/build/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/build/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/build/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/build/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/build/precache-manifest.8e63d5e09b70391109b46cf7cdfccda5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/build/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/build/service-worker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/build/static/css/2.35f98baf.chunk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/build/static/css/2.35f98baf.chunk.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/build/static/css/main.b811a0b8.chunk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/build/static/css/main.b811a0b8.chunk.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/build/static/js/2.2816aad6.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/build/static/js/2.2816aad6.chunk.js.LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/build/static/js/2.2816aad6.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/build/static/js/main.17d201c0.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/build/static/js/main.17d201c0.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/build/static/js/runtime-main.77f6908f.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/build/static/js/runtime-main.77f6908f.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/precache-manifest.7ee9bfe420183fbd59aac61fd17fae68.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/service-worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/service-worker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/static/css/main.4367f119.chunk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/static/css/main.4367f119.chunk.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/static/js/2.fc02ac24.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/static/js/2.fc02ac24.chunk.js.LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/static/js/2.fc02ac24.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/static/js/main.de063e06.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/static/js/main.de063e06.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/static/media/logo.ee7cd8ed.svg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +167,7 @@
       <option name="presentableId" value="Default" />
       <updated>1578673686239</updated>
       <workItem from="1578673688312" duration="3786000" />
-      <workItem from="1578936324271" duration="4064000" />
+      <workItem from="1578936324271" duration="4676000" />
     </task>
     <task id="LOCAL-00001" summary="Added dev and source code link">
       <created>1578675340051</created>
@@ -178,25 +217,25 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1578676244092" />
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1578921758077">
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1578941162363">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1578921758077" />
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1578941162363" />
     <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1578681386333" />
-    <state width="1899" height="282" key="GridCell.Tab.0.center" timestamp="1578921758077">
+    <state width="1899" height="282" key="GridCell.Tab.0.center" timestamp="1578941162363">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1578921758077" />
+    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1578941162363" />
     <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1578681386333" />
-    <state width="1899" height="282" key="GridCell.Tab.0.left" timestamp="1578921758076">
+    <state width="1899" height="282" key="GridCell.Tab.0.left" timestamp="1578941162363">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1578921758076" />
+    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1578941162363" />
     <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1578681386332" />
-    <state width="1899" height="282" key="GridCell.Tab.0.right" timestamp="1578921758077">
+    <state width="1899" height="282" key="GridCell.Tab.0.right" timestamp="1578941162363">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1578921758077" />
+    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1578941162363" />
     <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1578681386333" />
     <state x="672" y="235" key="MultipleFileMergeDialog" timestamp="1578674042309">
       <screen x="0" y="0" width="1920" height="1040" />
