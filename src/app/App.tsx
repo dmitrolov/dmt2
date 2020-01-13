@@ -70,7 +70,7 @@ const App: React.FC = () => {
                   <Menu.Item key="12">Option 12</Menu.Item>
                   <Menu.Item key="12">Option 13</Menu.Item>
                 </SubMenu>
-                <SubMenu key="sub3" title="Very long submenu" >
+                <SubMenu key="sub4" title="Very long submenu" >
                   <Menu.Item key="11">Option 11</Menu.Item>
                   <Menu.Item key="12">Option 12</Menu.Item>
                   <Menu.Item key="12">Option 12</Menu.Item>
