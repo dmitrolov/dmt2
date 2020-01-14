@@ -2,12 +2,47 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41acc593-3ae0-4c75-9a9e-0474381a0828" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/Components/Firebase/firebase.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/Components/SideMenu/SideMenu.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/constants/routes.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/img/character-page/Attributes/charisma.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/img/character-page/Attributes/constitution.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/img/character-page/Attributes/dexterity.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/img/character-page/Attributes/intelligence.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/img/character-page/Attributes/strength.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/img/character-page/Attributes/wisdom.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/img/character-page/attributes.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/img/character-page/combat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/img/character-page/description.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/img/character-page/equipment.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/img/character-page/general-info.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/img/character-page/localMap.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/img/character-page/magic.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/img/character-page/proficiency.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/img/character-page/stats.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/img/default-user-icon-4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/public/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <favorite-branches>
@@ -52,6 +87,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/img" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -66,6 +102,10 @@
     <property name="ts.external.directory.path" value="C:\Users\Dmytro_Frolov1\WebstormProjects\dmt2\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Dmytro_Frolov1\WebstormProjects\dmt2\src\img" />
+      <recent name="C:\Users\Dmytro_Frolov1\WebstormProjects\dmt2\public" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Dmytro_Frolov1\WebstormProjects\dmt2\src\app" />
       <recent name="C:\Users\Dmytro_Frolov1\WebstormProjects\dmt2\src\img" />
@@ -166,6 +206,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="178" key="#TypeScript/0.0.1920.1040@0.0.1920.1040" timestamp="1578676085912" />
+    <state x="734" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1579019994632">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="734" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1579019994632" />
     <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1578681054357">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
