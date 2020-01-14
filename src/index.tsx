@@ -5,7 +5,7 @@ import './index.scss';
 import * as serviceWorker from './serviceWorker';
 
 const RoutedApp = () => (
-  <App/>
+  <App />
 );
 
 ReactDOM.render(<RoutedApp />, document.getElementById('root')

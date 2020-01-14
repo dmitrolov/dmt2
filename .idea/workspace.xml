@@ -2,34 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41acc593-3ae0-4c75-9a9e-0474381a0828" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/Components/Firebase/firebase.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/Components/SideMenu/SideMenu.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/constants/routes.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/img/character-page/Attributes/charisma.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/img/character-page/Attributes/constitution.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/img/character-page/Attributes/dexterity.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/img/character-page/Attributes/intelligence.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/img/character-page/Attributes/strength.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/img/character-page/Attributes/wisdom.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/img/character-page/attributes.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/img/character-page/combat.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/img/character-page/description.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/img/character-page/equipment.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/img/character-page/general-info.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/img/character-page/localMap.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/img/character-page/magic.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/img/character-page/proficiency.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/img/character-page/stats.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/img/default-user-icon-4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/api/firebase/firebase.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/public/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/Firebase/firebase.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/SideMenu/SideMenu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/SideMenu/SideMenu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,6 +85,9 @@
       <recent name="C:\Users\Dmytro_Frolov1\WebstormProjects\dmt2\public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Dmytro_Frolov1\WebstormProjects\dmt2\src\app\api\firebase" />
+      <recent name="C:\Users\Dmytro_Frolov1\WebstormProjects\dmt2\src\app\api" />
+      <recent name="C:\Users\Dmytro_Frolov1\WebstormProjects\dmt2\src\app\components" />
       <recent name="C:\Users\Dmytro_Frolov1\WebstormProjects\dmt2\src\app" />
       <recent name="C:\Users\Dmytro_Frolov1\WebstormProjects\dmt2\src\img" />
     </key>
