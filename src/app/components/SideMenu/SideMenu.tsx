@@ -1,30 +1,26 @@
-import { Button, Icon, Layout, Menu } from 'antd';
+import { Icon, Layout, Menu } from 'antd';
 import 'antd/dist/antd.css';
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import * as ROUTES from '../../constants/routes';
 
 const { Sider } = Layout;
 const { SubMenu } = Menu;
 
-export const SideMenu = () => {
-  const [status, isMenuCollapsed] = useState(true);
-
-  const onMenuClick = () => {
-    isMenuCollapsed(!status);
-  };
-
+export const SideMenu = (isMenuCollapsed: boolean) => {
+  console.log('[SideMenu isMenuCollapsed]:', isMenuCollapsed);
+  console.log('[BodyW]:', document.getElementsByTagName('body')[0].clientWidth);
+  console.log('[BodyH]:', document.getElementsByTagName('body')[0].clientHeight);
   return (
-    <Sider collapsed={ status } width={ 240 } theme="light">
+    <Sider collapsed={ !isMenuCollapsed } width={ 240 } theme="light" style={
+      isMenuCollapsed ? {} : { display: 'none' }
+    }>
       <div style={ { width: 240 } }>
-        <Button type="primary" onClick={ onMenuClick } style={ { marginBottom: 16 } }>
-          <Icon type={ status ? 'menu-unfold' : 'menu-fold' } />
-        </Button>
         <Menu
           defaultSelectedKeys={ ['1'] }
           mode="inline"
           theme="light"
-          inlineCollapsed={ status }
+          inlineCollapsed={ isMenuCollapsed }
         >
           <Menu.Item key="1">
             <Icon type="pie-chart" />

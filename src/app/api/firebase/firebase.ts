@@ -11,11 +11,7 @@ const config = {
   messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID
 };
 
-console.log('[config]:', config);
-
 firebase.initializeApp(config);
-
-console.log('[firebase]:', firebase);
 
 export const getAllChars = () => {
   return firebase.firestore()
