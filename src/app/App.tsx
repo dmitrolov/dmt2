@@ -1,39 +1,50 @@
-import { Button, Layout } from 'antd';
 import 'antd/dist/antd.css';
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
-import logo from './../img/dndLogo.png';
-import avatar from './../img/default-user-icon-4.jpg';
-import { getAllChars } from './api/firebase/firebase';
+import Hammer from 'hammerjs';
+import React, { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.scss';
+import { Header } from './components/Header/Header';
 import { SideMenu } from './components/SideMenu/SideMenu';
 import * as ROUTES from './constants/routes';
 import { HomePage } from './pages/homePage/HomePage';
 
 const App: React.FC = () => {
+  const bodyWidth = document.getElementsByTagName('body')[0].clientWidth;
+  // const bodyHeight = document.getElementsByTagName('body')[0].clientHeight;
+  const isMobileMenuView = bodyWidth <= 425;
+
   const [isMenuCollapsed, setIsMenuCollapsed] = useState(true);
 
   const onMenuClick = () => {
-    console.log(isMenuCollapsed);
     setIsMenuCollapsed(!isMenuCollapsed);
   };
 
-  getAllChars().then(value => console.log('[value]:', value));
+  useEffect(() => {
+    if (isMobileMenuView) {
+      const stage = document.getElementById('root') as HTMLElement;
+      const mc = new Hammer(stage);
+      mc.on('swipeleft', () => {
+        console.log('[swipe left]');
+        setIsMenuCollapsed(true);
+      });
+      mc.on('swiperight', () => {
+        console.log('[swipe right]');
+        setIsMenuCollapsed(false);
+      });
+    }
+  }, []);
+
   return (
     <Router>
-      <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
-        <Button style={{margin: 5}} type="primary" shape="round" icon="menu-fold" size={'default'} onClick={onMenuClick}/>
-        <Link to={'/'}><img style={{height: 50, margin: 5}} src={ logo } alt="" /></Link>
-        <img style={{height: 50, margin: 5}} src={ avatar } alt="" />
-      </div>
-      <Layout style={ { minHeight: '100vh' } }>
-
-        { SideMenu(isMenuCollapsed) }
-        <Layout>
-
+      <div className='app'>
+        <div className='app__header'>
+          <Header onMenuClick={ onMenuClick } />
+        </div>
+        <div className='app__content'>
+          <SideMenu isMobileMenuView={ isMobileMenuView } isMenuCollapsed={ isMenuCollapsed } />
           <Route exact path={ ROUTES.LANDING } component={ HomePage } />
-        </Layout>
-      </Layout>
+        </div>
+      </div>
     </Router>
   );
 };

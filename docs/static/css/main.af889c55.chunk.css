@@ -1,0 +1,2 @@
+.app{display:flex;flex-direction:column;width:100vw;height:100vh}.app .app__header{height:60px;border:1px solid red}.app .app__content{display:flex;height:calc(100vh - 60px);width:100%}.header{display:flex;justify-content:space-between;align-items:center;padding:5px 10px}.header__logo,.header__userAvatar{height:40px}.side-menu{border:1px solid red;max-width:240px;-webkit-transition:.4s;transition:.4s}
+/*# sourceMappingURL=main.af889c55.chunk.css.map */
