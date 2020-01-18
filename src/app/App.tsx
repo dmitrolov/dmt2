@@ -1,4 +1,5 @@
 import 'antd/dist/antd.css';
+import { Breadcrumb, Icon } from 'antd';
 import Hammer from 'hammerjs';
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';

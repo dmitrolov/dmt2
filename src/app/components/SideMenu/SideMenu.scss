@@ -3,3 +3,11 @@
     max-width: 240px;
     transition: 0.4s;
 }
+.ant-menu-submenu-title {
+    padding-left: 24px !important;
+}
+.ant-menu.ant-menu-sub.ant-menu-inline {
+    .ant-menu-item {
+        padding-left: 48px !important;
+    }
+}

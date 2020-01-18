@@ -3,11 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="41acc593-3ae0-4c75-9a9e-0474381a0828" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/Header/Header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Header/Header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Header/Header.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/components/SideMenu/SideMenu.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/SideMenu/SideMenu.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/SideMenu/SideMenu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/SideMenu/SideMenu.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +148,7 @@
       <workItem from="1578673688312" duration="3786000" />
       <workItem from="1578936324271" duration="4676000" />
       <workItem from="1579180976260" duration="19000" />
-      <workItem from="1579347029769" duration="24925000" />
+      <workItem from="1579347029769" duration="28541000" />
     </task>
     <task id="LOCAL-00001" summary="Added dev and source code link">
       <created>1578675340051</created>
