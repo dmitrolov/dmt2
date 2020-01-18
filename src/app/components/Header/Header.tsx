@@ -10,9 +10,9 @@ interface Header {
 export function Header(props: Header) {
   return (
     <div className='header'>
-      <Button style={ { margin: 5 } } type="primary" shape="round" icon="menu-fold" size={ 'default' }
+      <Button type="primary" shape="round" icon="menu-fold" size={ 'default' }
               onClick={ props.onMenuClick } />
-      <Breadcrumb style={ { margin: 5 } }>
+      <Breadcrumb>
         <Breadcrumb.Item><Link to={'/'}><Icon type="home" /></Link></Breadcrumb.Item>
         <Breadcrumb.Item><Link to={'/'}><span>Приключения</span></Link></Breadcrumb.Item>
         <Breadcrumb.Item><Link to={'/'}><span>Джадам</span></Link></Breadcrumb.Item>
