@@ -12,7 +12,7 @@ export function Header(props: Header) {
     <div className='header'>
       <Button type="primary" shape="round" icon="menu-fold" size={ 'default' }
               onClick={ props.onMenuClick } />
-      <Breadcrumb style={{maxWidth: 240}}>
+      <Breadcrumb className='breadcrumb'>
         <Breadcrumb.Item><Link to={'/'}><Icon type="home" /></Link></Breadcrumb.Item>
         <Breadcrumb.Item><Link to={'/'}><span>Приключения</span></Link></Breadcrumb.Item>
         <Breadcrumb.Item><Link to={'/'}><span>Джадам</span></Link></Breadcrumb.Item>

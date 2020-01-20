@@ -49,8 +49,7 @@ const menuItems: MenuItem[] = [
   { icon: 'thunderbolt', name: 'Заклинания' }
 ];
 
-export function SideMenu(props: SideMenu) {
-
+export const SideMenu = (props: SideMenu) => {
   return (
     <Menu className='side-menu'
           mode="inline"
