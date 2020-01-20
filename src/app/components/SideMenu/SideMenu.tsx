@@ -22,7 +22,8 @@ interface MenuItem {
 const menuItems: MenuItem[] = [
   {
     icon: 'user', name: 'Аккаунт', link: ROUTES.SIGN_IN, subItems: [
-      { name: 'Вход' }
+      { name: 'Вход' },
+      { name: 'Регистрация' },
     ]
   },
   {

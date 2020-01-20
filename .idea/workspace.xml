@@ -2,11 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41acc593-3ae0-4c75-9a9e-0474381a0828" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/app/redux/actions/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/redux/actions/userActions.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/redux/constants.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/redux/reducers/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/redux/reducers/userDataReducer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/components/Header/Header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Header/Header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Header/Header.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/components/SideMenu/SideMenu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/SideMenu/SideMenu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,9 +24,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="tsconfig.json" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -80,16 +88,16 @@
     <property name="ts.external.directory.path" value="C:\Users\Dmytro_Frolov1\WebstormProjects\dmt2\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Dmytro_Frolov1\WebstormProjects\dmt2\src\img" />
-      <recent name="C:\Users\Dmytro_Frolov1\WebstormProjects\dmt2\public" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Dmytro_Frolov1\WebstormProjects\dmt2\src\app" />
       <recent name="C:\Users\Dmytro_Frolov1\WebstormProjects\dmt2\src\app\api\firebase" />
       <recent name="C:\Users\Dmytro_Frolov1\WebstormProjects\dmt2\src\app\api" />
       <recent name="C:\Users\Dmytro_Frolov1\WebstormProjects\dmt2\src\app\components" />
-      <recent name="C:\Users\Dmytro_Frolov1\WebstormProjects\dmt2\src\app" />
       <recent name="C:\Users\Dmytro_Frolov1\WebstormProjects\dmt2\src\img" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Dmytro_Frolov1\WebstormProjects\dmt2\src\img" />
+      <recent name="C:\Users\Dmytro_Frolov1\WebstormProjects\dmt2\public" />
     </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
@@ -148,7 +156,8 @@
       <workItem from="1578936324271" duration="4676000" />
       <workItem from="1579180976260" duration="19000" />
       <workItem from="1579347029769" duration="31383000" />
-      <workItem from="1579530581153" duration="1556000" />
+      <workItem from="1579530581153" duration="3884000" />
+      <workItem from="1579546248452" duration="2928000" />
     </task>
     <task id="LOCAL-00001" summary="Added dev and source code link">
       <created>1578675340051</created>
@@ -190,10 +199,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="178" key="#TypeScript/0.0.1920.1040@0.0.1920.1040" timestamp="1578676085912" />
-    <state x="734" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1579019994632">
+    <state x="734" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1579546844930">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="734" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1579019994632" />
+    <state x="734" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1579546844930" />
     <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1578681054357">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -238,9 +247,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="656" y="257" width="607" height="526" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1578674276375" />
-    <state x="616" y="240" key="run.anything.popup" timestamp="1579370297238">
+    <state x="616" y="240" key="run.anything.popup" timestamp="1579548122959">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1579548122959" />
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1579370297238" />
   </component>
 </project>

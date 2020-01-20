@@ -1,11 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 import App from './app/App';
 import './index.scss';
 import * as serviceWorker from './serviceWorker';
+import { store } from './store';
 
 const RoutedApp = () => (
-  <App />
+  <Provider store={ store }>
+    <App />
+  </Provider>
+
 );
 
 ReactDOM.render(<RoutedApp />, document.getElementById('root')
