@@ -1,11 +1,7 @@
+import { ActionReducer } from '../../types/General';
 import { actions } from '../constants';
 
 const initialState: any = {};
-
-export interface ActionReducer<T> {
-  type: string
-  payload: T
-}
 
 export const userDataReducer = (state = initialState, action: ActionReducer<{name: string}>) => {
   console.log('[ReducerAction]:', action);

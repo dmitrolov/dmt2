@@ -2,19 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41acc593-3ae0-4c75-9a9e-0474381a0828" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/redux/actions/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/redux/actions/userActions.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/redux/constants.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/redux/reducers/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/redux/reducers/userDataReducer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/Header/Header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Header/Header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/SideMenu/SideMenu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/SideMenu/SideMenu.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/types/General.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/redux/reducers/userDataReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/redux/reducers/userDataReducer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,7 +147,7 @@
       <workItem from="1579180976260" duration="19000" />
       <workItem from="1579347029769" duration="31383000" />
       <workItem from="1579530581153" duration="3884000" />
-      <workItem from="1579546248452" duration="2928000" />
+      <workItem from="1579546248452" duration="3708000" />
     </task>
     <task id="LOCAL-00001" summary="Added dev and source code link">
       <created>1578675340051</created>
