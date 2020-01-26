@@ -8,7 +8,8 @@ import './App.scss';
 import { Header } from './components/Header/Header';
 import { SideMenu } from './components/SideMenu/SideMenu';
 import * as ROUTES from './constants/routes';
-import { HomePage } from './pages/homePage/HomePage';
+import { Home } from './pages/home/Home';
+import { SignIn } from './pages/signIn/SignIn';
 import { SignUp } from './pages/signUp/SignUp';
 import { fetchUserData } from './redux/actions/userActions';
 
@@ -50,7 +51,8 @@ const App: React.FC = (props: any) => {
         </div>
         <div className='app__content'>
           <SideMenu isMobileMenuView={ isMobileMenuView } isMenuCollapsed={ isMenuCollapsed } />
-          <Route exact path={ ROUTES.LANDING } component={ HomePage } />
+          <Route exact path={ ROUTES.LANDING } component={ Home } />
+          <Route exact path={ ROUTES.SIGN_IN } component={ SignIn } />
           <Route path={ ROUTES.SIGN_UP } component={ SignUp } />
         </div>
       </div>

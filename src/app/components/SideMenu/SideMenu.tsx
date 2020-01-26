@@ -20,10 +20,11 @@ interface MenuItem {
 }
 
 const menuItems: MenuItem[] = [
+  {name: 'Home', link: ROUTES.LANDING, icon: 'home'},
   {
-    icon: 'user', name: 'Аккаунт', link: ROUTES.SIGN_IN, subItems: [
-      { name: 'Вход' },
-      { name: 'Регистрация', link: ROUTES.SIGN_UP },
+    icon: 'user', name: 'Аккаунт', subItems: [
+      { name: 'Вход', link: ROUTES.SIGN_IN },
+      { name: 'Регистрация', link: ROUTES.SIGN_UP }
     ]
   },
   {
@@ -59,7 +60,7 @@ export const SideMenu = (props: SideMenu) => {
       { renderMenu(menuItems) }
     </Menu>
   );
-}
+};
 
 const renderMenuItem = (option: MenuItem) => {
   return (

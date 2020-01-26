@@ -2,8 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41acc593-3ae0-4c75-9a9e-0474381a0828" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/app/pages/home/Home.sass" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/pages/home/Home.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/pages/signIn/SignIn.sass" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/pages/signIn/SignIn.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/signUp/SignUp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/signUp/SignUp.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/firebase/firebase.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/firebase/firebase.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/SideMenu/SideMenu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/SideMenu/SideMenu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/pages/homePage/HomePage.tsx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,8 +21,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="tsconfig.json" />
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -150,7 +157,7 @@
       <workItem from="1579623070288" duration="10000" />
       <workItem from="1579623087484" duration="3838000" />
       <workItem from="1579626941207" duration="10136000" />
-      <workItem from="1580044297124" duration="11455000" />
+      <workItem from="1580044297124" duration="14063000" />
     </task>
     <task id="LOCAL-00001" summary="Added dev and source code link">
       <created>1578675340051</created>
@@ -249,5 +256,9 @@
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1579548122959" />
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1580045467818" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1580058208785">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1580058208785" />
   </component>
 </project>
