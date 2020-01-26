@@ -9,6 +9,7 @@ import { Header } from './components/Header/Header';
 import { SideMenu } from './components/SideMenu/SideMenu';
 import * as ROUTES from './constants/routes';
 import { HomePage } from './pages/homePage/HomePage';
+import { SignUp } from './pages/signUp/SignUp';
 import { fetchUserData } from './redux/actions/userActions';
 
 const App: React.FC = (props: any) => {
@@ -50,6 +51,7 @@ const App: React.FC = (props: any) => {
         <div className='app__content'>
           <SideMenu isMobileMenuView={ isMobileMenuView } isMenuCollapsed={ isMenuCollapsed } />
           <Route exact path={ ROUTES.LANDING } component={ HomePage } />
+          <Route path={ ROUTES.SIGN_UP } component={ SignUp } />
         </div>
       </div>
     </Router>

@@ -23,7 +23,7 @@ const menuItems: MenuItem[] = [
   {
     icon: 'user', name: 'Аккаунт', link: ROUTES.SIGN_IN, subItems: [
       { name: 'Вход' },
-      { name: 'Регистрация' },
+      { name: 'Регистрация', link: ROUTES.SIGN_UP },
     ]
   },
   {
