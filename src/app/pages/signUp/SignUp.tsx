@@ -1,8 +1,15 @@
 import React, { useEffect, useState } from 'react';
+import { connect } from 'react-redux';
 import { SignUpEmail } from '../../api/firebase/firebase';
+import { setUserAction } from '../../redux/actions/userActions';
+import { User } from '../../types/user/User';
 import './SignUp.sass';
 
-export const SignUp = () => {
+interface ISignUp {
+  setUser: (user: User) => void;
+}
+
+const SignUp = (props: ISignUp) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [statusList, setStatus] = useState<string[]>([]);
@@ -19,10 +26,12 @@ export const SignUp = () => {
   };
 
   const onSubmit = () => {
-    if (statusList.length === 0) SignUpEmail(email, password).then(firebaseResponse => {
+    if (statusList.length === 0) SignUpEmail(email, password).then((firebaseResponse) => {
       if (firebaseResponse.message) setStatus([firebaseResponse.message]);
       if (firebaseResponse.user) {
+        const currentUser: User = { email: firebaseResponse.user.email };
         setStatus(['User successfully created and signed in']);
+        props.setUser(currentUser);
       }
     });
   };
@@ -52,3 +61,7 @@ export const SignUp = () => {
     </div>
   );
 };
+
+export default connect(null, {
+  setUser: setUserAction
+})(SignUp);

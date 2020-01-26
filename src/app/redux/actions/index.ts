@@ -1,6 +1,7 @@
+import { User } from '../../types/user/User';
 import { actions } from '../constants';
 
-const { user } = actions;
+const { userActionTypes } = actions;
 
 const createAction = (type: string, payload: any = null) => {
   return {
@@ -9,4 +10,4 @@ const createAction = (type: string, payload: any = null) => {
   };
 };
 
-export const getUserData = (data: {name: string}) => createAction(user.GET_USER, data);
+export const setUserActionConverter = (user: User) => createAction(userActionTypes.SET_USER, user);

@@ -1,19 +1,16 @@
 import 'antd/dist/antd.css';
 import Hammer from 'hammerjs';
 import React, { useEffect, useState } from 'react';
-import { connect } from 'react-redux';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { AppState } from '../store';
 import './App.scss';
 import { Header } from './components/Header/Header';
 import { SideMenu } from './components/SideMenu/SideMenu';
 import * as ROUTES from './constants/routes';
-import { Home } from './pages/home/Home';
-import { SignIn } from './pages/signIn/SignIn';
-import { SignUp } from './pages/signUp/SignUp';
-import { fetchUserData } from './redux/actions/userActions';
+import Home  from './pages/home/Home';
+import SignIn from './pages/signIn/SignIn';
+import SignUp from './pages/signUp/SignUp';
 
-const App: React.FC = (props: any) => {
+export const App: React.FC = (props: any) => {
   const bodyWidth = document.getElementsByTagName('body')[0].clientWidth;
   // const bodyHeight = document.getElementsByTagName('body')[0].clientHeight;
   const isMobileMenuView = bodyWidth <= 425;
@@ -37,11 +34,7 @@ const App: React.FC = (props: any) => {
         setIsMenuCollapsed(false);
       });
     }
-    
-    props.getUser({ name: 'sasamba' });
   }, []);
-
-  console.log('[store]:', props.mainStore);
 
   return (
     <Router>
@@ -59,10 +52,3 @@ const App: React.FC = (props: any) => {
     </Router>
   );
 };
-
-export default connect(
-  (state: AppState) => ({
-    mainStore: state
-  }), {
-    getUser: fetchUserData
-  })(App);

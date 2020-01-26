@@ -1,13 +1,15 @@
 import { ActionReducer } from '../../types/General';
+import { User } from '../../types/user/User';
 import { actions } from '../constants';
 
-const initialState: any = {};
+const initialState: User = {
+  email: ''
+};
 
-export const userDataReducer = (state = initialState, action: ActionReducer<{name: string}>) => {
-  console.log('[ReducerAction]:', action);
-  const { GET_USER } = actions.user;
-  if (action.type === GET_USER) {
-    console.log('[ReducerActionPeyload]:', { ...action.payload });
+export const userDataReducer = (state: User = initialState, action: ActionReducer<User>) => {
+  const { SET_USER } = actions.userActionTypes;
+
+  if (action.type === SET_USER ) {
     return { ...action.payload };
   } else return state;
 };

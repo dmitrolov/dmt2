@@ -17,17 +17,17 @@ export const SignUpEmail = (email: string, password: string) => {
   return firebase.auth()
   .createUserWithEmailAndPassword(email, password)
   .catch((e: any) => {
-    return e
-  })
-}
+    return e;
+  });
+};
 
 export const SignInEmail = (email: string, password: string) => {
   return firebase.auth()
   .signInWithEmailAndPassword(email, password)
   .catch((e: any) => {
-    return e
-  })
-}
+    return e;
+  });
+};
 
 export const getAllChars = () => {
   return firebase.firestore()

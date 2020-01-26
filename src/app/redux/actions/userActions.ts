@@ -1,10 +1,10 @@
 import { Dispatch } from 'redux';
-import { getUserData } from './index';
+import { User } from '../../types/user/User';
+import { setUserActionConverter } from './index';
 
-export const fetchUserData = (data: {name: string}) => async (dispatch: Dispatch) => {
-  console.log('[ActionData]:', data);
-  const userData: {name: string} = {
-    name: data.name,
+export const setUserAction = (user: User) => async (dispatch: Dispatch) => {
+  const userData: User = {
+    email: user.email,
   };
-  dispatch(getUserData(userData));
+  dispatch(setUserActionConverter(userData));
 };

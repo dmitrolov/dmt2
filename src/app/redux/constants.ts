@@ -1,9 +1,6 @@
 export const actions = {
-  user: {
-    GET_USER: 'GET_USER',
-    CREATE_USER: 'CREATE_USER',
-    UPDATE_USER: 'UPDATE_USER',
-    DELETE_USER: 'DELETE_USER'
+  userActionTypes: {
+    SET_USER: 'SET_USER'
   },
 
 
