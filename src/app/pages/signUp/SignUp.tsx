@@ -2,11 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { SignUpEmail } from '../../api/firebase/firebase';
 import './SignUp.sass';
 
-interface SignUpState {
-  email: string;
-  password: string;
-}
-
 export const SignUp = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -24,10 +19,10 @@ export const SignUp = () => {
   };
 
   const onSubmit = () => {
-    if (statusList.length === 0) SignUpEmail(email, password).then(firebaseResponce => {
-      if (firebaseResponce.message) setStatus([firebaseResponce.message]);
-      if (firebaseResponce.user) {
-        setStatus(['User successfully created and signed in'])
+    if (statusList.length === 0) SignUpEmail(email, password).then(firebaseResponse => {
+      if (firebaseResponse.message) setStatus([firebaseResponse.message]);
+      if (firebaseResponse.user) {
+        setStatus(['User successfully created and signed in']);
       }
     });
   };
