@@ -20,7 +20,7 @@ interface MenuItem {
 }
 
 const menuItems: MenuItem[] = [
-  {name: 'Home', link: ROUTES.LANDING, icon: 'home'},
+  {name: 'Home', link: ROUTES.HOME, icon: 'home'},
   {
     icon: 'user', name: 'Аккаунт', subItems: [
       { name: 'Вход', link: ROUTES.SIGN_IN },
@@ -65,7 +65,7 @@ export const SideMenu = (props: SideMenu) => {
 const renderMenuItem = (option: MenuItem) => {
   return (
     <Menu.Item key={ option.name }>
-      <Link to={ option.link || ROUTES.LANDING }>
+      <Link to={ option.link || ROUTES.HOME }>
         { option.icon && <Icon type={ option.icon } /> }
         <span>{ option.name }</span>
       </Link>

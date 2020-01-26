@@ -37,15 +37,15 @@ export const App: React.FC = (props: any) => {
   }, []);
 
   return (
-    <Router>
+    <Router basename='/dmt2'>
       <div className='app'>
         <div className='app__header'>
           <Header onMenuClick={ onMenuClick } />
         </div>
         <div className='app__content'>
           <SideMenu isMobileMenuView={ isMobileMenuView } isMenuCollapsed={ isMenuCollapsed } />
-          <Route exact path={ ROUTES.LANDING } component={ Home } />
-          <Route exact path={ ROUTES.SIGN_IN } component={ SignIn } />
+          <Route exact path={ ROUTES.HOME } component={ Home } />
+          <Route path={ ROUTES.SIGN_IN } component={ SignIn } />
           <Route path={ ROUTES.SIGN_UP } component={ SignUp } />
         </div>
       </div>
