@@ -6,6 +6,7 @@ import './App.scss';
 import { Header } from './components/Header/Header';
 import { SideMenu } from './components/SideMenu/SideMenu';
 import * as ROUTES from './constants/routes';
+import AdventureCreate from './pages/adventureCreate/AdventureCreate';
 import Home  from './pages/home/Home';
 import SignIn from './pages/signIn/SignIn';
 import SignUp from './pages/signUp/SignUp';
@@ -47,6 +48,7 @@ export const App: React.FC = (props: any) => {
           <Route exact path={ ROUTES.HOME } component={ Home } />
           <Route path={ ROUTES.SIGN_IN } component={ SignIn } />
           <Route path={ ROUTES.SIGN_UP } component={ SignUp } />
+          <Route path={ ROUTES.ADVENTURE_CREATE } component={ AdventureCreate } />
         </div>
       </div>
     </Router>

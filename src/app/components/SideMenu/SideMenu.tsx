@@ -20,7 +20,7 @@ interface MenuItem {
 }
 
 const menuItems: MenuItem[] = [
-  {name: 'Home', link: ROUTES.HOME, icon: 'home'},
+  { name: 'Home', link: ROUTES.HOME, icon: 'home' },
   {
     icon: 'user', name: 'Аккаунт', subItems: [
       { name: 'Вход', link: ROUTES.SIGN_IN },
@@ -29,15 +29,20 @@ const menuItems: MenuItem[] = [
   },
   {
     icon: 'crown', name: 'Приключения', subItems: [
+      { name: 'Создать приключение', link: ROUTES.ADVENTURE_CREATE },
       {
-        name: 'Джадам', icon: 'crown', subItems: [
+        name: 'Мои приключения', icon: 'crown', link: ROUTES.ADVENTURE_LIST, subItems: [
           {
-            name: 'Список персонажей', icon: 'crown', subItems: [
+            name: 'Джадам', icon: 'crown', subItems: [
               {
-                name: 'Гремми', icon: 'crown', subItems: [
+                name: 'Список персонажей', icon: 'crown', subItems: [
                   {
-                    name: 'О персонаже', icon: 'crown', subItems: [
-                      { name: 'Характеристики' }
+                    name: 'Гремми', icon: 'crown', subItems: [
+                      {
+                        name: 'О персонаже', icon: 'crown', subItems: [
+                          { name: 'Характеристики' }
+                        ]
+                      }
                     ]
                   }
                 ]

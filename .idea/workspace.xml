@@ -2,7 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41acc593-3ae0-4c75-9a9e-0474381a0828" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/pages/adventureCreate/AdventureCreate.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/types/adventure/Adventure.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/types/character/Character.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/types/character/about/character.about.model.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/types/character/about/characterClass.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/types/character/about/characterRace.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/types/character/about/components/character.action.model.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/types/character/about/components/character.attributes.model.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/types/character/about/components/character.description.model.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/types/character/about/components/character.effects.model.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/types/character/about/components/character.info.model.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/types/character/about/components/character.personalQualities.model.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/types/character/about/components/character.proficiency.model.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/types/character/about/components/character.stats.model.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/types/character/equipment/character.equipment.model.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/types/character/racesList.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/types/character/skillsProficiency.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/types/equipment/equipment.data.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/types/equipment/equipment.model.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/types/equipment/item/item.model.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/types/equipment/item/weapon.model.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/types/gameMechanics/Damage.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/types/gameMechanics/creatureSizes.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/types/gameMechanics/gameLanguages.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/types/skills/raceAbilities.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/SideMenu/SideMenu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/SideMenu/SideMenu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/constants/routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/constants/routes.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +89,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/img" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/app/types" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -76,16 +104,17 @@
     <property name="ts.external.directory.path" value="C:\Users\Dmytro_Frolov1\WebstormProjects\dmt2\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Dmytro_Frolov1\WebstormProjects\dmt2\src\app\types" />
+      <recent name="C:\Users\Dmytro_Frolov1\WebstormProjects\dmt2\src\img" />
+      <recent name="C:\Users\Dmytro_Frolov1\WebstormProjects\dmt2\public" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Dmytro_Frolov1\WebstormProjects\dmt2\src\app" />
       <recent name="C:\Users\Dmytro_Frolov1\WebstormProjects\dmt2\src\app\api\firebase" />
       <recent name="C:\Users\Dmytro_Frolov1\WebstormProjects\dmt2\src\app\api" />
       <recent name="C:\Users\Dmytro_Frolov1\WebstormProjects\dmt2\src\app\components" />
       <recent name="C:\Users\Dmytro_Frolov1\WebstormProjects\dmt2\src\img" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Dmytro_Frolov1\WebstormProjects\dmt2\src\img" />
-      <recent name="C:\Users\Dmytro_Frolov1\WebstormProjects\dmt2\public" />
     </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
@@ -149,7 +178,7 @@
       <workItem from="1579623070288" duration="10000" />
       <workItem from="1579623087484" duration="3838000" />
       <workItem from="1579626941207" duration="10136000" />
-      <workItem from="1580044297124" duration="22503000" />
+      <workItem from="1580044297124" duration="26551000" />
     </task>
     <task id="LOCAL-00001" summary="Added dev and source code link">
       <created>1578675340051</created>
