@@ -7,7 +7,9 @@ import { Header } from './components/Header/Header';
 import { SideMenu } from './components/SideMenu/SideMenu';
 import * as ROUTES from './constants/routes';
 import AdventureCreate from './pages/adventureCreate/AdventureCreate';
-import Home  from './pages/home/Home';
+import AdventureList  from './pages/adventureList/AdventureList';
+import AdventureView from './pages/adventureView/AdventureView';
+import Home from './pages/home/Home';
 import SignIn from './pages/signIn/SignIn';
 import SignUp from './pages/signUp/SignUp';
 
@@ -49,6 +51,8 @@ export const App: React.FC = (props: any) => {
           <Route path={ ROUTES.SIGN_IN } component={ SignIn } />
           <Route path={ ROUTES.SIGN_UP } component={ SignUp } />
           <Route path={ ROUTES.ADVENTURE_CREATE } component={ AdventureCreate } />
+          <Route path={ ROUTES.ADVENTURE_LIST } component={ AdventureList } />
+          <Route path={ ROUTES.ADVENTURE_VIEW } component={ AdventureView } />
         </div>
       </div>
     </Router>

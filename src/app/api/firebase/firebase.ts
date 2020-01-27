@@ -1,6 +1,7 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
+import { Adventure } from '../../types/adventure/Adventure';
 
 const config = {
   apiKey: process.env.REACT_APP_API_KEY,
@@ -29,15 +30,31 @@ export const SignInEmail = (email: string, password: string) => {
   });
 };
 
+export const CreateAdventure = (newAdventure: Adventure) => {
+  return firebase.firestore()
+    .collection('adventures')
+    .doc(newAdventure.name)
+    .set({...newAdventure})
+};
+
+export const GetAllUserAdventures: () => Promise<Adventure[]> = () => {
+  return firebase.firestore()
+    .collection('adventures')
+    .get()
+    .then(adventures => {
+      return adventures.docs.map(doc => {
+        return doc.data() as Adventure;
+      })
+    })
+};
+
+
+
 export const getAllChars = () => {
   return firebase.firestore()
   .collection('playerCharacters')
   .get()
   .then((characters) => {
-    let allChars = [];
-    characters.forEach((doc) => {
-      allChars.push(doc.data());
-    });
     return characters.docs.map((doc) => {
       return { id: doc.id, ...doc.data() };
     });
