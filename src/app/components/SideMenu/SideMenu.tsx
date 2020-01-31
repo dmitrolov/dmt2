@@ -3,7 +3,7 @@ import 'antd/dist/antd.css';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import * as ROUTES from '../../constants/routes';
-import './SideMenu.scss';
+import './SideMenu.sass';
 
 const { SubMenu } = Menu;
 
