@@ -2,20 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41acc593-3ae0-4c75-9a9e-0474381a0828" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/pages/adventureCreate/AdventureCreate.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/pages/adventureList/AdventureList.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/pages/adventureList/AdventureList.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/pages/adventureView/AdventureView.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/pages/adventureView/AdventureView.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/pages/characterView/CharacterView.sass" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/pages/characterView/CharacterView.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/firebase/firebase.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/firebase/firebase.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/SideMenu/SideMenu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/SideMenu/SideMenu.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/constants/routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/constants/routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/adventureCreate/AdventureCreate.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/adventureCreate/AdventureCreate.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/types/adventure/Adventure.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/types/adventure/Adventure.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/pages/adventureView/AdventureView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/adventureView/AdventureView.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/pages/home/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/home/Home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +79,8 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.TypeScript" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
+    <property name="settings.editor.splitter.proportion" value="0.18966909" />
     <property name="ts.external.directory.path" value="C:\Users\Dmytro_Frolov1\WebstormProjects\dmt2\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
@@ -164,7 +159,10 @@
       <workItem from="1579623087484" duration="3838000" />
       <workItem from="1579626941207" duration="10136000" />
       <workItem from="1580044297124" duration="26681000" />
-      <workItem from="1580116040978" duration="11973000" />
+      <workItem from="1580116040978" duration="12669000" />
+      <workItem from="1580395405303" duration="5433000" />
+      <workItem from="1580418250829" duration="687000" />
+      <workItem from="1580480712810" duration="772000" />
     </task>
     <task id="LOCAL-00001" summary="Added dev and source code link">
       <created>1578675340051</created>
@@ -206,6 +204,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="178" key="#TypeScript/0.0.1920.1040@0.0.1920.1040" timestamp="1578676085912" />
+    <state x="805" y="413" key="#com.intellij.codeInsight.template.impl.EditVariableDialog" timestamp="1580399651718">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="805" y="413" key="#com.intellij.codeInsight.template.impl.EditVariableDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1580399651718" />
     <state x="734" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1579546844930">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -246,9 +248,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="672" y="235" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578674042309" />
-    <state x="461" y="162" key="SettingsEditor" timestamp="1578676258605">
+    <state x="461" y="69" width="1255" height="933" key="SettingsEditor" timestamp="1580399653433">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="461" y="69" width="1255" height="933" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1580399653433" />
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1578676258605" />
     <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1578681068905">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -263,10 +266,10 @@
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1579548122959" />
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1580045467818" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1580148411260">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1580484981113">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1580148411260" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1580484981113" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1580058208785" />
   </component>
 </project>

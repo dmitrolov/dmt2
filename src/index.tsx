@@ -10,7 +10,6 @@ const RoutedApp = () => (
   <Provider store={ store }>
     <App />
   </Provider>
-
 );
 
 ReactDOM.render(<RoutedApp />, document.getElementById('root')
