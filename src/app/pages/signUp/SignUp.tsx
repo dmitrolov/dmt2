@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
+import { useHistory } from 'react-router';
 import { SignUpEmail } from '../../api/firebase/firebase';
 import { setUserAction } from '../../redux/actions/userActions';
 import { User } from '../../types/user/User';
@@ -13,6 +14,7 @@ const SignUp = (props: ISignUp) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [statusList, setStatus] = useState<string[]>([]);
+  const history = useHistory();
 
   const validation = () => {
     // const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -32,6 +34,7 @@ const SignUp = (props: ISignUp) => {
         const currentUser: User = { email: firebaseResponse.user.email };
         setStatus(['User successfully created and signed in']);
         props.setUser(currentUser);
+        history.push('/')
       }
     });
   };

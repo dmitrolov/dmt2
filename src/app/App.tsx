@@ -7,6 +7,7 @@ import * as ROUTES from './constants/routes';
 import AdventureCreate from './pages/adventureCreate/AdventureCreate';
 import AdventureList from './pages/adventureList/AdventureList';
 import AdventureView from './pages/adventureView/AdventureView';
+import CharacterCreate from './pages/characterCreate/CharacterCreate';
 import CharacterView from './pages/characterView/CharacterView';
 import Home from './pages/home/Home';
 import SignIn from './pages/signIn/SignIn';
@@ -58,6 +59,7 @@ export const App: React.FC = () => {
           <Route path={ ROUTES.ADVENTURE_CREATE } component={ AdventureCreate } />
           <Route path={ ROUTES.ADVENTURE_LIST } component={ AdventureList } />
           <Route exact path={ ROUTES.ADVENTURE_VIEW } component={ AdventureView } />
+          <Route path={ ROUTES.CHARACTER_CREATE } component={ CharacterCreate } />
           <Route path={ ROUTES.CHARACTER_VIEW } component={ CharacterView } />
         </div>
         <MainMenu clientWindowResolution={clientWindowResolution} />

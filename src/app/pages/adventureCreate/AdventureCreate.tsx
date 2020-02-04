@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import { useHistory } from 'react-router';
 import { CreateAdventure } from '../../api/firebase/firebase';
 import { Adventure } from '../../types/adventure/Adventure';
+import * as ROUTES from './../../constants/routes';
 import './AdventureCreate.sass';
 
 const newAdventure: Adventure = {
@@ -17,6 +19,7 @@ const newAdventure: Adventure = {
 const AdventureCreate = () => {
   const [playerEmail, setPlayerEmail] = useState('');
   const [errorsList, setErrorsList] = useState(['']);
+  const history = useHistory();
   const currentErrors: string[] = [];
 
   const validation = () => {
@@ -31,6 +34,7 @@ const AdventureCreate = () => {
     if (currentErrors.length === 0) {
       newAdventure.dungeonMaster = newAdventure.playersList[0];
       CreateAdventure(newAdventure).then(response => console.log('[AdventureCreate response]:', response));
+      history.push(ROUTES.ADVENTURE_LIST);
     }
   };
 

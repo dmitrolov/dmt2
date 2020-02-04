@@ -48,6 +48,16 @@ export const GetAllUserAdventures: () => Promise<Adventure[]> = () => {
     })
 };
 
+export const GetCharacter = (docName: string) => {
+  return firebase.firestore()
+    .collection('playerCharacters')
+    .doc(docName)
+    .get()
+    .then(character => {
+      return character.data()
+    })
+}
+
 
 
 export const getAllChars = () => {

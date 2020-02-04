@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import { useHistory } from 'react-router';
 import { SignInEmail } from '../../api/firebase/firebase';
 import './SignIn.sass';
 import { setUserAction } from '../../redux/actions/userActions';
@@ -13,6 +14,7 @@ const SignIn = (props: ISignUp) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [statusList, setStatus] = useState<string[]>([]);
+  const history = useHistory()
 
   const onSubmit = () => {
     if (statusList.length === 0) SignInEmail(email, password).then(firebaseResponse => {
@@ -21,6 +23,7 @@ const SignIn = (props: ISignUp) => {
         const currentUser: User = { email: firebaseResponse.user.email };
         setStatus(['User successfully signed in']);
         props.setUser(currentUser);
+        history.push('/')
       }
     });
   };

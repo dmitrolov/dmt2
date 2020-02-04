@@ -48,7 +48,7 @@ const MainMenu = (props: MainMenuProps) => {
   const renderMenuItems = (menuOptions: { name: string, link: string }[], menuSize: number) => {
     return menuOptions.map((option, index) => {
       const rotationStep = 360 / menuOptions.length;
-      console.log('[index * rotationStep]', index * rotationStep);
+
 
       return <div className='main-menu__item' style={ {
         transform: `rotate(${ index * rotationStep }deg)`,
@@ -103,7 +103,9 @@ const menuOptions: MenuOptions = {
     { name: 'Вход', link: ROUTES.SIGN_IN },
     { name: 'Регистрация', link: ROUTES.SIGN_UP },
     { name: 'Создать приключение', link: ROUTES.ADVENTURE_CREATE },
-    { name: 'Мои приключения', link: ROUTES.ADVENTURE_LIST }
+    { name: 'Мои приключения', link: ROUTES.ADVENTURE_LIST },
+    { name: 'Создать персонажа', link: '/adventure/view/Djadame/character/create' },
+    { name: 'a_a char', link: '/adventure/view/Djadame/character/view/a_a' }
   ]
 };
 
