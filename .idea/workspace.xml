@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41acc593-3ae0-4c75-9a9e-0474381a0828" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/pages/characterCreate/CharacterCreate.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/pages/characterCreate/CharacterCreate.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/firebase/firebase.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/firebase/firebase.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/mainMenu/MainMenu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/mainMenu/MainMenu.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/constants/routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/constants/routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/adventureCreate/AdventureCreate.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/adventureCreate/AdventureCreate.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/adventureView/AdventureView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/adventureView/AdventureView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/characterView/CharacterView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/characterView/CharacterView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/signIn/SignIn.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/signIn/SignIn.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/signUp/SignUp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/signUp/SignUp.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/App.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.sass" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,7 +158,7 @@
       <workItem from="1580418250829" duration="687000" />
       <workItem from="1580480712810" duration="5343000" />
       <workItem from="1580723396359" duration="273000" />
-      <workItem from="1580729353465" duration="28464000" />
+      <workItem from="1580729353465" duration="28744000" />
     </task>
     <task id="LOCAL-00001" summary="Added dev and source code link">
       <created>1578675340051</created>
