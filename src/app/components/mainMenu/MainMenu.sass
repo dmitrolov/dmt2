@@ -1,0 +1,55 @@
+.main-menu-container
+    width: 30px
+    height: 30px
+    border-radius: 50%
+    background-color: lightgray
+
+    position: absolute
+    margin: 0 auto
+    left: 0
+    right: 0
+    bottom: 0.5em
+
+    border: 2px solid blue
+    transition: linear 0.1s
+
+    display: flex
+    align-items: center
+    justify-content: center
+
+    overflow: hidden
+
+    &.opened
+        transform: translate(0, -40px)
+        border-radius: 2em
+
+
+
+.main-menu
+    display: flex
+    justify-content: center
+    align-items: center
+
+    &__item
+        position: absolute
+
+        // border: 1px dashed black
+        transform-origin: 100%
+
+        display: flex
+        align-items: center
+
+.main-menu-item-container
+    background-color: grey
+    border-radius: 50%
+    color: white
+    font-size: 12px
+    display: flex
+    justify-content: center
+    align-items: center
+    text-align: center
+    z-index: 1
+
+    & > *
+        color: white
+
