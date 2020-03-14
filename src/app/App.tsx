@@ -50,9 +50,21 @@ export const App: React.FC = () => {
     overflow: 'auto'
   };
 
+  const appContentStyles: CSSProperties = {
+    display: 'flex',
+    flexDirection: 'column',
+    width: clientWindowResolution.width,
+    minWidth: clientWindowResolution.width,
+    maxWidth: clientWindowResolution.width,
+    height: clientWindowResolution.height - 42,
+    minHeight: clientWindowResolution.height - 42,
+    maxHeight: clientWindowResolution.height - 42,
+    overflow: 'auto'
+  };
+
   return (
     <div style={ appContainerStyles }>
-      <div>
+      <div style={ appContentStyles }>
         <Route exact path={ ROUTES.HOME } component={ Home } />
         <Route path={ ROUTES.SIGN_IN } component={ SignIn } />
         <Route path={ ROUTES.SIGN_UP } component={ SignUp } />
