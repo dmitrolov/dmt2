@@ -1,7 +1,6 @@
 import 'antd/dist/antd.css';
 import React, { CSSProperties, useEffect, useState } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import './App.sass';
+import { Route } from 'react-router-dom';
 import MainMenu from './components/mainMenu/MainMenu';
 import * as ROUTES from './constants/routes';
 import AdventureCreate from './pages/adventureCreate/AdventureCreate';
@@ -39,6 +38,8 @@ export const App: React.FC = () => {
   }, []);
 
   const appContainerStyles: CSSProperties = {
+    display: 'flex',
+    flexDirection: 'column',
     width: clientWindowResolution.width,
     minWidth: clientWindowResolution.width,
     maxWidth: clientWindowResolution.width,
@@ -50,20 +51,17 @@ export const App: React.FC = () => {
   };
 
   return (
-    <Router basename='/dmt2'>
-      <div className='app' style={ appContainerStyles }>
-        <div className='app__content'>
-          <Route exact path={ ROUTES.HOME } component={ Home } />
-          <Route path={ ROUTES.SIGN_IN } component={ SignIn } />
-          <Route path={ ROUTES.SIGN_UP } component={ SignUp } />
-          <Route path={ ROUTES.ADVENTURE_CREATE } component={ AdventureCreate } />
-          <Route path={ ROUTES.ADVENTURE_LIST } component={ AdventureList } />
-          <Route exact path={ ROUTES.ADVENTURE_VIEW } component={ AdventureView } />
-          <Route path={ ROUTES.CHARACTER_CREATE } component={ CharacterCreate } />
-          <Route path={ ROUTES.CHARACTER_VIEW } component={ CharacterView } />
-        </div>
-        <MainMenu clientWindowResolution={clientWindowResolution} />
-      </div>
-    </Router>
+    <div style={ appContainerStyles }>
+      <Route exact path={ ROUTES.HOME } component={ Home } />
+      <Route path={ ROUTES.SIGN_IN } component={ SignIn } />
+      <Route path={ ROUTES.SIGN_UP } component={ SignUp } />
+      <Route path={ ROUTES.ADVENTURE_CREATE } component={ AdventureCreate } />
+      <Route path={ ROUTES.ADVENTURE_LIST } component={ AdventureList } />
+      <Route exact path={ ROUTES.ADVENTURE_VIEW } component={ AdventureView } />
+      <Route path={ ROUTES.CHARACTER_CREATE } component={ CharacterCreate } />
+      <Route path={ ROUTES.CHARACTER_VIEW } component={ CharacterView } />
+
+      <MainMenu clientWindowResolution={ clientWindowResolution } />
+    </div>
   );
 };

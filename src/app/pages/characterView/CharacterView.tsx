@@ -23,12 +23,7 @@ const CharacterView = (props: CharacterViewProps) => {
     <div className='character-view'>
       <button onClick={ () => setState(!state) }>CharacterView WORKS!!!</button>
       <div>THIS CHARACTER IS <b>{id}</b></div>
-      <div style={{
-        width: 300,
-        height: 120,
-        wordBreak: 'break-word',
-        overflow: 'auto'
-      }}>{characterData ? JSON.stringify(characterData, null, '\n') : <span>Wrong character page</span>}</div>
+      <pre>{JSON.stringify(characterData, null, 2)}</pre>
     </div>
   );
 };
