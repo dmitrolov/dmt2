@@ -23,7 +23,9 @@ const CharacterView = (props: CharacterViewProps) => {
     <div className='character-view'>
       <button onClick={ () => setState(!state) }>CharacterView WORKS!!!</button>
       <div>THIS CHARACTER IS <b>{id}</b></div>
-      <pre>{JSON.stringify(characterData, null, 2)}</pre>
+      <pre style={{
+        border:'1px solid red',
+      }}>{JSON.stringify(characterData, null, 2)}</pre>
     </div>
   );
 };

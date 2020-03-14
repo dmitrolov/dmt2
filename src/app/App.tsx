@@ -46,16 +46,18 @@ export const App: React.FC = () => {
     height: clientWindowResolution.height,
     minHeight: clientWindowResolution.height,
     maxHeight: clientWindowResolution.height,
-    border: '1px solid red',
+    border: '1px solid blue',
     overflow: 'auto'
   };
 
   const appContentStyles: CSSProperties = {
     display: 'flex',
     flexDirection: 'column',
-    width: clientWindowResolution.width,
-    minWidth: clientWindowResolution.width,
-    maxWidth: clientWindowResolution.width,
+    padding: 6,
+    border: '1px solid green',
+    width: clientWindowResolution.width - 2, // cause of border
+    minWidth: clientWindowResolution.width - 2, // cause of border
+    maxWidth: clientWindowResolution.width - 2, // cause of border
     height: clientWindowResolution.height - 42,
     minHeight: clientWindowResolution.height - 42,
     maxHeight: clientWindowResolution.height - 42,
