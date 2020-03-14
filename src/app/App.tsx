@@ -52,15 +52,16 @@ export const App: React.FC = () => {
 
   return (
     <div style={ appContainerStyles }>
-      <Route exact path={ ROUTES.HOME } component={ Home } />
-      <Route path={ ROUTES.SIGN_IN } component={ SignIn } />
-      <Route path={ ROUTES.SIGN_UP } component={ SignUp } />
-      <Route path={ ROUTES.ADVENTURE_CREATE } component={ AdventureCreate } />
-      <Route path={ ROUTES.ADVENTURE_LIST } component={ AdventureList } />
-      <Route exact path={ ROUTES.ADVENTURE_VIEW } component={ AdventureView } />
-      <Route path={ ROUTES.CHARACTER_CREATE } component={ CharacterCreate } />
-      <Route path={ ROUTES.CHARACTER_VIEW } component={ CharacterView } />
-
+      <div>
+        <Route exact path={ ROUTES.HOME } component={ Home } />
+        <Route path={ ROUTES.SIGN_IN } component={ SignIn } />
+        <Route path={ ROUTES.SIGN_UP } component={ SignUp } />
+        <Route path={ ROUTES.ADVENTURE_CREATE } component={ AdventureCreate } />
+        <Route path={ ROUTES.ADVENTURE_LIST } component={ AdventureList } />
+        <Route exact path={ ROUTES.ADVENTURE_VIEW } component={ AdventureView } />
+        <Route path={ ROUTES.CHARACTER_CREATE } component={ CharacterCreate } />
+        <Route path={ ROUTES.CHARACTER_VIEW } component={ CharacterView } />
+      </div>
       <MainMenu clientWindowResolution={ clientWindowResolution } />
     </div>
   );
