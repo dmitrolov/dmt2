@@ -6,6 +6,9 @@
     flex-direction: column
 
     &--mobile
+        height: 100vh
+        overflow: auto
+        border: 1px solid red
 
     &--desktop
         background-color: darken(white, 10%)
@@ -15,6 +18,11 @@
             width: 60px
 
 .menu-list
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    height: 100vh
+
     &__item
         display: flex
         align-items: center
@@ -36,11 +44,14 @@
         visibility: visible
         transition-delay: 0.2s
         transition-duration: .2s
-        transition-timing-function: ease-in-out
         margin-left: 0
         opacity: 1
+        transition-timing-function: ease-in-out
 
-    &__text--collapsed
-        visibility: hidden
-        margin-left: -.75rem
-        opacity: 0
+        &.collapsed
+            visibility: hidden
+            transition-delay: 0s
+            transition-duration: 0s
+            margin-left: -.75rem
+            opacity: 0
+

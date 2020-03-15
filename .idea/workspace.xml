@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="41acc593-3ae0-4c75-9a9e-0474381a0828" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/App.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.sass" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/components/SideMenu/SideMenu.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/SideMenu/SideMenu.sass" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/components/SideMenu/SideMenu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/SideMenu/SideMenu.tsx" afterDir="false" />
     </list>
@@ -167,7 +166,7 @@
       <workItem from="1582386110105" duration="187000" />
       <workItem from="1584109380227" duration="15330000" />
       <workItem from="1584215077215" duration="5845000" />
-      <workItem from="1584278428326" duration="25867000" />
+      <workItem from="1584278428326" duration="27445000" />
     </task>
     <task id="LOCAL-00001" summary="Added dev and source code link">
       <created>1578675340051</created>
