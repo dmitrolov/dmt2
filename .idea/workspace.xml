@@ -2,10 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41acc593-3ae0-4c75-9a9e-0474381a0828" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/app/App.sass" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/mixins.sass" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/characterView/CharacterView.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/characterView/CharacterView.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/Header/Header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Header/Header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/SideMenu/SideMenu.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/SideMenu/SideMenu.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/SideMenu/SideMenu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/SideMenu/SideMenu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/mainMenu/MainMenu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/mainMenu/MainMenu.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/pages/characterView/CharacterView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/characterView/CharacterView.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,7 +173,9 @@
       <workItem from="1580908652712" duration="3277000" />
       <workItem from="1581016427855" duration="102000" />
       <workItem from="1582386110105" duration="187000" />
-      <workItem from="1584109380227" duration="7547000" />
+      <workItem from="1584109380227" duration="15330000" />
+      <workItem from="1584215077215" duration="5845000" />
+      <workItem from="1584278428326" duration="20989000" />
     </task>
     <task id="LOCAL-00001" summary="Added dev and source code link">
       <created>1578675340051</created>
@@ -274,37 +284,43 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="734" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1579546844930" />
-    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1584181531159">
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1584295002203">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/-1080.-851.1080.1880/0.-768.1024.728@0.0.1920.1040" timestamp="1584295002203" />
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1579629326948" />
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584181531159" />
     <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1584185060842">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="585" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584185060842" />
-    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1578676244092">
+    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1584213741551">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040/-1080.-851.1080.1880/0.-768.1024.728@0.0.1920.1040" timestamp="1584213741551" />
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1578676244092" />
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1584182806214">
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1584215042604">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1080.-851.1080.1880/0.-768.1024.728@0.0.1920.1040" timestamp="1584215042604" />
     <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1578941162363" />
     <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584182806214" />
-    <state width="1899" height="282" key="GridCell.Tab.0.center" timestamp="1584182806214">
+    <state width="1899" height="282" key="GridCell.Tab.0.center" timestamp="1584215042603">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-1080.-851.1080.1880/0.-768.1024.728@0.0.1920.1040" timestamp="1584215042603" />
     <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1578941162363" />
     <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584182806214" />
-    <state width="1899" height="282" key="GridCell.Tab.0.left" timestamp="1584182806214">
+    <state width="1899" height="282" key="GridCell.Tab.0.left" timestamp="1584215042603">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-1080.-851.1080.1880/0.-768.1024.728@0.0.1920.1040" timestamp="1584215042603" />
     <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1578941162363" />
     <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584182806214" />
-    <state width="1899" height="282" key="GridCell.Tab.0.right" timestamp="1584182806214">
+    <state width="1899" height="282" key="GridCell.Tab.0.right" timestamp="1584215042604">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-1080.-851.1080.1880/0.-768.1024.728@0.0.1920.1040" timestamp="1584215042604" />
     <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1578941162363" />
     <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584182806214" />
     <state x="672" y="235" key="MultipleFileMergeDialog" timestamp="1578674042309">
@@ -328,9 +344,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="656" y="257" width="617" height="526" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1584181113957" />
-    <state x="616" y="240" key="run.anything.popup" timestamp="1580828121538">
+    <state x="616" y="240" key="run.anything.popup" timestamp="1584296371674">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/-1080.-851.1080.1880/0.-768.1024.728@0.0.1920.1040" timestamp="1584296371674" />
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1580828121538" />
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1580045467818" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1580820409096">

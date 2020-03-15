@@ -1,90 +1,66 @@
-import { Icon, Menu } from 'antd';
-import 'antd/dist/antd.css';
-import React from 'react';
+import { Drawer } from '@material-ui/core';
+import Switch from '@material-ui/core/Switch';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import * as ROUTES from '../../constants/routes';
 import './SideMenu.sass';
 
-const { SubMenu } = Menu;
-
-interface SideMenu {
-  isMobileMenuView: boolean
-  isMenuCollapsed: boolean
+interface SideMenuProps {
+  isMobileMenuView: boolean;
+  isMenuCollapsed: boolean;
+  isMenuOpened: boolean;
+  onClose: () => void;
 }
 
-interface MenuItem {
-  name: string;
-  icon?: string;
-  link?: string;
-  subItems?: MenuItem[];
+interface SideMenuState {
+  isMenuCollapsed: boolean;
 }
 
-const menuItems: MenuItem[] = [
-  { name: 'Home', link: ROUTES.HOME, icon: 'home' },
-  {
-    icon: 'user', name: 'Аккаунт', subItems: [
-      { name: 'Вход', link: ROUTES.SIGN_IN },
-      { name: 'Регистрация', link: ROUTES.SIGN_UP }
-    ]
-  },
-  {
-    icon: 'crown', name: 'Приключения', subItems: [
-      { name: 'Создать приключение', link: ROUTES.ADVENTURE_CREATE },
-      { name: 'Мои приключения', link: ROUTES.ADVENTURE_LIST },
-    ]
-  },
-
-  {
-    name: 'Список персонажей', icon: 'team', subItems: [
-      {
-        name: 'Гремми', icon: 'crown', subItems: [
-          {
-            name: 'О персонаже', icon: 'crown', subItems: [
-              { name: 'Характеристики' }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  { icon: 'thunderbolt', name: 'Заклинания' }
-];
-
-export const SideMenu = (props: SideMenu) => {
-  return (
-    <Menu className='side-menu'
-          mode="inline"
-          inlineCollapsed={ props.isMobileMenuView ? false : props.isMenuCollapsed }
-          style={ props.isMobileMenuView && props.isMenuCollapsed ? { marginLeft: -240 } : { marginLeft: 0 } }>
-      { renderMenu(menuItems) }
-    </Menu>
-  );
-};
-
-const renderMenuItem = (option: MenuItem) => {
-  return (
-    <Menu.Item key={ option.name }>
-      <Link to={ option.link || ROUTES.HOME }>
-        { option.icon && <Icon type={ option.icon } /> }
-        <span>{ option.name }</span>
-      </Link>
-    </Menu.Item>
-  );
-};
-
-const renderMenu = (options: MenuItem[]) => {
-  return options.map((option: MenuItem) => {
-    return option.subItems
-      ?
-      <SubMenu key={ option.name } title={
-        <span>
-          <Icon type={ option.icon } />
-          <span>{ option.name }</span>
-        </span>
-      }>
-        { renderMenu(option.subItems) }
-      </SubMenu>
-      :
-      renderMenuItem(option);
+export const SideMenu = (props: SideMenuProps) => {
+  const [state, setState] = useState<SideMenuState>({
+    isMenuCollapsed: props.isMenuCollapsed
   });
+
+  const renderMenuList = () => {
+    return <div className='menu-list'>
+      <div className="menu-list__item">
+        <Link to={ ROUTES.HOME }>Главная</Link>
+      </div>
+      <div className="menu-list__item">
+        <Link to={ ROUTES.SIGN_IN }>Вход</Link>
+      </div>
+      {
+        props.isMobileMenuView
+          ? null
+          : <div className="menu-list__item no-padding">
+            <Switch onChange={ () => setState({ ...state, isMenuCollapsed: !state.isMenuCollapsed }) } />
+            <span className={ !state.isMenuCollapsed ? 'text' : 'text-collapsed' }>Collapse menu</span>
+          </div>
+      }
+    </div>;
+  };
+
+  return <>
+    {
+      props.isMobileMenuView
+        ?
+        <Drawer
+          open={ props.isMenuOpened }
+          onClose={ props.onClose }
+        >
+          <div
+            className='side-menu side-menu--mobile'
+            onClick={ props.onClose }
+            onKeyDown={ props.onClose }
+          >
+            { renderMenuList() }
+          </div>
+        </Drawer>
+        :
+        <div
+          className={ `side-menu side-menu--desktop ${ state.isMenuCollapsed ? 'collapsed' : '' } ${ !props.isMenuOpened ? 'closed' : '' }` }>
+          { renderMenuList() }
+        </div>
+    }
+  </>;
 };

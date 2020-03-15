@@ -1,0 +1,10 @@
+$tablet-width: 768px
+$desktop-width: 1024px
+
+@mixin for-tablet-up
+    @media (min-width: $tablet-width)
+        @content
+
+@mixin for-desktop-up
+    @media (min-width: $desktop-width)
+        @content

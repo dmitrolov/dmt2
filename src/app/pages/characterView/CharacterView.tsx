@@ -21,7 +21,6 @@ const CharacterView = (props: CharacterViewProps) => {
 
   return (
     <div className='character-view'>
-      <button onClick={ () => setState(!state) }>CharacterView WORKS!!!</button>
       <div>THIS CHARACTER IS <b>{id}</b></div>
       <pre style={{
         border:'1px solid red',

@@ -1,7 +1,9 @@
 import 'antd/dist/antd.css';
-import React, { CSSProperties, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Route } from 'react-router-dom';
-import MainMenu from './components/mainMenu/MainMenu';
+import './App.sass';
+import { Header } from './components/Header/Header';
+import { SideMenu } from './components/SideMenu/SideMenu';
 import * as ROUTES from './constants/routes';
 import AdventureCreate from './pages/adventureCreate/AdventureCreate';
 import AdventureList from './pages/adventureList/AdventureList';
@@ -12,20 +14,48 @@ import Home from './pages/home/Home';
 import SignIn from './pages/signIn/SignIn';
 import SignUp from './pages/signUp/SignUp';
 
-export interface ClientWindowResolution {
-  width: number
-  height: number
+interface AppState {
+  menu: {
+    isMobileMenu: boolean;
+    isMenuCollapsed: boolean;
+    isMenuOpened: boolean;
+  },
+  clientWindowResolution: {
+    width: number
+    height: number
+  }
 }
 
 export const App: React.FC = () => {
-  const [clientWindowResolution, setClientWindowResolution] = useState<ClientWindowResolution>({ width: 0, height: 0 });
+  const [state, setState] = useState<AppState>({
+    menu: {
+      isMobileMenu: true,
+      isMenuCollapsed: false,
+      isMenuOpened: false
+    },
+    clientWindowResolution: {
+      width: 0,
+      height: 0
+    }
+  });
 
   const onWindowResize = () => {
     const body = document.getElementsByTagName('body')[0];
-    setClientWindowResolution({
-      width: body.clientWidth,
-      height: body.clientHeight
+    setState({
+      clientWindowResolution: {
+        width: body.clientWidth,
+        height: body.clientHeight
+      },
+      menu: {
+        isMenuOpened: !(body.clientWidth < 1024),
+        isMenuCollapsed: false,
+        isMobileMenu: body.clientWidth < 1024
+      }
     });
+  };
+
+  const onMobileMenuButtonClick = () => {
+    setState({ ...state, menu: { ...state.menu, isMenuOpened: !state.menu.isMenuOpened } });
   };
 
   useEffect(() => {
@@ -37,36 +67,14 @@ export const App: React.FC = () => {
     };
   }, []);
 
-  const appContainerStyles: CSSProperties = {
-    display: 'flex',
-    flexDirection: 'column',
-    width: clientWindowResolution.width,
-    minWidth: clientWindowResolution.width,
-    maxWidth: clientWindowResolution.width,
-    height: clientWindowResolution.height,
-    minHeight: clientWindowResolution.height,
-    maxHeight: clientWindowResolution.height,
-    border: '1px solid blue',
-    overflow: 'auto'
-  };
-
-  const appContentStyles: CSSProperties = {
-    display: 'flex',
-    flexDirection: 'column',
-    padding: 6,
-    border: '1px solid green',
-    width: clientWindowResolution.width - 2, // cause of border
-    minWidth: clientWindowResolution.width - 2, // cause of border
-    maxWidth: clientWindowResolution.width - 2, // cause of border
-    height: clientWindowResolution.height - 42,
-    minHeight: clientWindowResolution.height - 42,
-    maxHeight: clientWindowResolution.height - 42,
-    overflow: 'auto'
-  };
-
   return (
-    <div style={ appContainerStyles }>
-      <div style={ appContentStyles }>
+    <div className='app'>
+      { state.menu.isMobileMenu ? <Header onMenuButtonClick={ onMobileMenuButtonClick } /> : null }
+      <SideMenu isMobileMenuView={ state.menu.isMobileMenu }
+                isMenuCollapsed={ state.menu.isMenuCollapsed }
+                isMenuOpened={ state.menu.isMenuOpened }
+                onClose={ () => setState({ ...state, menu: { ...state.menu, isMenuOpened: false } }) } />
+      <div className='app__content'>
         <Route exact path={ ROUTES.HOME } component={ Home } />
         <Route path={ ROUTES.SIGN_IN } component={ SignIn } />
         <Route path={ ROUTES.SIGN_UP } component={ SignUp } />
@@ -76,7 +84,6 @@ export const App: React.FC = () => {
         <Route path={ ROUTES.CHARACTER_CREATE } component={ CharacterCreate } />
         <Route path={ ROUTES.CHARACTER_VIEW } component={ CharacterView } />
       </div>
-      <MainMenu clientWindowResolution={ clientWindowResolution } />
     </div>
   );
 };

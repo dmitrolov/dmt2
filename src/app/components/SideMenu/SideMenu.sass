@@ -1,13 +1,46 @@
+@import "./../../mixins"
+
 .side-menu
-    transition: 0.4s
-    border: 1px dashed blue
-    border-radius: 2em
+    width: 240px
+    display: flex
+    flex-direction: column
 
-.ant-menu-submenu-title
-    padding-left: 24px !important
+    &--mobile
 
-.ant-menu.ant-menu-sub.ant-menu-inline
-    .ant-menu-item
-        padding-left: 48px !important
+    &--desktop
+        transition: 0.4s
+        border: 1px solid red
 
+        &__item
+            height: 58px
+            text-overflow: ellipsis
 
+        &.collapsed
+            width: 60px
+
+        &.closed
+            top: 42px
+            margin-left: -240px
+
+.menu-list
+    &__item
+        height: 38px
+        display: flex
+        align-items: center
+        padding: 6px
+
+        &.no-padding
+            padding: 0
+
+.text
+    visibility: visible
+    transition-delay: 0.2s
+    transition-duration: .2s
+    transition-timing-function: ease-in-out
+    margin-left: 0
+    opacity: 1
+
+.text-collapsed
+    visibility: hidden
+    margin-left: -.75rem
+    opacity: 0

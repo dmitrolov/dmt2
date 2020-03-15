@@ -4,12 +4,14 @@ import { IconType } from 'react-icons';
 import { FaHome } from 'react-icons/all';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { ClientWindowResolution } from '../../App';
 import * as ROUTES from '../../constants/routes';
 import './MainMenu.sass';
 
 interface MainMenuProps {
-  clientWindowResolution: ClientWindowResolution
+  clientWindowResolution: {
+    width: number;
+    height: number;
+  }
 }
 
 const MainMenu = (props: MainMenuProps) => {
@@ -33,7 +35,7 @@ const MainMenu = (props: MainMenuProps) => {
         width: backButtonSize,
         height: backButtonSize
       } }>
-        <Link to={ ROUTES.HOME } onClick={() => {setOpen(false)}}>
+        <Link to={ ROUTES.HOME } onClick={ () => {setOpen(false);} }>
           { menuOptions.returnButton.icon?.call(null, {
             style: {
               width: backButtonIconSize,
@@ -49,7 +51,6 @@ const MainMenu = (props: MainMenuProps) => {
     return menuOptions.map((option, index) => {
       const rotationStep = 360 / menuOptions.length;
 
-
       return <div className='main-menu__item' style={ {
         transform: `rotate(${ index * rotationStep }deg)`,
         width: menuSize / 2 - 6,
@@ -61,7 +62,7 @@ const MainMenu = (props: MainMenuProps) => {
           width: menuSize / 3.5,
           height: menuSize / 3.5
         } }>
-          <Link to={ option.link } onClick={() => {setOpen(false)}}>{ option.name }</Link>
+          <Link to={ option.link } onClick={ () => {setOpen(false);} }>{ option.name }</Link>
         </div>
       </div>;
     });
@@ -108,6 +109,5 @@ const menuOptions: MenuOptions = {
     { name: 'a_a char', link: '/adventure/view/Djadame/character/view/a_a' }
   ]
 };
-
 
 export default connect(null, null)(MainMenu);

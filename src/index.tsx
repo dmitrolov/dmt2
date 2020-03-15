@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { App } from './app/App';
-import './index.scss';
+import './index.sass';
 import { store } from './store';
 
 const RoutedApp = () => (

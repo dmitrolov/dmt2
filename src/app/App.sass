@@ -1,0 +1,20 @@
+@import './mixins'
+
+.app
+    display: flex
+    flex-direction: column
+    border: 1px solid blue
+    overflow: auto
+    width: 100vw
+    height: 100vh
+
+    +for-desktop-up
+        flex-direction: row
+
+    &__content
+        display: flex
+        flex-direction: column
+        width: 100%
+        padding: 6px
+        border: 1px solid green
+        overflow: auto
