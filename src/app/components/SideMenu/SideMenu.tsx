@@ -1,8 +1,10 @@
 import { Drawer } from '@material-ui/core';
 import Switch from '@material-ui/core/Switch';
+import HomeIcon from '@material-ui/icons/Home';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import * as ROUTES from '../../constants/routes';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import './SideMenu.sass';
 
 interface SideMenuProps {
@@ -21,21 +23,31 @@ export const SideMenu = (props: SideMenuProps) => {
     isMenuCollapsed: props.isMenuCollapsed
   });
 
+  const renderMenuItem = (route: string, staticItem: JSX.Element, text: string) => {
+    return <div className='menu-list__item'>
+      <Link to={ route } className='menu-list__link'>
+        <div className='menu-list__static-item'>{ staticItem }</div>
+        <div className={ !state.isMenuCollapsed ? 'menu-list__text' : 'menu-list__text--collapsed' }>
+          <span>{ text }</span>
+        </div>
+      </Link>
+    </div>;
+  };
+
   const renderMenuList = () => {
     return <div className='menu-list'>
-      <div className="menu-list__item">
-        <Link to={ ROUTES.HOME }>Главная</Link>
-      </div>
-      <div className="menu-list__item">
-        <Link to={ ROUTES.SIGN_IN }>Вход</Link>
-      </div>
+      { renderMenuItem(ROUTES.HOME, <HomeIcon />, 'Главная') }
+      { renderMenuItem(ROUTES.SIGN_IN, <ExitToAppIcon />, 'Вход') }
       {
-        props.isMobileMenuView
-          ? null
-          : <div className="menu-list__item no-padding">
-            <Switch onChange={ () => setState({ ...state, isMenuCollapsed: !state.isMenuCollapsed }) } />
-            <span className={ !state.isMenuCollapsed ? 'text' : 'text-collapsed' }>Collapse menu</span>
-          </div>
+        !props.isMobileMenuView &&
+        <div className='menu-list__item switch'>
+          <Switch
+            checked={ !state.isMenuCollapsed }
+            onChange={ () => setState({ ...state, isMenuCollapsed: !state.isMenuCollapsed }) } />
+          <span
+            className={ !state.isMenuCollapsed ? 'menu-list__text' : 'menu-list__text--collapsed' }>COLLAPSE MENU
+          </span>
+        </div>
       }
     </div>;
   };

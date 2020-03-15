@@ -8,39 +8,39 @@
     &--mobile
 
     &--desktop
+        background-color: darken(white, 10%)
         transition: 0.4s
-        border: 1px solid red
-
-        &__item
-            height: 58px
-            text-overflow: ellipsis
 
         &.collapsed
             width: 60px
 
-        &.closed
-            top: 42px
-            margin-left: -240px
-
 .menu-list
     &__item
-        height: 38px
         display: flex
         align-items: center
-        padding: 6px
 
-        &.no-padding
-            padding: 0
+        &.switch
+            height: 60px
 
-.text
-    visibility: visible
-    transition-delay: 0.2s
-    transition-duration: .2s
-    transition-timing-function: ease-in-out
-    margin-left: 0
-    opacity: 1
+    &__link
+        display: flex
+        align-items: center
 
-.text-collapsed
-    visibility: hidden
-    margin-left: -.75rem
-    opacity: 0
+    &__static-item
+        height: 60px
+        padding: 18px
+
+
+
+    &__text
+        visibility: visible
+        transition-delay: 0.2s
+        transition-duration: .2s
+        transition-timing-function: ease-in-out
+        margin-left: 0
+        opacity: 1
+
+    &__text--collapsed
+        visibility: hidden
+        margin-left: -.75rem
+        opacity: 0
