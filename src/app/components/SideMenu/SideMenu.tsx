@@ -7,7 +7,6 @@ import HomeIcon from '@material-ui/icons/Home';
 import ListIcon from '@material-ui/icons/List';
 import PersonAddIcon from '@material-ui/icons/PersonAdd';
 import React, { useState } from 'react';
-import { FaHome } from 'react-icons/all';
 import { Link } from 'react-router-dom';
 import * as ROUTES from '../../constants/routes';
 import './SideMenu.sass';

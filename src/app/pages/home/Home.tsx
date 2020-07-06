@@ -18,7 +18,7 @@ export const Home = (props: Home) => {
 
   useEffect(() => {
     props.setUser({email: userEmail});
-  }, [userEmail]);
+  }, [props, userEmail]);
 
   firebase.auth().onAuthStateChanged(() => {
     setUserEmail(firebase.auth().currentUser?.email || '');
