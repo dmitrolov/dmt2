@@ -10,6 +10,7 @@ import * as ROUTES from './../../routes';
 import { ClientWindowResolution, getClientWindowResolution } from "../../helpers/clientWindowResolution"
 import { SideMenu } from "../../components/SideMenu/SideMenu"
 import { Header } from "../../components/Header/Header"
+import './site.sass'
 
 interface SiteState {
     menu: {
@@ -44,10 +45,6 @@ export const Site: React.FC = (props) => {
         });
     };
 
-    const onMobileMenuButtonClick = () => {
-        setState({ ...state, menu: { ...state.menu, isMenuOpened: !state.menu.isMenuOpened } });
-    };
-
     useEffect(() => {
         window.onresize = onWindowResize;
         onWindowResize();
@@ -58,13 +55,16 @@ export const Site: React.FC = (props) => {
     }, []);
 
     return (
-        <>
+        <div className='site'>
             <SideMenu
                 isMobileMenuView={state.clientWindowResolution.isMobile}
                 isMenuCollapsed={state.menu.isMenuCollapsed}
                 isMenuOpened={state.menu.isMenuOpened}
                 onClose={() => setState({ ...state, menu: { ...state.menu, isMenuOpened: false } })} />
-            {state.clientWindowResolution.isMobile ? <Header onMenuButtonClick={onMobileMenuButtonClick} /> : null}
+
+            {state.clientWindowResolution.isMobile
+                ? <Header onMenuButtonClick={() => setState({ ...state, menu: { ...state.menu, isMenuOpened: !state.menu.isMenuOpened } })} />
+                : null}
 
             <Route exact path={ROUTES.SITE} component={Home} />
             <Route path={ROUTES.SIGN_IN} component={SignIn} />
@@ -72,6 +72,6 @@ export const Site: React.FC = (props) => {
             <Route path={ROUTES.ADVENTURE_CREATE} component={AdventureCreate} />
             <Route path={ROUTES.ADVENTURE_LIST} component={AdventureList} />
             <Route exact path={ROUTES.ADVENTURE_VIEW} component={AdventureView} />
-        </>
+        </div>
     )
 }

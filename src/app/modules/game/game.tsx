@@ -32,7 +32,7 @@ export const Game: React.FC = (props) => {
                 <Route path={ROUTES.CHARACTER_CREATE} component={CharacterCreate} />
                 <Route path={ROUTES.CHARACTER_VIEW} component={CharacterView} />
             </div>
-            <GameMenu onMenuButtonClick={() => { }} clientWindowResolution={state.clientWindowResolution} />
+            {state.clientWindowResolution.isMobile && <GameMenu onMenuButtonClick={() => { }} clientWindowResolution={state.clientWindowResolution} />}
         </div>
     )
 }
