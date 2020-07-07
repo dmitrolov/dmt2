@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { Route, Redirect } from "react-router"
+import { Route } from "react-router"
 import Home from "./pages/home/Home"
 import SignIn from "./pages/signIn/SignIn"
 import SignUp from "./pages/signUp/SignUp"

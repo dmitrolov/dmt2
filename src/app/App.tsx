@@ -1,6 +1,6 @@
 import 'antd/dist/antd.css';
 import React from 'react';
-import { Route, Redirect } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import * as ROUTES from './routes';
 import { Game } from './modules/game/game';
 import { Site } from './modules/site/site';
