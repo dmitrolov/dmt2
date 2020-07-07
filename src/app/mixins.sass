@@ -8,3 +8,11 @@ $desktop-width: 1024px
 @mixin for-desktop-up
     @media (min-width: $desktop-width)
         @content
+
+@mixin for-portrait
+    @media screen and (orientation:portrait) 
+        @content
+
+@mixin for-landscape
+    @media screen and (orientation:landscape)
+        @content

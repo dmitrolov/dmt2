@@ -13,12 +13,34 @@
 
 .app-site
     & > *
-        height: calc( 100vh - 30px )
         background-color: darken(white, 5%)
         overflow: auto
 
+        +for-portrait
+            height: calc( 100vh - 30px )
+        +for-landscape
+            width: calc( 100vw - 30px )
+
 .app-game
+    display: flex
+    flex-wrap: wrap
+
+    +for-portrait
+        flex-direction: column
+    +for-landscape
+        flex-direction: row
+
     & > *
-        height: calc( 100vh - 90px )
         background-color: darken(white, 5%)
         overflow: auto
+
+        +for-portrait
+            height: calc( 100vh - 90px )
+        +for-landscape
+            height: calc( 100vh - 30px )
+            width: calc( 100vw - 60px )
+
+    +for-desktop-up
+        & > *
+            height: calc( 100vh )
+            width: calc( 100vw - 300px )
