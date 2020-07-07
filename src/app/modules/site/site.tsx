@@ -66,8 +66,7 @@ export const Site: React.FC = (props) => {
                 onClose={() => setState({ ...state, menu: { ...state.menu, isMenuOpened: false } })} />
             {state.clientWindowResolution.isMobile ? <Header onMenuButtonClick={onMobileMenuButtonClick} /> : null}
 
-            <Redirect from={ROUTES.SITE} to={ROUTES.DASHBOARD} />
-            <Route exact path={ROUTES.DASHBOARD} component={Home} />
+            <Route exact path={ROUTES.SITE} component={Home} />
             <Route path={ROUTES.SIGN_IN} component={SignIn} />
             <Route path={ROUTES.SIGN_UP} component={SignUp} />
             <Route path={ROUTES.ADVENTURE_CREATE} component={AdventureCreate} />

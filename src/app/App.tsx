@@ -8,9 +8,9 @@ import { Site } from './modules/site/site';
 export const App: React.FC = () => {
     return (
         <>
-            <Redirect from={ROUTES.ROOT} to={ROUTES.SITE} />
             <Route path={ROUTES.SITE} component={Site} />
             <Route path={ROUTES.GAME} component={Game} />
+            <Route exact path={ROUTES.ROOT} component={Site} />
         </>
     );
 };
