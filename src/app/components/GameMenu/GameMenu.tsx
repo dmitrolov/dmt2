@@ -4,18 +4,17 @@ import './GameMenu.sass'
 import FaceIcon from '@material-ui/icons/Face';
 import HomeIcon from '@material-ui/icons/Home';
 import { Menu, Dropdown, Button } from 'antd';
-import { ClientWindowResolution } from '../../helpers/clientWindowResolution';
+import { clientWindowResolution } from '../../helpers/clientWindowResolution';
 
 interface gameMenuProps {
-    clientWindowResolution: ClientWindowResolution
     onMenuButtonClick: () => void
 }
 
-const menu = (
+const menu = (key: string) => (
     <Menu className={'submenu'}>
-        <Menu.Item key="1"><a href="#anc1">1</a></Menu.Item>
-        <Menu.Item key="2"><a href="#anc2">2</a></Menu.Item>
-        <Menu.Item key="3"><a href="#anc3">3</a></Menu.Item>
+        <Menu.Item key={key}><a href="#anc1">1</a></Menu.Item>
+        <Menu.Item key={key}><a href="#anc2">2</a></Menu.Item>
+        <Menu.Item key={key}><a href="#anc3">3</a></Menu.Item>
     </Menu>
 );
 
@@ -24,16 +23,16 @@ const GameMenu = (props: gameMenuProps) => {
         <div
             className={'game-menu'}
             style={
-                props.clientWindowResolution.width < props.clientWindowResolution.height
-                    ? { height: 60, flexDirection: 'row' }
-                    : { width: 60, flexDirection: 'column' }
+                clientWindowResolution().isLandscape
+                    ? { width: 60, flexDirection: 'column' }
+                    : { height: 60, flexDirection: 'row' }
             }>
-            <Dropdown overlay={menu} overlayStyle={{ width: '100%' }}>
+            <Dropdown key={'11'} overlay={menu('21')} overlayStyle={{ width: '100%' }}>
                 <Button className={'game-menu__button'}>
                     <FaceIcon />
                 </Button>
             </Dropdown>
-            <Dropdown overlay={menu} overlayStyle={{ width: '100%' }}>
+            <Dropdown key={'12'} overlay={menu('22')} overlayStyle={{ width: '100%' }}>
                 <Button className={'game-menu__button'}>
                     <FaceIcon />
                 </Button>
@@ -41,12 +40,12 @@ const GameMenu = (props: gameMenuProps) => {
             <Button className={'game-menu__button'} onClick={props.onMenuButtonClick}>
                 <HomeIcon />
             </Button>
-            <Dropdown overlay={menu} overlayStyle={{ width: '100%' }}>
+            <Dropdown key={'13'} overlay={menu('23')} overlayStyle={{ width: '100%' }}>
                 <Button className={'game-menu__button'}>
                     <FaceIcon />
                 </Button>
             </Dropdown>
-            <Dropdown overlay={menu} overlayStyle={{ width: '100%' }}>
+            <Dropdown key={'14'} overlay={menu('24')} overlayStyle={{ width: '100%' }}>
                 <Button className={'game-menu__button'}>
                     <FaceIcon />
                 </Button>

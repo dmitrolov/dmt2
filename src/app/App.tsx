@@ -2,7 +2,6 @@ import 'antd/dist/antd.css';
 import React, { useState, useEffect } from 'react';
 import { Route } from 'react-router-dom';
 import * as ROUTES from './routes';
-import { Game } from './pages/game/game';
 import { Header } from './components/Header/Header';
 import { ClientWindowResolution, clientWindowResolution } from './helpers/clientWindowResolution';
 import { SideMenu } from './components/SideMenu/SideMenu';
@@ -12,16 +11,17 @@ import SignUp from './pages/signUp/SignUp';
 import AdventureCreate from './pages/adventureCreate/AdventureCreate';
 import AdventureList from './pages/adventureList/AdventureList';
 import AdventureView from './pages/adventureView/AdventureView';
-import CharacterCreate from './pages/game/components/characterCreate/CharacterCreate';
-import CharacterView from './pages/game/components/characterView/CharacterView';
+import CharacterCreate from './pages/characterCreate/CharacterCreate';
+import CharacterView from './pages/characterView/CharacterView';
 import './App.sass'
+import GameMenu from './components/GameMenu/GameMenu';
 
 interface AppState {
     menu: {
         isMenuCollapsed: boolean;
         isMenuOpened: boolean;
     },
-    clientWindowResolution: ClientWindowResolution | undefined
+    clientWindowResolution: ClientWindowResolution
 }
 
 export const App: React.FC = () => {
@@ -30,7 +30,12 @@ export const App: React.FC = () => {
             isMenuCollapsed: false,
             isMenuOpened: false
         },
-        clientWindowResolution: undefined
+        clientWindowResolution: {
+            width: 0,
+            height: 0,
+            isLandscape: false,
+            isMobile: true
+        }
     });
 
     const onWindowResize = () => {
@@ -52,6 +57,7 @@ export const App: React.FC = () => {
             window.onresize = null;
         };
     }, []);
+
     return (
         <>
             <div className={'app'}>
@@ -61,21 +67,26 @@ export const App: React.FC = () => {
                     isMenuOpened={state.menu.isMenuOpened}
                     onClose={() => setState({ ...state, menu: { ...state.menu, isMenuOpened: false } })} />
 
-                {state.clientWindowResolution?.isMobile
-                    ? <Header onMenuButtonClick={() => setState({ ...state, menu: { ...state.menu, isMenuOpened: !state.menu.isMenuOpened } })} />
-                    : null}
+                <div className={'app-header'}>
+                    {state.clientWindowResolution?.isMobile
+                        ? <Header onMenuButtonClick={() => setState({ ...state, menu: { ...state.menu, isMenuOpened: !state.menu.isMenuOpened } })} />
+                        : null}
+                </div>
 
-                <Route path={ROUTES.SIGN_IN} component={SignIn} />
-                <Route path={ROUTES.SIGN_UP} component={SignUp} />
-                <Route path={ROUTES.ADVENTURE_CREATE} component={AdventureCreate} />
-                <Route path={ROUTES.ADVENTURE_LIST} component={AdventureList} />
-                <Route exact path={ROUTES.ADVENTURE_VIEW} component={AdventureView} />
+                <div className={'app-site'}>
+                    <Route exact path={ROUTES.DASHBOARD} component={Home} />
+                    <Route path={ROUTES.SIGN_IN} component={SignIn} />
+                    <Route path={ROUTES.SIGN_UP} component={SignUp} />
+                    <Route path={ROUTES.ADVENTURE_CREATE} component={AdventureCreate} />
+                    <Route path={ROUTES.ADVENTURE_LIST} component={AdventureList} />
+                    <Route exact path={ROUTES.ADVENTURE_VIEW} component={AdventureView} />
+                </div>
 
-                <Route path={ROUTES.CHARACTER_CREATE} component={CharacterCreate} />
-                <Route path={ROUTES.CHARACTER_VIEW} component={CharacterView} />
-                <Route exact path={ROUTES.GAME} component={Game} />
-                
-                <Route exact path={ROUTES.DASHBOARD} component={Home} />
+                <div className={'app-game'}>
+                    <Route path={ROUTES.CHARACTER_CREATE} component={CharacterCreate} />
+                    <Route path={ROUTES.CHARACTER_VIEW} component={CharacterView} />
+                    <Route path={ROUTES.GAME} component={GameMenu} />
+                </div>
             </div>
         </>
     );

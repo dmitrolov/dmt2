@@ -7,3 +7,18 @@
 
     +for-desktop-up
         flex-direction: row
+
+.app-header
+    height: 30px
+
+.app-site
+    & > *
+        height: calc( 100vh - 30px )
+        background-color: darken(white, 5%)
+        overflow: auto
+
+.app-game
+    & > *
+        height: calc( 100vh - 90px )
+        background-color: darken(white, 5%)
+        overflow: auto

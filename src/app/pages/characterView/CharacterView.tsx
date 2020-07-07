@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import './CharacterView.sass';
-import { getCharacter } from '../../../../api/firebase/firebase';
-import { Character } from '../../../../types/character/Character';
+import { getCharacter } from '../../api/firebase/firebase';
+import { Character } from '../../types/character/Character';
 import { Table } from 'antd';
 
 const columns = [
@@ -26,27 +26,27 @@ const data = [
         age: 'Скальный гном'
     },
     {
-        key: '1',
+        key: '2',
         name: 'Пол',
         age: 'Скальный гном'
     },
     {
-        key: '1',
+        key: '3',
         name: 'Возраст',
         age: 'Скальный гном'
     },
     {
-        key: '1',
+        key: '4',
         name: 'Рост',
         age: 'Скальный гном'
     },
     {
-        key: '1',
+        key: '5',
         name: 'Вес',
         age: 'Скальный гном'
     },
     {
-        key: '1',
+        key: '6',
         name: 'Предистория',
         age: 'Скальный гном'
     },
