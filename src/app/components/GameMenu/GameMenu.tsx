@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
 import React from 'react';
 import './GameMenu.sass'
-import { ClientWindowResolution } from '../../App';
 import FaceIcon from '@material-ui/icons/Face';
 import HomeIcon from '@material-ui/icons/Home';
 import { Menu, Dropdown, Button } from 'antd';
+import { ClientWindowResolution } from '../../helpers/clientWindowResolution';
 
 interface gameMenuProps {
     clientWindowResolution: ClientWindowResolution

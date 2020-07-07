@@ -35,7 +35,7 @@ const MainMenu = (props: MainMenuProps) => {
         width: backButtonSize,
         height: backButtonSize
       } }>
-        <Link to={ ROUTES.HOME } onClick={ () => {setOpen(false);} }>
+        <Link to={ ROUTES.DASHBOARD } onClick={ () => {setOpen(false);} }>
           { menuOptions.returnButton.icon?.call(null, {
             style: {
               width: backButtonIconSize,
@@ -99,7 +99,7 @@ interface MenuItemOption {
 }
 
 const menuOptions: MenuOptions = {
-  returnButton: { name: 'Главная', link: ROUTES.HOME, icon: FaHome },
+  returnButton: { name: 'Главная', link: ROUTES.DASHBOARD, icon: FaHome },
   menuButtons: [
     { name: 'Вход', link: ROUTES.SIGN_IN },
     { name: 'Регистрация', link: ROUTES.SIGN_UP },

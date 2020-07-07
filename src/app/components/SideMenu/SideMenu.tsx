@@ -41,11 +41,11 @@ export const SideMenu = (props: SideMenuProps) => {
   const renderMenuList = () => {
     return <div className='menu-list'>
       <div>
-        { renderMenuItem(ROUTES.HOME, <HomeIcon />, 'Главная') }
+        { renderMenuItem(ROUTES.SITE, <HomeIcon />, 'Главная') }
         { renderMenuItem(ROUTES.ADVENTURE_CREATE, <AddIcon />, 'Создать приключение') }
         { renderMenuItem(ROUTES.ADVENTURE_LIST, <ListIcon />, 'Мои приключения') }
-        { renderMenuItem('/adventure/view/Djadame/character/create', <PersonAddIcon />, 'Создать персонажа') }
-        { renderMenuItem('/adventure/view/Djadame/character/view/a_a', <FaceIcon />, 'a_a char') }
+        { renderMenuItem('/game/adventure/view/Djadame/character/create', <PersonAddIcon />, 'Создать персонажа') }
+        { renderMenuItem('/game/adventure/view/Djadame/character/view/a_a', <FaceIcon />, 'a_a char') }
       </div>
       <div>
         { renderMenuItem(ROUTES.SIGN_IN, <AccountCircleIcon />, 'Вход') }
