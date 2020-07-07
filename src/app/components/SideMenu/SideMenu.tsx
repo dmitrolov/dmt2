@@ -41,7 +41,7 @@ export const SideMenu = (props: SideMenuProps) => {
   const renderMenuList = () => {
     return <div className='menu-list'>
       <div>
-        { renderMenuItem(ROUTES.SITE, <HomeIcon />, 'Главная') }
+        { renderMenuItem(ROUTES.DASHBOARD, <HomeIcon />, 'Главная') }
         { renderMenuItem(ROUTES.ADVENTURE_CREATE, <AddIcon />, 'Создать приключение') }
         { renderMenuItem(ROUTES.ADVENTURE_LIST, <ListIcon />, 'Мои приключения') }
         { renderMenuItem('/game/adventure/view/Djadame/character/create', <PersonAddIcon />, 'Создать персонажа') }

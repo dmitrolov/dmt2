@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
-import { AppState } from '../../../../../store';
-import firebase from '../../../../api/firebase/firebase';
+import { AppState } from '../../../store';
+import firebase from '../../api/firebase/firebase';
 import './Home.sass';
-import { setUserAction } from '../../../../redux/actions/userActions';
-import { User } from '../../../../types/user/User';
+import { setUserAction } from '../../redux/actions/userActions';
+import { User } from '../../types/user/User';
 
 interface Home {
   userData: User,

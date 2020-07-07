@@ -5,7 +5,7 @@ export interface ClientWindowResolution {
     isLandscape: boolean;
 }
 
-export const getClientWindowResolution: () => ClientWindowResolution = () => {
+export const clientWindowResolution: () => ClientWindowResolution = () => {
     const body = document.getElementsByTagName('body')[0];
 
     return {

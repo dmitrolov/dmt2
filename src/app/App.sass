@@ -1,0 +1,9 @@
+@import ./mixins
+
+.app
+    display: flex
+    flex-direction: column
+    overflow: auto
+
+    +for-desktop-up
+        flex-direction: row
