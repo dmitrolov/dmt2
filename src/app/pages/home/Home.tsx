@@ -12,13 +12,14 @@ interface Home {
 }
 
 export const Home = (props: Home) => {
+  const { setUser } = props;
   const [userEmail, setUserEmail] = useState('');
   const bodyWidth = document.getElementsByTagName('body')[0].clientWidth;
   const bodyHeight = document.getElementsByTagName('body')[0].clientHeight;
 
   useEffect(() => {
-    props.setUser({email: userEmail});
-  }, [props, userEmail]);
+    setUser({ email: userEmail });
+  }, [setUser, userEmail]);
 
   firebase.auth().onAuthStateChanged(() => {
     setUserEmail(firebase.auth().currentUser?.email || '');
@@ -26,7 +27,7 @@ export const Home = (props: Home) => {
 
   return (
     <div className='home'>
-      <h1>Current user - [{ userEmail }]</h1>
+      <h1>Current user - [{userEmail}]</h1>
       <button onClick={() => alert(props.userData.email)}>Alert user data email from store</button>
       <button onClick={() => firebase.auth().signOut()}>Sign out</button>
       <button onClick={() => alert(bodyWidth)}>Show client width</button>

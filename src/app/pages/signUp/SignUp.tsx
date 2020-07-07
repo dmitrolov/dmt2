@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { connect } from 'react-redux';
 import { useHistory } from 'react-router';
 import { SignUpEmail } from '../../api/firebase/firebase';
@@ -16,7 +16,7 @@ const SignUp = (props: ISignUp) => {
   const [statusList, setStatus] = useState<string[]>([]);
   const history = useHistory();
 
-  const validation = () => {
+  const validation = useCallback(() => {
     // const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     const re = /\S+@\S+\.\S+/;
     const validationErrors: string[] = [];
@@ -25,7 +25,7 @@ const SignUp = (props: ISignUp) => {
     if (password.length < 6) validationErrors.push('Password should be at least 6 characters.');
     setStatus(validationErrors);
     console.log('[validationErrors]:', validationErrors);
-  };
+  }, [email, password.length]);
 
   const onSubmit = () => {
     if (statusList.length === 0) SignUpEmail(email, password).then((firebaseResponse) => {
@@ -51,7 +51,7 @@ const SignUp = (props: ISignUp) => {
 
   useEffect(() => {
     validation();
-  }, [email, password]);
+  }, [email, password, validation]);
 
   return (
     <div className='sign-up'>
