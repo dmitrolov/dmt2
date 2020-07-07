@@ -41,9 +41,7 @@
     "build": "react-scripts build",
     "build-gh": "rd /s /q docs & react-scripts build & move build docs & copy docs/index.html docs/404.html",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"

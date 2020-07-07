@@ -6,3 +6,5 @@ export const ADVENTURE_LIST = '/adventure/list';
 export const ADVENTURE_VIEW = '/adventure/view/:id';
 export const CHARACTER_CREATE = '/adventure/view/:id/character/create';
 export const CHARACTER_VIEW = '/adventure/view/:id/character/view/:id';
+
+export const GAME = '/game';

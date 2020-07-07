@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { GetAllUserAdventures } from '../../api/firebase/firebase';
-import { Adventure } from '../../types/adventure/Adventure';
+import { GetAllUserAdventures } from '../../../../api/firebase/firebase';
+import { Adventure } from '../../../../types/adventure/Adventure';
 import './AdventureList.sass';
 
 export const AdventureList = () => {

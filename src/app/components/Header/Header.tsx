@@ -8,7 +8,8 @@ interface Header {
 export function Header(props: Header) {
   return (
     <div className='header'>
-      <div className="menu-button" onClick={ props.onMenuButtonClick }>click me</div>
+      <button className="menu-button" onClick={ props.onMenuButtonClick }>menu</button>
+      <h3>Character name & owner</h3>
     </div>
   );
 }

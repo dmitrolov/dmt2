@@ -4,16 +4,17 @@ import { Route } from 'react-router-dom';
 import './App.sass';
 // import { Header } from './components/Header/Header';
 import { SideMenu } from './components/SideMenu/SideMenu';
-import * as ROUTES from './constants/routes';
-import AdventureCreate from './pages/adventureCreate/AdventureCreate';
-import AdventureList from './pages/adventureList/AdventureList';
-import AdventureView from './pages/adventureView/AdventureView';
-import CharacterCreate from './pages/characterCreate/CharacterCreate';
-import CharacterView from './pages/characterView/CharacterView';
-import Home from './pages/home/Home';
-import SignIn from './pages/signIn/SignIn';
-import SignUp from './pages/signUp/SignUp';
+import * as ROUTES from './routes';
+import AdventureCreate from './modules/site/pages/adventureCreate/AdventureCreate';
+import AdventureList from './modules/site/pages/adventureList/AdventureList';
+import AdventureView from './modules/site/pages/adventureView/AdventureView';
+import CharacterCreate from './modules/game/pages/characterCreate/CharacterCreate';
+import CharacterView from './modules/game/pages/characterView/CharacterView';
+import Home from './modules/site/pages/home/Home';
+import SignIn from './modules/site/pages/signIn/SignIn';
+import SignUp from './modules/site/pages/signUp/SignUp';
 import GameMenu from './components/GameMenu/GameMenu';
+import { Game } from './modules/game/game';
 
 export interface ClientWindowResolution {
     width: number
@@ -73,10 +74,18 @@ export const App: React.FC = () => {
     return (
         <div
             className='app'
-            style={{
-                width: state.clientWindowResolution.width,
-                height: state.clientWindowResolution.height
-            }}>
+            style={
+                state.clientWindowResolution.height < state.clientWindowResolution.width
+                    ? {
+                        width: state.clientWindowResolution.width,
+                        height: state.clientWindowResolution.height,
+                        flexDirection: 'row'
+                    }
+                    : {
+                        width: state.clientWindowResolution.width,
+                        height: state.clientWindowResolution.height,
+                        flexDirection: 'column'
+                    }}>
             {/* {state.menu.isMobileMenu ? <Header onMenuButtonClick={onMobileMenuButtonClick} /> : null} */}
             <SideMenu
                 isMobileMenuView={state.menu.isMobileMenu}
@@ -84,10 +93,14 @@ export const App: React.FC = () => {
                 isMenuOpened={state.menu.isMenuOpened}
                 onClose={() => setState({ ...state, menu: { ...state.menu, isMenuOpened: false } })} />
             <div
-                style={{
-                    width: state.clientWindowResolution.width,
-                    height: state.clientWindowResolution.height - 30
-                }}
+                style={state.clientWindowResolution.height > state.clientWindowResolution.width
+                    ? {
+                        width: state.clientWindowResolution.width,
+                        height: state.clientWindowResolution.height - 60
+                    } : {
+                        width: state.clientWindowResolution.width - 60,
+                        height: state.clientWindowResolution.height
+                    }}
                 className='app__content'>
                 <Route exact path={ROUTES.HOME} component={Home} />
                 <Route path={ROUTES.SIGN_IN} component={SignIn} />
@@ -97,6 +110,7 @@ export const App: React.FC = () => {
                 <Route exact path={ROUTES.ADVENTURE_VIEW} component={AdventureView} />
                 <Route path={ROUTES.CHARACTER_CREATE} component={CharacterCreate} />
                 <Route path={ROUTES.CHARACTER_VIEW} component={CharacterView} />
+                <Route path={ROUTES.GAME} component={Game} />
             </div>
             {state.menu.isMobileMenu ? <GameMenu onMenuButtonClick={onMobileMenuButtonClick} clientWindowResolution={state.clientWindowResolution} /> : null}
         </div>

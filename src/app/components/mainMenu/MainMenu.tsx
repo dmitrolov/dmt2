@@ -4,7 +4,7 @@ import { IconType } from 'react-icons';
 import { FaHome } from 'react-icons/all';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import * as ROUTES from '../../constants/routes';
+import * as ROUTES from '../../routes';
 import './MainMenu.sass';
 
 interface MainMenuProps {
