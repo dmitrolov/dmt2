@@ -1,23 +1,38 @@
-import React from "react"
+import React, { useState } from "react"
 import GameMenu from "../../components/GameMenu/GameMenu"
-import { ClientWindowResolution } from "../../helpers/clientWindowResolution"
+import { ClientWindowResolution, getClientWindowResolution } from "../../helpers/clientWindowResolution"
 import CharacterCreate from "./pages/characterCreate/CharacterCreate"
 import { Route } from "react-router"
 import CharacterView from "./pages/characterView/CharacterView"
 import * as ROUTES from './../../routes';
+import './game.sass';
+import { Header } from "../../components/Header/Header"
 
-interface GameProps {
-    onMenuButtonClick: () => {};
+interface GameState {
     clientWindowResolution: ClientWindowResolution;
-    isMobileMenu: boolean;
 }
 
-export const Game: React.FC<GameProps> = (props) => {
+export const Game: React.FC = (props) => {
+    const [state, setState] = useState({
+        clientWindowResolution: getClientWindowResolution()
+    })
+
     return (
-        <>
-            <Route path={ROUTES.CHARACTER_CREATE} component={CharacterCreate} />
-            <Route path={ROUTES.CHARACTER_VIEW} component={CharacterView} />
-            {props.isMobileMenu ? <GameMenu onMenuButtonClick={props.onMenuButtonClick} clientWindowResolution={props.clientWindowResolution} /> : null}
-        </>
+        <div
+            className={'game-container-wrap'}
+            style={{
+                width: state.clientWindowResolution.width,
+                height: state.clientWindowResolution.height
+            }}>
+            <Header onMenuButtonClick={() => { }}></Header>
+            <div className={'game-container'} style={{
+                width: state.clientWindowResolution.width,
+                height: state.clientWindowResolution.height - 60
+            }}>
+                <Route path={ROUTES.CHARACTER_CREATE} component={CharacterCreate} />
+                <Route path={ROUTES.CHARACTER_VIEW} component={CharacterView} />
+            </div>
+            <GameMenu onMenuButtonClick={() => { }} clientWindowResolution={state.clientWindowResolution} />
+        </div>
     )
 }

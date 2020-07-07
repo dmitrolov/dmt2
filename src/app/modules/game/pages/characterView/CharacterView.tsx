@@ -3,9 +3,7 @@ import { connect } from 'react-redux';
 import './CharacterView.sass';
 import { getCharacter } from '../../../../api/firebase/firebase';
 import { Character } from '../../../../types/character/Character';
-
 import { Table } from 'antd';
-import { Header } from '../../../../components/Header/Header';
 
 const columns = [
     {
@@ -80,14 +78,13 @@ const CharacterView = (props: CharacterViewProps) => {
     console.log('[state.character]', state.character);
     return (
         <>
-            <Header onMenuButtonClick={() => { }}></Header>
             {state.character ? <div className='character-view-container'>
                 <div className={'character-view-container__item'}><img className={'character-view__image'} src={state.character.about.description.imageUrl} alt="" /></div>
                 <div className={'character-view-container__item'}><Table title={() => 'Основная информация'} showHeader={false} pagination={false} columns={columns} dataSource={data} /></div>
                 <div className={'character-view-container__item'}><Table title={() => 'Основная информация'} showHeader={false} pagination={false} columns={columns} dataSource={data} /></div>
                 <div className={'character-view-container__item'}><Table title={() => 'Основная информация'} showHeader={false} pagination={false} columns={columns} dataSource={data} /></div>
-                
-                
+
+
             </div> : <div>Loading . . .</div>}
             {/* <button onClick={
                 () => setCharacter(props.match.params.id, state.character as Character)
