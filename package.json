@@ -39,7 +39,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "build-gh": "rmdir docs /s /q & react-scripts build & copy build/index.html build/404.html & move build docs",
+    "build-gh": "rd /s /q docs & react-scripts build & move build docs & copy docs/index.html docs/404.html",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
