@@ -8,7 +8,7 @@ import ListIcon from '@material-ui/icons/List';
 import PersonAddIcon from '@material-ui/icons/PersonAdd';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import * as ROUTES from '../../routes';
+import * as ROUTES from '../../../routes';
 import './SideMenu.sass';
 
 interface SideMenuProps {

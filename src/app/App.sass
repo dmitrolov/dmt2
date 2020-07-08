@@ -17,7 +17,8 @@
         overflow: auto
 
         +for-portrait
-            height: calc( 100vh - 30px )
+            height: calc( var(--vh, 1vh) * 100 - 30px )
+            min-height: -webkit-fill-available
         +for-landscape
             width: calc( 100vw - 30px )
 
@@ -35,12 +36,12 @@
         overflow: auto
 
         +for-portrait
-            height: calc( 100vh - 90px )
+            height: calc( var(--vh, 1vh) * 100 - 90px )
         +for-landscape
-            height: calc( 100vh - 30px )
+            height: calc( var(--vh, 1vh) * 100 - 30px )
             width: calc( 100vw - 60px )
 
     +for-desktop-up
         & > *
-            height: calc( 100vh )
+            height: calc( var(--vh, 1vh) * 100 )
             width: calc( 100vw - 300px )

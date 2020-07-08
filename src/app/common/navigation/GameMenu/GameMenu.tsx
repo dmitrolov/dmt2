@@ -4,7 +4,7 @@ import './GameMenu.sass'
 import FaceIcon from '@material-ui/icons/Face';
 import HomeIcon from '@material-ui/icons/Home';
 import { Menu, Dropdown, Button } from 'antd';
-import { clientWindowResolution } from '../../helpers/clientWindowResolution';
+import { clientWindowResolution } from '../../../helpers/clientWindowResolution';
 
 interface gameMenuProps {
     onMenuButtonClick: () => void

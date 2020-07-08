@@ -16,6 +16,7 @@ const CharacterCreate = (props: CharacterCreateProps) => {
   return (
     <div className='character-create'>
       <button onClick={ () => setState(!state) }>CharacterCreate WORKS!!!</button>
+      <input type="text"/>
     </div>
   );
 };
