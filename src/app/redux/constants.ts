@@ -2,6 +2,9 @@ export const actions = {
   userActionTypes: {
     SET_USER: 'SET_USER'
   },
+  windowActionTypes: {
+    GET_RESOLUTION: 'GET_RESOLUTION'
+  },
 
 
 

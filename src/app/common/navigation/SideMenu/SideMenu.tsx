@@ -10,10 +10,11 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import * as ROUTES from '../../../routes';
 import './SideMenu.sass';
+import { connect } from 'react-redux';
+import { ClientWindowResolution } from '../../../types/window/window';
 
 interface SideMenuProps {
-  isMobileMenuView: boolean;
-  isMenuCollapsed: boolean;
+  windowData?: ClientWindowResolution;
   isMenuOpened: boolean;
   onClose: () => void;
 }
@@ -22,9 +23,9 @@ interface SideMenuState {
   isMenuCollapsed: boolean;
 }
 
-export const SideMenu = (props: SideMenuProps) => {
+const SideMenu = (props: SideMenuProps) => {
   const [state, setState] = useState<SideMenuState>({
-    isMenuCollapsed: props.isMenuCollapsed
+    isMenuCollapsed: false
   });
 
   const renderMenuItem = (route: string, staticItem: JSX.Element, text: string) => {
@@ -51,7 +52,7 @@ export const SideMenu = (props: SideMenuProps) => {
         { renderMenuItem(ROUTES.SIGN_IN, <AccountCircleIcon />, 'Вход') }
         { renderMenuItem(ROUTES.SIGN_UP, <AccountCircleIcon />, 'Регистрация') }
         {
-          !props.isMobileMenuView &&
+          !props.windowData?.isMobile &&
           <div className='menu-list__item switch'>
             <Switch
               checked={ !state.isMenuCollapsed }
@@ -65,7 +66,7 @@ export const SideMenu = (props: SideMenuProps) => {
     </div>;
   };
 
-  return props.isMobileMenuView
+  return props.windowData?.isMobile
     ? <Drawer
       open={ props.isMenuOpened }
       onClose={ props.onClose }>
@@ -81,3 +82,11 @@ export const SideMenu = (props: SideMenuProps) => {
       { renderMenuList() }
     </div>;
 };
+
+const mapStateToProps = (state: SideMenuProps) => {
+  return ({
+      windowData: state.windowData, 
+  })
+}
+
+export default connect(mapStateToProps, null)(SideMenu);

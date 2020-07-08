@@ -4,9 +4,10 @@ import './GameMenu.sass'
 import FaceIcon from '@material-ui/icons/Face';
 import HomeIcon from '@material-ui/icons/Home';
 import { Menu, Dropdown, Button } from 'antd';
-import { clientWindowResolution } from '../../../helpers/clientWindowResolution';
+import { ClientWindowResolution } from '../../../types/window/window';
 
-interface gameMenuProps {
+interface GameMenuProps {
+    windowData: ClientWindowResolution;
     onMenuButtonClick: () => void
 }
 
@@ -18,12 +19,12 @@ const menu = (key: string) => (
     </Menu>
 );
 
-const GameMenu = (props: gameMenuProps) => {
+const GameMenu = (props: GameMenuProps) => {
     return (
         <div
             className={'game-menu'}
             style={
-                clientWindowResolution().isLandscape
+                props.windowData.isLandscape
                     ? { width: 60, flexDirection: 'column' }
                     : { height: 60, flexDirection: 'row' }
             }>
@@ -54,4 +55,10 @@ const GameMenu = (props: gameMenuProps) => {
     )
 }
 
-export default connect(null, null)(GameMenu);
+const mapStateToProps = (state: GameMenuProps) => {
+    return ({
+        windowData: state.windowData, 
+    })
+}
+
+export default connect(mapStateToProps, null)(GameMenu);

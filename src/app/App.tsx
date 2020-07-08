@@ -3,8 +3,6 @@ import React, { useState, useEffect } from 'react';
 import { Route } from 'react-router-dom';
 import * as ROUTES from './routes';
 import { Header } from './common/navigation/Header/Header';
-import { ClientWindowResolution, clientWindowResolution } from './helpers/clientWindowResolution';
-import { SideMenu } from './common/navigation/SideMenu/SideMenu';
 import Home from './pages/home/Home';
 import SignIn from './pages/signIn/SignIn';
 import SignUp from './pages/signUp/SignUp';
@@ -15,62 +13,46 @@ import CharacterCreate from './pages/characterCreate/CharacterCreate';
 import CharacterView from './pages/characterView/CharacterView';
 import './App.sass'
 import GameMenu from './common/navigation/GameMenu/GameMenu';
+import { connect } from 'react-redux';
+import { setWindowAction } from './redux/actions/windowActions';
+import { ClientWindowResolution } from './types/window/window';
+import SideMenu from './common/navigation/SideMenu/SideMenu';
 
-interface AppState {
-    menu: {
-        isMenuCollapsed: boolean;
-        isMenuOpened: boolean;
-    },
-    clientWindowResolution: ClientWindowResolution
+interface AppProps {
+    windowData: ClientWindowResolution;
+    userData: string;
+    setWindow: () => void;
 }
 
-export const App: React.FC = () => {
+interface AppState {
+    isMenuOpened: boolean;
+}
+
+const App: React.FC<AppProps> = (props) => {
     const [state, setState] = useState<AppState>({
-        menu: {
-            isMenuCollapsed: false,
-            isMenuOpened: false
-        },
-        clientWindowResolution: {
-            width: 0,
-            height: 0,
-            isLandscape: false,
-            isMobile: true
-        }
+        isMenuOpened: false
     });
 
-    const onWindowResize = () => {
-        document.documentElement.style.setProperty('--vh', `${document.documentElement.clientHeight * 0.01}px`);
-        const resolution = clientWindowResolution()
-        setState({
-            clientWindowResolution: resolution,
-            menu: {
-                isMenuOpened: !(resolution.isMobile),
-                isMenuCollapsed: false,
-            }
-        });
-    };
-
     useEffect(() => {
-        window.onresize = onWindowResize;
-        onWindowResize();
+        window.onresize = props.setWindow;
+        props.setWindow();
 
         return () => {
             window.onresize = null;
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
         <>
             <div className={'app'}>
                 <SideMenu
-                    isMobileMenuView={!!state.clientWindowResolution?.isMobile}
-                    isMenuCollapsed={state.menu.isMenuCollapsed}
-                    isMenuOpened={state.menu.isMenuOpened}
-                    onClose={() => setState({ ...state, menu: { ...state.menu, isMenuOpened: false } })} />
+                    isMenuOpened={state.isMenuOpened}
+                    onClose={() => setState({ isMenuOpened: false })} />
 
                 <div className={'app-header'}>
-                    {state.clientWindowResolution?.isMobile
-                        ? <Header onMenuButtonClick={() => setState({ ...state, menu: { ...state.menu, isMenuOpened: !state.menu.isMenuOpened } })} />
+                    {props.windowData?.isMobile
+                        ? <Header onMenuButtonClick={() => setState({ isMenuOpened: true })} />
                         : null}
                 </div>
 
@@ -92,3 +74,14 @@ export const App: React.FC = () => {
         </>
     );
 };
+
+const mapStateToProps = (state: AppProps) => {
+    return ({
+        windowData: state.windowData,
+        userData: state.userData
+    })
+}
+
+export default connect(mapStateToProps, {
+    setWindow: setWindowAction
+})(App);
