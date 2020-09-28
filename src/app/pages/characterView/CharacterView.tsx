@@ -59,12 +59,12 @@ const CharacterView = (props: CharacterViewProps) => {
                                 ]}
                                 dataSource={[
                                     {
-                                        key: '1',
+                                        key: 'playerName',
                                         name: 'Имя игрока',
                                         value: state.character.about.info.playerName
                                     },
                                     {
-                                        key: '1',
+                                        key: 'characterName',
                                         name: 'Имя персонажа',
                                         value: state.character.about.info.characterName
                                     },
