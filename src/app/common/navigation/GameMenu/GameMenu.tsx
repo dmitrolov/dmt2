@@ -89,10 +89,10 @@ const GameMenu = (props: GameMenuProps) => {
                     </>)
                     : (<>
                         {portraitMenu('p1', characterGeneralInfoMenu('k1'), props.windowData.isLandscape, <FaceIcon />)}
-                        {portraitMenu('p2', characterBattleInfoMenu('k2'), props.windowData.isLandscape, <WhatshotIcon />)}
+                        {portraitMenu('p2', characterBattleInfoMenu('k2'), props.windowData.isLandscape, <FavoriteBorderIcon />)}
                         {portraitMenu('p3', characterJournalMenu('k3'), props.windowData.isLandscape, <MenuBookIcon />)}
                         {portraitMenu('p4', characterEquipmentMenu('k4'), props.windowData.isLandscape, <AccountBalanceWalletIcon />)}
-                        {portraitMenu('p5', characterAbilitiesMenu('k5'), props.windowData.isLandscape, <FavoriteBorderIcon />)}
+                        {portraitMenu('p5', characterAbilitiesMenu('k5'), props.windowData.isLandscape, <WhatshotIcon />)}
                     </>)
             }
         </div>

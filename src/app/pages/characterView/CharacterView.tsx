@@ -4,6 +4,7 @@ import './CharacterView.sass';
 import { getCharacter } from '../../api/firebase/firebase';
 import { Character } from '../../types/character/Character';
 import { Table } from 'antd';
+import { CharacterGeneralInfoSection } from './characterInfoSection/characterGeneralInfo';
 
 interface CharacterViewProps {
     match: any
@@ -39,66 +40,9 @@ const CharacterView = (props: CharacterViewProps) => {
                             <img className={'character-view__image'} src={state.character.about.description.imageUrl} alt="" />
                         </div>
                         <div id={'anc1'} className={'character-view-container__item'}>
-                            <Table
-                                title={() => 'Основная информация'}
-                                showHeader={false}
-                                pagination={false}
-                                style={{ width: '100%' }}
-                                columns={[
-                                    {
-                                        title: 'Name',
-                                        dataIndex: 'name',
-                                        key: 'name',
-                                        // render: (text: React.ReactNode) => <a>text</a>
-                                    },
-                                    {
-                                        title: 'value',
-                                        dataIndex: 'value',
-                                        key: 'value',
-                                    }
-                                ]}
-                                dataSource={[
-                                    {
-                                        key: 'playerName',
-                                        name: 'Имя игрока',
-                                        value: state.character.about.info.playerName
-                                    },
-                                    {
-                                        key: 'characterName',
-                                        name: 'Имя персонажа',
-                                        value: state.character.about.info.characterName
-                                    },
-                                    {
-                                        key: '1',
-                                        name: 'Расса (подвид)',
-                                        value: state.character.about.info.subRace
-                                    },
-                                    {
-                                        key: '2',
-                                        name: 'Пол',
-                                        value: state.character.about.description.sex
-                                    },
-                                    {
-                                        key: '3',
-                                        name: 'Возраст',
-                                        value: state.character.about.description.age.human
-                                    },
-                                    {
-                                        key: '4',
-                                        name: 'Рост',
-                                        value: state.character.about.description.height
-                                    },
-                                    {
-                                        key: '5',
-                                        name: 'Вес',
-                                        value: state.character.about.description.weight
-                                    },
-                                    {
-                                        key: '6',
-                                        name: 'Предистория',
-                                        value: state.character.about.info.background
-                                    },
-                                ]}
+                            <CharacterGeneralInfoSection
+                                info={state.character.about.info}
+                                description={state.character.about.description}
                             />
                         </div>
                         <div id={'anc2'} className={'character-view-container__item'}>
