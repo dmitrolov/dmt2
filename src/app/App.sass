@@ -1,9 +1,12 @@
 @import ./mixins
 
+$gameMenuPortraitWidth: 60px
+$gameMenuLandscapeWidth: 180px
+
 .app
     display: flex
     flex-direction: column
-    overflow: auto
+    overflow: hidden
 
     +for-desktop-up
         flex-direction: row
@@ -39,9 +42,9 @@
             height: calc( var(--vh, 1vh) * 100 - 90px )
         +for-landscape
             height: calc( var(--vh, 1vh) * 100 - 30px )
-            width: calc( 100vw - 60px )
+            width: calc( 100vw - 180px )
 
     +for-desktop-up
         & > *
             height: calc( var(--vh, 1vh) * 100 )
-            width: calc( 100vw - 300px )
+            width: calc( 100vw - 240px - 180px )
