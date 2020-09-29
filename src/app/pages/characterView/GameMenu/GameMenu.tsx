@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import React, { Dispatch, SetStateAction } from 'react';
+import React, { SetStateAction } from 'react';
 import './GameMenu.sass'
 import FaceIcon from '@material-ui/icons/Face';
 import MenuBookIcon from '@material-ui/icons/MenuBook';
@@ -10,93 +10,93 @@ import { Menu, Dropdown, Button } from 'antd';
 import { ClientWindowResolution } from '../../../types/window/window';
 import { CharacterViewTabName } from '../CharacterView';
 
+const generalInfoMenuTabs: menuTab[] = [
+    { name: 'generalInfo', caption: 'О персонаже' },
+    { name: 'attributes', caption: 'Характеристики' },
+    { name: 'generalInfo', caption: 'Класс и опыт' },
+    { name: 'generalInfo', caption: 'Черты' },
+    { name: 'generalInfo', caption: 'Владение' },
+];
+
+const battleInfoMenuTabs: menuTab[] = [
+    { name: 'generalInfo', caption: 'Боевые параметры' },
+    { name: 'generalInfo', caption: 'Здоровье' },
+    { name: 'generalInfo', caption: 'Спасброски от смерти' },
+    { name: 'generalInfo', caption: 'Сопротивления' },
+];
+
+const journalMenuTabs: menuTab[] = [
+    { name: 'generalInfo', caption: 'Время' },
+    { name: 'generalInfo', caption: 'Заметки' },
+    { name: 'generalInfo', caption: 'Квесты' },
+    { name: 'generalInfo', caption: 'Персонажи' },
+    { name: 'generalInfo', caption: 'Лог' },
+];
+
+const equipmentMenuTabs: menuTab[] = [
+    { name: 'generalInfo', caption: 'Экипировка' },
+    { name: 'generalInfo', caption: 'Рюкзак' },
+    { name: 'generalInfo', caption: 'Хранилище' },
+];
+
+const abilitiesMenuTabs: menuTab[] = [
+    { name: 'generalInfo', caption: 'Способности' },
+    { name: 'generalInfo', caption: 'Навыки' },
+    { name: 'generalInfo', caption: 'Умения' },
+    { name: 'generalInfo', caption: 'Ритуалы' },
+    { name: 'generalInfo', caption: 'Заклинания' },
+];
+
 interface GameMenuProps {
     windowData: ClientWindowResolution;
-    setCharacterViewTab: Dispatch<SetStateAction<CharacterViewTabName>>;
+    setCharacterViewTab: React.Dispatch<SetStateAction<CharacterViewTabName>>;
 }
 
-const characterGeneralInfoMenu = (key: string, setCharacterViewTab: Dispatch<SetStateAction<CharacterViewTabName>>) => (
-    <Menu className={'submenu'}>
-        <Menu.Item key={key + '1'}><button onClick={() => setCharacterViewTab('generalInfo')}>О персонаже</button></Menu.Item>
-        <Menu.Item key={key + '2'}><button onClick={() => setCharacterViewTab('attributes')}>Характеристики</button></Menu.Item>
-        <Menu.Item key={key + '3'}><a href="#anc3">Класс и опыт</a></Menu.Item>
-        <Menu.Item key={key + '4'}><a href="#anc4">Черты</a></Menu.Item>
-        <Menu.Item key={key + '5'}><a href="#anc5">Владение</a></Menu.Item>
-    </Menu>
-);
-
-const characterBattleInfoMenu = (key: string) => (
-    <Menu className={'submenu'}>
-        <Menu.Item key={key + '1'}><a href="#anc1">Боевые параметры</a></Menu.Item>
-        <Menu.Item key={key + '2'}><a href="#anc2">Здоровье</a></Menu.Item>
-        <Menu.Item key={key + '3'}><a href="#anc3">Спасброски от смерти</a></Menu.Item>
-        <Menu.Item key={key + '4'}><a href="#anc4">Сопротивления</a></Menu.Item>
-    </Menu>
-);
-
-const characterJournalMenu = (key: string) => (
-    <Menu className={'submenu'}>
-        <Menu.Item key={key + '1'}><a href="#anc1">Время</a></Menu.Item>
-        <Menu.Item key={key + '2'}><a href="#anc1">Заметки</a></Menu.Item>
-        <Menu.Item key={key + '3'}><a href="#anc2">Квесты</a></Menu.Item>
-        <Menu.Item key={key + '4'}><a href="#anc3">Персонажи</a></Menu.Item>
-        <Menu.Item key={key + '5'}><a href="#anc4">Лог</a></Menu.Item>
-    </Menu>
-);
-
-const characterEquipmentMenu = (key: string) => (
-    <Menu className={'submenu'}>
-        <Menu.Item key={key + '1'}><a href="#anc1">Экипировка</a></Menu.Item>
-        <Menu.Item key={key + '2'}><a href="#anc2">Рюкзак</a></Menu.Item>
-        <Menu.Item key={key + '3'}><a href="#anc3">Хранилище</a></Menu.Item>
-    </Menu>
-);
-
-const characterAbilitiesMenu = (key: string) => (
-    <Menu className={'submenu'}>
-        <Menu.Item key={key + '1'}><a href="#anc1">Способности</a></Menu.Item>
-        <Menu.Item key={key + '2'}><a href="#anc2">Навыки</a></Menu.Item>
-        <Menu.Item key={key + '3'}><a href="#anc3">Умения</a></Menu.Item>
-        <Menu.Item key={key + '4'}><a href="#anc4">Ритуалы</a></Menu.Item>
-        <Menu.Item key={key + '5'}><a href="#anc5">Заклинания</a></Menu.Item>
-    </Menu>
-);
-
-const portraitMenu = (key: string, overlay: JSX.Element, isLandscape: boolean, icon: JSX.Element) => (
-    <Dropdown key={key} overlay={overlay} overlayStyle={isLandscape ? {} : { width: '100%' }}>
-        <Button className={'game-menu__button'}>
-            {icon}
-        </Button>
-    </Dropdown>
-)
+interface menuTab {
+    name: CharacterViewTabName;
+    caption: string;
+}
 
 const GameMenu = (props: GameMenuProps) => {
+    const { isLandscape, isMobile } = props.windowData;
+
+    const renderSubmenu = (tabs: menuTab[]) =>
+        <Menu className={'submenu'}>
+            {tabs.map((tab: menuTab) =>
+                <Menu.Item key={tab.name} onClick={() => props.setCharacterViewTab(tab.name)} children={tab.caption} />)
+            }
+        </Menu>
+
+    const portraitMenu = (key: string, overlay: JSX.Element, icon: JSX.Element) => (
+        <Dropdown key={key} overlay={overlay} overlayStyle={isLandscape ? {} : { width: '100%' }}>
+            <Button className={'game-menu__button'} children={icon} />
+        </Dropdown>
+    )
+
     return (
         <div
             className={'game-menu'}
-            style={
-                props.windowData.isLandscape && !props.windowData.isMobile
-                    ? { width: 180, flexDirection: 'column', justifyContent: 'space-between' }
-                    : { height: 60, flexDirection: 'row' }
+            style={isLandscape && !isMobile
+                ? { width: 180, flexDirection: 'column', justifyContent: 'space-between' }
+                : { height: 60, flexDirection: 'row' }
             }>
-            {
-                props.windowData.isLandscape && !props.windowData.isMobile
-                    ? (<>
-                        {characterGeneralInfoMenu('l1', props.setCharacterViewTab)}
-                        {characterBattleInfoMenu('l2')}
-                        {characterJournalMenu('l3')}
-                        {characterEquipmentMenu('l4')}
-                        {characterAbilitiesMenu('l5')}
-                        {/* TODO: add favorites sections */}
-                    </>)
-                    : (<>
-                        {portraitMenu('p1', characterGeneralInfoMenu('k1', props.setCharacterViewTab), props.windowData.isLandscape, <FaceIcon />)}
-                        {portraitMenu('p2', characterBattleInfoMenu('k2'), props.windowData.isLandscape, <FavoriteBorderIcon />)}
-                        {portraitMenu('p3', characterJournalMenu('k3'), props.windowData.isLandscape, <MenuBookIcon />)}
-                        {portraitMenu('p4', characterEquipmentMenu('k4'), props.windowData.isLandscape, <AccountBalanceWalletIcon />)}
-                        {portraitMenu('p5', characterAbilitiesMenu('k5'), props.windowData.isLandscape, <WhatshotIcon />)}
-                        {/* TODO: add favorites sections */}
-                    </>)
+            {isLandscape && !isMobile
+                ? (<>
+                    {renderSubmenu(generalInfoMenuTabs)}
+                    {renderSubmenu(battleInfoMenuTabs)}
+                    {renderSubmenu(journalMenuTabs)}
+                    {renderSubmenu(equipmentMenuTabs)}
+                    {renderSubmenu(abilitiesMenuTabs)}
+                    {/* TODO: add favorites sections */}
+                </>)
+                : (<>
+                    {portraitMenu('generalInfoMenu', renderSubmenu(generalInfoMenuTabs), <FaceIcon />)}
+                    {portraitMenu('battleInfoMenuTabs', renderSubmenu(battleInfoMenuTabs), <FavoriteBorderIcon />)}
+                    {portraitMenu('journalMenuTabs', renderSubmenu(journalMenuTabs), <MenuBookIcon />)}
+                    {portraitMenu('equipmentMenuTabs', renderSubmenu(equipmentMenuTabs), <AccountBalanceWalletIcon />)}
+                    {portraitMenu('abilitiesMenuTabs', renderSubmenu(abilitiesMenuTabs), <WhatshotIcon />)}
+                    {/* TODO: add favorites sections */}
+                </>)
             }
         </div>
     )
