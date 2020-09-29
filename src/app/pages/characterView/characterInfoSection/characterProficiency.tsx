@@ -1,5 +1,4 @@
 import { Table } from "antd"
-import { info } from "console"
 import React from "react"
 import { CharacterProficiency } from "../../../types/character/Character"
 

@@ -9,8 +9,9 @@ import { ClientWindowResolution } from '../../types/window/window';
 import { CharacterAttributesSection } from './characterInfoSection/characterAttributes';
 import { CharacterExperienceSection } from './characterInfoSection/characterExperience';
 import { CharacterProficiencySection } from './characterInfoSection/characterProficiency';
+import { CharacterCombatSection } from './characterInfoSection/characterCombat';
 
-export type CharacterViewTabName = 'generalInfo' | 'attributes' | 'experience' | 'proficiency'
+export type CharacterViewTabName = 'generalInfo' | 'attributes' | 'experience' | 'proficiency' | 'combat'
 
 interface CharacterViewProps {
     windowData: ClientWindowResolution;
@@ -38,7 +39,8 @@ const CharacterView = (props: CharacterViewProps) => {
             generalInfo: <CharacterGeneralInfoSection info={character.about.info} description={character.about.description} />,
             attributes: <CharacterAttributesSection attributes={character.about.attributes} skills={character.about.proficiency.skills} />,
             experience: <CharacterExperienceSection classes={character.about.info.classes} action={character.about.action} info={character.about.info} />,
-            proficiency: <CharacterProficiencySection proficiency={character.about.proficiency} />
+            proficiency: <CharacterProficiencySection proficiency={character.about.proficiency} />,
+            combat: <CharacterCombatSection action={character.about.action} attributes={character.about.attributes} stats={character.about.stats} effects={character.about.effects} />
         }
         return tab[currentTab]
     }

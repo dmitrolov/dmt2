@@ -15,13 +15,7 @@ const generalInfoMenuTabs: menuTab[] = [
     { name: 'attributes', caption: 'Характеристики' },
     { name: 'experience', caption: 'Класс и опыт' },
     { name: 'proficiency', caption: 'Владение' },
-];
-
-const battleInfoMenuTabs: menuTab[] = [
-    { name: 'generalInfo', caption: 'Боевые параметры' },
-    { name: 'generalInfo', caption: 'Здоровье' },
-    { name: 'generalInfo', caption: 'Спасброски от смерти' },
-    { name: 'generalInfo', caption: 'Сопротивления' },
+    { name: 'combat', caption: 'Боевые параметры' },
 ];
 
 const journalMenuTabs: menuTab[] = [
@@ -82,7 +76,6 @@ const GameMenu = (props: GameMenuProps) => {
             {isLandscape && !isMobile
                 ? (<>
                     {renderSubmenu(generalInfoMenuTabs)}
-                    {renderSubmenu(battleInfoMenuTabs)}
                     {renderSubmenu(journalMenuTabs)}
                     {renderSubmenu(equipmentMenuTabs)}
                     {renderSubmenu(abilitiesMenuTabs)}
@@ -90,11 +83,10 @@ const GameMenu = (props: GameMenuProps) => {
                 </>)
                 : (<>
                     {portraitMenu('generalInfoMenu', renderSubmenu(generalInfoMenuTabs), <FaceIcon />)}
-                    {portraitMenu('battleInfoMenuTabs', renderSubmenu(battleInfoMenuTabs), <FavoriteBorderIcon />)}
                     {portraitMenu('journalMenuTabs', renderSubmenu(journalMenuTabs), <MenuBookIcon />)}
                     {portraitMenu('equipmentMenuTabs', renderSubmenu(equipmentMenuTabs), <AccountBalanceWalletIcon />)}
                     {portraitMenu('abilitiesMenuTabs', renderSubmenu(abilitiesMenuTabs), <WhatshotIcon />)}
-                    {/* TODO: add favorites sections */}
+                    {/* TODO: add favorites sections <FavoriteBorderIcon /> */}
                 </>)
             }
         </div>

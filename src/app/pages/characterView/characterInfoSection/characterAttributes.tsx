@@ -1,6 +1,7 @@
 import { Table } from "antd"
 import React from "react"
 import { CharacterAttributes, SkillsProficiency } from "../../../types/character/Character"
+import { calculateAttributeBonus } from "./helpers"
 
 interface CharacterAttributesSectionProps {
     attributes: CharacterAttributes,
@@ -47,7 +48,7 @@ export const CharacterAttributesSection: React.FC<CharacterAttributesSectionProp
                     key: '1',
                     name: 'Сила',
                     count: attributes.strength,
-                    bonus: Math.round((attributes.strength - 0.5) / 2 - 5),
+                    bonus: calculateAttributeBonus(attributes.strength),
                     skills: [
                         { name: 'Атлетика', value: skills.Athletics }
                     ]
@@ -56,7 +57,7 @@ export const CharacterAttributesSection: React.FC<CharacterAttributesSectionProp
                     key: '2',
                     name: 'Ловкость',
                     count: attributes.dexterity,
-                    bonus: Math.round((attributes.dexterity - 0.5) / 2 - 5),
+                    bonus: calculateAttributeBonus(attributes.dexterity),
                     skills: [
                         { name: 'Акробатика', value: skills.Acrobatics },
                         { name: 'Ловкость рук', value: skills.SleightOfHand },
@@ -67,7 +68,7 @@ export const CharacterAttributesSection: React.FC<CharacterAttributesSectionProp
                     key: '3',
                     name: 'Телосложение',
                     count: attributes.constitution,
-                    bonus: Math.round((attributes.constitution - 0.5) / 2 - 5),
+                    bonus: calculateAttributeBonus(attributes.constitution),
                     skills: [
                         { name: 'Выносливость', value: skills.Endurance }
                     ]
@@ -76,7 +77,7 @@ export const CharacterAttributesSection: React.FC<CharacterAttributesSectionProp
                     key: '4',
                     name: 'Интеллект',
                     count: attributes.intelligence,
-                    bonus: Math.round((attributes.intelligence - 0.5) / 2 - 5),
+                    bonus: calculateAttributeBonus(attributes.intelligence),
                     skills: [
                         { name: 'Анализ', value: skills.Investigation },
                         { name: 'История', value: skills.History },
@@ -89,7 +90,7 @@ export const CharacterAttributesSection: React.FC<CharacterAttributesSectionProp
                     key: '5',
                     name: 'Мудрость',
                     count: attributes.wisdom,
-                    bonus: Math.round((attributes.wisdom - 0.5) / 2 - 5),
+                    bonus: calculateAttributeBonus(attributes.wisdom),
                     skills: [
                         { name: 'Внимательность', value: skills.Perception },
                         { name: 'Выживание', value: skills.Survival },
@@ -102,7 +103,7 @@ export const CharacterAttributesSection: React.FC<CharacterAttributesSectionProp
                     key: '6',
                     name: 'Харизма',
                     count: attributes.charisma,
-                    bonus: Math.round((attributes.charisma - 0.5) / 2 - 5),
+                    bonus: calculateAttributeBonus(attributes.charisma),
                     skills: [
                         { name: 'Выступление', value: skills.Performance },
                         { name: 'Запугивание', value: skills.Intimidation },
