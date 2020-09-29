@@ -52,13 +52,9 @@ const CharacterView = (props: CharacterViewProps) => {
                                 height: props.windowData.isMobile ? props.windowData.height - 30 - 60 : props.windowData.height,
                                 overflow: 'auto'
                             }}
-                            className='character-view-container'
-                        >
-                            <div className={'character-view-container__item'}>
-                                {renderTab(currentTab, character)}
-                            </div>
-                        </div>
-                        <div><GameMenu setCharacterViewTab={setCurrentTab} windowData={props.windowData} /></div>
+                            children={renderTab(currentTab, character)}
+                        />
+                        <GameMenu setCharacterViewTab={setCurrentTab} windowData={props.windowData} />
                     </div>
                     : <div>Loading . . .</div>
             }
