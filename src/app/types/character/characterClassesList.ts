@@ -1,7 +1,5 @@
-import { DomItem } from '../../dom/Dom';
-import { CharacterEquipment } from '../equipment/character.equipment.model';
-import { CharacterEffects } from './components/character.effects.model';
-import { CharacterProficiency } from './components/character.proficiency.model';
+import { DomItem } from '../dom/Dom';
+import { CharacterProficiency, CharacterEffects, CharacterEquipment, characterMock } from './Character';
 
 export interface CharacterClass extends DomItem {
   proficiency: CharacterProficiency;
@@ -21,7 +19,7 @@ export const CharacterClassesList: CharacterClass[] = [
       weapons: ['martial', 'simple'],
       tools: [],
       languages: [],
-      skills: ['Choose two from Anim al Handling, Athletics, Intimidation, Nature, Perception, and Survival']
+      skills: characterMock.about.proficiency.skills
     },
     effects: {
       savingThrows: ['strength', 'constitution'],

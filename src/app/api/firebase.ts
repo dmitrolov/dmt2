@@ -57,7 +57,7 @@ export const getCharacter: (docName: string) => Promise<Character | undefined> =
   return character.data() as Character;
 }
 
-export const setCharacter = (docName: string, data: Character) => {
+export const setCharacterToDB = (docName: string, data: Character) => {
   firebase.firestore()
     .collection('playerCharacters')
     .doc(docName)

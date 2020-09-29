@@ -1,5 +1,6 @@
 import { DomLocalization } from '../dom/Dom';
-import { CharacterRace } from './about/characterRace';
+import { characterMock } from './Character';
+import { CharacterRace } from './characterRace';
 
 interface RacesList extends CharacterRace {
   generatorData: {
@@ -20,6 +21,7 @@ interface RacesList extends CharacterRace {
   };
 }
 
+const SkillsProficiencyMock = characterMock.about.proficiency.skills;
 
 export const racesList: RacesList[] = [
   {
@@ -101,7 +103,7 @@ export const racesList: RacesList[] = [
       'tools of your choice: smith’s tools, brew er’s supplies, or mason’s tools'], // ??????????
       languages: ['dwarvish', 'common'],
       armor: [],
-      skills: [],
+      skills: SkillsProficiencyMock,
     },
     abilities: [],
     subRaces: [
@@ -121,7 +123,7 @@ export const racesList: RacesList[] = [
         },
         proficiency: {
           armor: ['light', 'medium'],
-          skills: [],
+          skills: SkillsProficiencyMock,
           weapons: [],
           tools: [],
           languages: [],
@@ -169,7 +171,7 @@ export const racesList: RacesList[] = [
           languages: [],
           tools: [],
           weapons: [],
-          skills: [],
+          skills: SkillsProficiencyMock,
           armor: [],
         }
       }
@@ -249,7 +251,7 @@ export const racesList: RacesList[] = [
     proficiency: {
       languages: ['common', 'gnomish'],
       armor: [],
-      skills: [],
+      skills: SkillsProficiencyMock,
       weapons: [],
       tools: [],
     },
@@ -273,7 +275,7 @@ export const racesList: RacesList[] = [
         proficiency: {
           tools: [],
           weapons: [],
-          skills: [],
+          skills: SkillsProficiencyMock,
           armor: [],
           languages: [],
         },
@@ -307,7 +309,7 @@ export const racesList: RacesList[] = [
           tools: ['tinsmith'],
           languages: [],
           armor: [],
-          skills: [],
+          skills: SkillsProficiencyMock,
           weapons: [],
         },
         abilities: ['artificersLore', 'tinker'],

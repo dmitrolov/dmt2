@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import './CharacterView.sass';
-import { getCharacter } from '../../api/firebase';
-import { Character } from '../../types/character/Character';
+import { getCharacter, setCharacterToDB } from '../../api/firebase';
+import { Character, characterMock } from '../../types/character/Character';
 import { CharacterGeneralInfoSection } from './characterInfoSection/characterGeneralInfo';
 import GameMenu from './GameMenu/GameMenu';
 import { ClientWindowResolution } from '../../types/window/window';
 import { CharacterAttributesSection } from './characterInfoSection/characterAttributes';
+import { CharacterExperienceSection } from './characterInfoSection/characterExperience';
 
-export type CharacterViewTabName = 'generalInfo' | 'attributes'
+export type CharacterViewTabName = 'generalInfo' | 'attributes' | 'experience'
 
 interface CharacterViewProps {
     windowData: ClientWindowResolution;
@@ -29,12 +30,13 @@ const CharacterView = (props: CharacterViewProps) => {
             })
     }, [props.match.params.id]);
 
-    console.log('[state.character]', character);
+    console.log('[state.character]', JSON.stringify(character));
 
     const renderTab = (currentTab: CharacterViewTabName, character: Character) => {
         const tab: Record<CharacterViewTabName, JSX.Element> = {
             generalInfo: <CharacterGeneralInfoSection info={character.about.info} description={character.about.description} />,
-            attributes: <CharacterAttributesSection attributes={character.about.attributes} />
+            attributes: <CharacterAttributesSection attributes={character.about.attributes} skills={character.about.proficiency.skills} />,
+            experience: <CharacterExperienceSection classes={character.about.info.classes} action={character.about.action} />,
         }
         return tab[currentTab]
     }
@@ -59,7 +61,7 @@ const CharacterView = (props: CharacterViewProps) => {
                     : <div>Loading . . .</div>
             }
             {/* <button onClick={
-                () => setCharacter('klinfort', state.character as Character)
+                () => setCharacterToDB('gremmy', characterMock)
             }>set</button> */}
         </>
     );

@@ -1,7 +1,6 @@
 import { Table } from "antd"
 import React from "react"
-import { CharacterDescription } from "../../../types/character/about/components/character.description.model"
-import { CharacterInfo } from "../../../types/character/about/components/character.info.model"
+import { CharacterInfo, CharacterDescription } from "../../../types/character/Character"
 
 interface CharacterGeneralInfoSectionProps {
     info: CharacterInfo
@@ -10,7 +9,7 @@ interface CharacterGeneralInfoSectionProps {
 
 export const CharacterGeneralInfoSection: React.FC<CharacterGeneralInfoSectionProps> = ({ info, description }) => {
     return <>
-        <img style={{width: '100%', height: 100, objectFit: 'cover', objectPosition: '50% 25%'}} src={description.imageUrl} alt="" />
+        <img style={{ width: '100%', height: 100, objectFit: 'cover', objectPosition: '50% 25%' }} src={description.imageUrl} alt="" />
         <Table
             title={() => 'Основная информация'}
             showHeader={false}
