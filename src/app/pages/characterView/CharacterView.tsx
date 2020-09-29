@@ -8,8 +8,9 @@ import GameMenu from './GameMenu/GameMenu';
 import { ClientWindowResolution } from '../../types/window/window';
 import { CharacterAttributesSection } from './characterInfoSection/characterAttributes';
 import { CharacterExperienceSection } from './characterInfoSection/characterExperience';
+import { CharacterProficiencySection } from './characterInfoSection/characterProficiency';
 
-export type CharacterViewTabName = 'generalInfo' | 'attributes' | 'experience'
+export type CharacterViewTabName = 'generalInfo' | 'attributes' | 'experience' | 'proficiency'
 
 interface CharacterViewProps {
     windowData: ClientWindowResolution;
@@ -37,6 +38,7 @@ const CharacterView = (props: CharacterViewProps) => {
             generalInfo: <CharacterGeneralInfoSection info={character.about.info} description={character.about.description} />,
             attributes: <CharacterAttributesSection attributes={character.about.attributes} skills={character.about.proficiency.skills} />,
             experience: <CharacterExperienceSection classes={character.about.info.classes} action={character.about.action} info={character.about.info} />,
+            proficiency: <CharacterProficiencySection proficiency={character.about.proficiency} />
         }
         return tab[currentTab]
     }

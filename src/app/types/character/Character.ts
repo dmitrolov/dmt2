@@ -141,7 +141,7 @@ export const characterMock: Character = {
     proficiency: {
       languages: ["dwarvish", "common"],
       tools: ["Tool Proficiency. You gain proficiency with the artisan’s tools of your choice: smith’s tools, brew er’s supplies, or mason’s tools"],
-      armor: ["light", "medium", "light", "medium", "shields"],
+      armor: ["light", "medium", "heavy", "shields"],
       skills: { // Владение навыками
         Athletics: false,		      // Атлетика
 
