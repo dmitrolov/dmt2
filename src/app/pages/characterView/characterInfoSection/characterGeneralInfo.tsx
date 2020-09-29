@@ -8,8 +8,9 @@ interface CharacterGeneralInfoSectionProps {
     description: CharacterDescription
 }
 
-export const CharacterGeneralInfoSection: React.FC<CharacterGeneralInfoSectionProps> = ({info, description}) => {
+export const CharacterGeneralInfoSection: React.FC<CharacterGeneralInfoSectionProps> = ({ info, description }) => {
     return <>
+        <img style={{width: 100, height: 100}} src={description.imageUrl} alt="" />
         <Table
             title={() => 'Основная информация'}
             showHeader={false}

@@ -1,116 +1,65 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import './CharacterView.sass';
-import { getCharacter } from '../../api/firebase/firebase';
+import { getCharacter } from '../../api/firebase';
 import { Character } from '../../types/character/Character';
-import { Table } from 'antd';
 import { CharacterGeneralInfoSection } from './characterInfoSection/characterGeneralInfo';
+import GameMenu from './GameMenu/GameMenu';
+import { ClientWindowResolution } from '../../types/window/window';
+import { CharacterAttributesSection } from './characterInfoSection/characterAttributes';
+
+export type CharacterViewTabName = 'generalInfo' | 'attributes'
 
 interface CharacterViewProps {
+    windowData: ClientWindowResolution;
     match: any
 }
 
-interface CharacterViewState {
-    character: Character | undefined
-}
-
 const CharacterView = (props: CharacterViewProps) => {
-    const [state, setState] = useState<CharacterViewState>({
-        character: undefined
-    });
+    const [character, setCharacter] = useState<Character>();
+    const [currentTab, setCurrentTab] = useState<CharacterViewTabName>('generalInfo')
 
     useEffect(() => {
         getCharacter(props.match.params.id)
             .then((data) => {
                 if (data) {
-                    setState((state) => ({ ...state, character: data }))
+                    setCharacter(data)
                     console.log('[characterData]', data);
                 }
             })
     }, [props.match.params.id]);
 
-    console.log('[state.character]', state.character);
+    console.log('[state.character]', character);
+
+    const renderTab = (currentTab: CharacterViewTabName, character: Character) => {
+        const tab: Record<CharacterViewTabName, JSX.Element> = {
+            generalInfo: <CharacterGeneralInfoSection info={character.about.info} description={character.about.description} />,
+            attributes: <CharacterAttributesSection attributes={character.about.attributes} />
+        }
+        return tab[currentTab]
+    }
 
     return (
         <>
             {
-                state.character
-                    ? <div className='character-view-container'>
-                        <div className={'character-view-container__item'}>
-                            <img className={'character-view__image'} src={state.character.about.description.imageUrl} alt="" />
+                character
+                    ? <div style={{
+                        display: 'flex',
+                        flexDirection: props.windowData.isMobile ? 'column' : 'row'
+                    }}>
+                        <div
+                            style={{
+                                height: props.windowData.isMobile ? props.windowData.height - 30 - 60 : props.windowData.height,
+                                overflow: 'auto'
+                            }}
+                            className='character-view-container'
+                        >
+                            <div className={'character-view-container__item'}>
+                                {renderTab(currentTab, character)}
+                            </div>
                         </div>
-                        <div id={'anc1'} className={'character-view-container__item'}>
-                            <CharacterGeneralInfoSection
-                                info={state.character.about.info}
-                                description={state.character.about.description}
-                            />
-                        </div>
-                        <div id={'anc2'} className={'character-view-container__item'}>
-                            <Table
-                                title={() => 'Характеристики'}
-                                showHeader={false}
-                                pagination={false}
-                                style={{ width: '100%' }}
-                                columns={[
-                                    {
-                                        title: 'Name',
-                                        dataIndex: 'name',
-                                        key: 'name',
-                                        // render: (text: React.ReactNode) => <a>text</a>
-                                    },
-                                    {
-                                        title: 'Count',
-                                        dataIndex: 'count',
-                                        key: 'count',
-                                    },
-                                    {
-                                        title: 'Bonus',
-                                        dataIndex: 'bonus',
-                                        key: 'bonus',
-                                    }
-                                ]}
-                                dataSource={[
-                                    {
-                                        key: '1',
-                                        name: 'Сила',
-                                        count: state.character.about.attributes.strength,
-                                        bonus: Math.round((state.character.about.attributes.strength - 0.5) / 2 - 5),
-                                    },
-                                    {
-                                        key: '2',
-                                        name: 'Ловкость',
-                                        count: state.character.about.attributes.dexterity,
-                                        bonus: Math.round((state.character.about.attributes.dexterity - 0.5) / 2 - 5)
-                                    },
-                                    {
-                                        key: '3',
-                                        name: 'Телосложение',
-                                        count: state.character.about.attributes.constitution,
-                                        bonus: Math.round((state.character.about.attributes.constitution - 0.5) / 2 - 5)
-                                    },
-                                    {
-                                        key: '4',
-                                        name: 'Интеллект',
-                                        count: state.character.about.attributes.intelligence,
-                                        bonus: Math.round((state.character.about.attributes.intelligence - 0.5) / 2 - 5)
-                                    },
-                                    {
-                                        key: '5',
-                                        name: 'Мудрость',
-                                        count: state.character.about.attributes.wisdom,
-                                        bonus: Math.round((state.character.about.attributes.wisdom - 0.5) / 2 - 5)
-                                    },
-                                    {
-                                        key: '6',
-                                        name: 'Харизма',
-                                        count: state.character.about.attributes.charisma,
-                                        bonus: Math.round((state.character.about.attributes.charisma - 0.5) / 2 - 5)
-                                    },
-                                ]}
-                            />
-                        </div>
-                        
-                        </div>
+                        <div><GameMenu setCharacterViewTab={setCurrentTab} windowData={props.windowData} /></div>
+                    </div>
                     : <div>Loading . . .</div>
             }
             {/* <button onClick={
@@ -120,4 +69,10 @@ const CharacterView = (props: CharacterViewProps) => {
     );
 };
 
-export default connect(null, null)(CharacterView);
+const mapStateToProps = (state: CharacterViewProps) => {
+    return ({
+        windowData: state.windowData,
+    })
+}
+
+export default connect(mapStateToProps, null)(CharacterView);

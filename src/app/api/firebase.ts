@@ -1,8 +1,8 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
-import { Adventure } from '../../types/adventure/Adventure';
-import { Character } from '../../types/character/Character';
+import { Adventure } from '../types/adventure/Adventure';
+import { Character } from '../types/character/Character';
 
 const config = {
   apiKey: process.env.REACT_APP_API_KEY,

@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { connect } from 'react-redux';
 import { useHistory } from 'react-router';
-import { SignUpEmail } from '../../api/firebase/firebase';
+import { SignUpEmail } from '../../api/firebase';
 import { setUserAction } from '../../redux/actions/userActions';
 import { User } from '../../types/user/User';
 import './SignUp.sass';

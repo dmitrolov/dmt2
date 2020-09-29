@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { useHistory } from 'react-router';
-import { SignInEmail } from '../../api/firebase/firebase';
+import { SignInEmail } from '../../api/firebase';
 import './SignIn.sass';
 import { setUserAction } from '../../redux/actions/userActions';
 import { User } from '../../types/user/User';

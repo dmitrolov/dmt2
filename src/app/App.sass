@@ -1,8 +1,5 @@
 @import ./mixins
 
-$gameMenuPortraitWidth: 60px
-$gameMenuLandscapeWidth: 180px
-
 .app
     display: flex
     flex-direction: column
@@ -10,41 +7,3 @@ $gameMenuLandscapeWidth: 180px
 
     +for-desktop-up
         flex-direction: row
-
-.app-header
-    height: 30px
-
-.app-site
-    & > *
-        background-color: darken(white, 5%)
-        overflow: auto
-
-        +for-portrait
-            height: calc( var(--vh, 1vh) * 100 - 30px )
-            min-height: -webkit-fill-available
-        +for-landscape
-            width: calc( 100vw - 30px )
-
-.app-game
-    display: flex
-    flex-wrap: wrap
-
-    +for-portrait
-        flex-direction: column
-    +for-landscape
-        flex-direction: row
-
-    & > *
-        background-color: darken(white, 5%)
-        overflow: auto
-
-        +for-portrait
-            height: calc( var(--vh, 1vh) * 100 - 90px )
-        +for-landscape
-            height: calc( var(--vh, 1vh) * 100 - 30px )
-            width: calc( 100vw - 180px )
-
-    +for-desktop-up
-        & > *
-            height: calc( var(--vh, 1vh) * 100 )
-            width: calc( 100vw - 240px - 180px )
