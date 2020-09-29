@@ -14,7 +14,6 @@ const generalInfoMenuTabs: menuTab[] = [
     { name: 'generalInfo', caption: 'О персонаже' },
     { name: 'attributes', caption: 'Характеристики' },
     { name: 'experience', caption: 'Класс и опыт' },
-    { name: 'generalInfo', caption: 'Черты' },
     { name: 'generalInfo', caption: 'Владение' },
 ];
 

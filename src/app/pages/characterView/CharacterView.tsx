@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import './CharacterView.sass';
-import { getCharacter, setCharacterToDB } from '../../api/firebase';
-import { Character, characterMock } from '../../types/character/Character';
+import { getCharacter } from '../../api/firebase';
+import { Character } from '../../types/character/Character';
 import { CharacterGeneralInfoSection } from './characterInfoSection/characterGeneralInfo';
 import GameMenu from './GameMenu/GameMenu';
 import { ClientWindowResolution } from '../../types/window/window';
@@ -36,7 +36,7 @@ const CharacterView = (props: CharacterViewProps) => {
         const tab: Record<CharacterViewTabName, JSX.Element> = {
             generalInfo: <CharacterGeneralInfoSection info={character.about.info} description={character.about.description} />,
             attributes: <CharacterAttributesSection attributes={character.about.attributes} skills={character.about.proficiency.skills} />,
-            experience: <CharacterExperienceSection classes={character.about.info.classes} action={character.about.action} />,
+            experience: <CharacterExperienceSection classes={character.about.info.classes} action={character.about.action} info={character.about.info} />,
         }
         return tab[currentTab]
     }

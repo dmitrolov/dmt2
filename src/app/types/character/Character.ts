@@ -10,7 +10,7 @@ export interface CharacterInfo { // Основная и обязательная
   subRace?: string;          // Подрасса
   classes: CharacterClass[]; // Класс
   background: string;        // Предыстория
-  feats?: string[];          // Черты
+  feats: string[];          // Черты
 }
 
 export interface CharacterDescription {
