@@ -11,7 +11,7 @@ import { CharacterExperienceSection } from './characterInfoSection/characterExpe
 import { CharacterProficiencySection } from './characterInfoSection/characterProficiency';
 import { CharacterCombatSection } from './characterInfoSection/characterCombat';
 
-export type CharacterViewTabName = 'generalInfo' | 'attributes' | 'experience' | 'proficiency' | 'combat'
+export type CharacterViewTabName = 'generalInfo' | 'attributes' | 'experience' | 'proficiency' | 'combat' | 'equipment' | 'backpack' | 'valut'
 
 interface CharacterViewProps {
     windowData: ClientWindowResolution;
@@ -32,15 +32,20 @@ const CharacterView = (props: CharacterViewProps) => {
             })
     }, [props.match.params.id]);
 
-    console.log('[state.character]', JSON.stringify(character));
+    // console.log('[state.character]', JSON.stringify(character));
 
     const renderTab = (currentTab: CharacterViewTabName, character: Character) => {
         const tab: Record<CharacterViewTabName, JSX.Element> = {
+            // Character about
             generalInfo: <CharacterGeneralInfoSection info={character.about.info} description={character.about.description} />,
             attributes: <CharacterAttributesSection attributes={character.about.attributes} skills={character.about.proficiency.skills} />,
             experience: <CharacterExperienceSection classes={character.about.info.classes} action={character.about.action} info={character.about.info} />,
             proficiency: <CharacterProficiencySection proficiency={character.about.proficiency} />,
-            combat: <CharacterCombatSection action={character.about.action} attributes={character.about.attributes} stats={character.about.stats} effects={character.about.effects} />
+            combat: <CharacterCombatSection action={character.about.action} attributes={character.about.attributes} stats={character.about.stats} effects={character.about.effects} />,
+            // Equipment
+            equipment: <div></div>,
+            backpack: <div></div>,
+            valut: <div></div>,
         }
         return tab[currentTab]
     }
@@ -51,7 +56,8 @@ const CharacterView = (props: CharacterViewProps) => {
                 character
                     ? <div style={{
                         display: 'flex',
-                        flexDirection: props.windowData.isMobile ? 'column' : 'row'
+                        flexDirection: props.windowData.isMobile ? 'column' : 'row',
+                        justifyContent: 'space-between'
                     }}>
                         <div
                             style={{
