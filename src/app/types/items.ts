@@ -1,13 +1,16 @@
 import { Multilanguage } from "./general";
 import { Damage } from "./adventure/mechanics";
 
+type ItemType = 'weapon' | 'itemsPack';
+type ItemRarity = 'common' | 'uncommon' | 'rare' | 'epic' | 'legendary'
+
 export interface Item {
-  value: string;
-  title: Multilanguage;
-  type: string;
+  id: string;
+  name: Multilanguage;
+  type: ItemType;
   weight: number;               // Вес предмета в фунтах
   cost: number;                 // Стоимость предмета в самых дешевых монетах (прим. медные)
-  rarity: number;               // Редкость предмета
+  rarity: ItemRarity;           // Редкость предмета
   description: Multilanguage;   // Описание предмета
 }
 
@@ -20,14 +23,14 @@ export interface Weapon extends Item {
 
 export const items: Item[] = [
   {
-    value: 'greatAxe',
-    title: {
+    id: 'greatAxe',
+    name: {
       ru: 'Секира',
       en: 'Great Axe',
     },
     cost: 3000,
     weight: 7,
-    rarity: 0,
+    rarity: 'common',
     type: 'weapon',
     description: {
       ru: '1к12 рубящий Двуручное, тяжёлое',
@@ -35,14 +38,14 @@ export const items: Item[] = [
     }
   },
   {
-    value: 'handAxe',
-    title: {
+    id: 'handAxe',
+    name: {
       ru: 'Ручной топор',
       en: 'Hand Axe',
     },
     cost: 500,
     weight: 2,
-    rarity: 0,
+    rarity: 'common',
     type: 'weapon',
     description: {
       en: '',
@@ -51,12 +54,12 @@ export const items: Item[] = [
 
   },
   {
-    value: 'explorersPack',
-    title: {
+    id: 'explorersPack',
+    name: {
       ru: 'Набор путешественника',
       en: 'Explorer\'s Pack'
     },
-    rarity: 0,
+    rarity: 'common',
     cost: 1000,
     weight: 5,
     type: 'itemsPack',
@@ -69,15 +72,15 @@ export const items: Item[] = [
     }
   },
   {
-    value: 'javelin',
-    title: {
+    id: 'javelin',
+    name: {
       ru: 'Метательное копьё',
       en: 'Javelin',
     },
     type: 'weapon',
     weight: 2,
     cost: 50,
-    rarity: 0,
+    rarity: 'common',
     description: {
       en: '',
       ru: '1к6 колющий, Метательное (дис. 30/120)'

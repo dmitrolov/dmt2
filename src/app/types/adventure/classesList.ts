@@ -30,20 +30,28 @@ export const CharacterClassesList: CharacterClass[] = [
     },
     equipment: [
       {
-        value: 'greatAxe',
-        count: 1
+        id: 'greatAxe',
+        count: 1,
+        isEquiped: false,
+        isStored: false
       },
       {
-        value: 'handAxe',
-        count: 2
+        id: 'handAxe',
+        count: 2,
+        isEquiped: false,
+        isStored: false
       },
       {
-        value: 'explorersPack',
-        count: 1
+        id: 'explorersPack',
+        count: 1,
+        isEquiped: false,
+        isStored: false
       },
       {
-        value: 'javelin',
-        count: 4
+        id: 'javelin',
+        count: 4,
+        isEquiped: false,
+        isStored: false
       }
     ]
   }

@@ -27,8 +27,6 @@ const journalMenuTabs: menuTab[] = [
 
 const equipmentMenuTabs: menuTab[] = [
     { name: 'equipment', caption: 'Экипировка' },
-    { name: 'backpack', caption: 'Рюкзак' },
-    { name: 'valut', caption: 'Хранилище' },
 ];
 
 const abilitiesMenuTabs: menuTab[] = [

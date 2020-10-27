@@ -10,8 +10,9 @@ import { CharacterExperienceSection } from './characterInfoSection/characterExpe
 import { CharacterProficiencySection } from './characterInfoSection/characterProficiency';
 import { CharacterCombatSection } from './characterInfoSection/characterCombat';
 import { ClientWindowResolution } from '../../types/general';
+import { CharacterEquipmentSection } from './characterEquipmentSection/characterEquipment';
 
-export type CharacterViewTabName = 'generalInfo' | 'attributes' | 'experience' | 'proficiency' | 'combat' | 'equipment' | 'backpack' | 'valut'
+export type CharacterViewTabName = 'generalInfo' | 'attributes' | 'experience' | 'proficiency' | 'combat' | 'equipment';
 
 interface CharacterViewProps {
     windowData: ClientWindowResolution;
@@ -43,9 +44,7 @@ const CharacterView = (props: CharacterViewProps) => {
             proficiency: <CharacterProficiencySection proficiency={character.about.proficiency} />,
             combat: <CharacterCombatSection action={character.about.action} attributes={character.about.attributes} stats={character.about.stats} effects={character.about.effects} />,
             // Equipment
-            equipment: <div></div>,
-            backpack: <div></div>,
-            valut: <div></div>,
+            equipment: <CharacterEquipmentSection equipment={character.equipment} />,
         }
         return tab[currentTab]
     }

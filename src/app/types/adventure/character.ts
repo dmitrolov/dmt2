@@ -62,14 +62,6 @@ export interface SkillsProficiency { // Владение навыками
   Persuasion: boolean;	    	// Убеждение
 };
 
-export interface CharacterProficiency {
-  skills: SkillsProficiency;     // Владение атрибутивными навыками
-  languages: string[];  // Владение языками
-  tools: string[];      // Владение инструментами
-  weapons: string[];    // Владение оружием
-  armor: string[];      // Владение доспехами
-}
-
 export interface CharacterAction {
   inspiration: boolean;    // Вдохновение
   experience: number;      // Опыт
@@ -87,6 +79,18 @@ export interface CharacterAction {
   };
 }
 
+export interface CharacterStats {  // Информация необходимая для приключений и сражений
+  speed: number;                   // Скорость
+  initiative: number;              // Бонус инициативы
+  size: 'tiny'
+  | 'small'
+  | 'medium'
+  | 'large'
+  | 'huge'
+  | 'gargantuan';                  // Размер
+  darkVision: number;              // Тёмное зрение
+}
+
 export interface CharacterEffects {
   savingThrows: string[];          // Бонус к спас броскам
   resistance: string[];            // Сопротивление (Уменьшение урона х2, считается после всех модификаторов)
@@ -100,16 +104,12 @@ export interface CharacterPersonalQualities {
   flaws: string[];
 }
 
-export interface CharacterStats {  // Информация необходимая для приключений и сражений
-  speed: number;                   // Скорость
-  initiative: number;              // Бонус инициативы
-  size: 'tiny'
-  | 'small'
-  | 'medium'
-  | 'large'
-  | 'huge'
-  | 'gargantuan';                  // Размер
-  darkVision: number;              // Тёмное зрение
+export interface CharacterProficiency {
+  skills: SkillsProficiency;     // Владение атрибутивными навыками
+  languages: string[];  // Владение языками
+  tools: string[];      // Владение инструментами
+  weapons: string[];    // Владение оружием
+  armor: string[];      // Владение доспехами
 }
 
 export interface CharacterAbout {
@@ -126,6 +126,8 @@ export interface CharacterAbout {
 export interface CharacterEquipment {
   id: string;
   count: number;
+  isEquiped: boolean;
+  isStored: boolean;
 }
 
 export interface Character {
@@ -229,10 +231,30 @@ export const characterMock: Character = {
     }
   },
   equipment: [
-    { count: 1, id: "greatAxe" },
-    { count: 2, id: "handAxe" },
-    { count: 1, id: "explorersPack" },
-    { id: 'javelin', "count": 4 }
+    {
+      id: "greatAxe",
+      count: 1,
+      isEquiped: false,
+      isStored: false,
+    },
+    {
+      id: "handAxe",
+      count: 2,
+      isEquiped: false,
+      isStored: false,
+    },
+    {
+      id: "explorersPack",
+      count: 1,
+      isEquiped: false,
+      isStored: false,
+    },
+    {
+      id: 'javelin',
+      count: 4,
+      isEquiped: false,
+      isStored: false,
+    }
   ],
   abilities: []
 }
