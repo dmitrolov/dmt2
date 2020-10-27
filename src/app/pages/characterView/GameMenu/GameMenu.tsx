@@ -4,11 +4,10 @@ import './GameMenu.sass'
 import FaceIcon from '@material-ui/icons/Face';
 import MenuBookIcon from '@material-ui/icons/MenuBook';
 import WhatshotIcon from '@material-ui/icons/Whatshot';
-import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import AccountBalanceWalletIcon from '@material-ui/icons/AccountBalanceWallet';
 import { Menu, Dropdown, Button } from 'antd';
-import { ClientWindowResolution } from '../../../types/window/window';
 import { CharacterViewTabName } from '../CharacterView';
+import { ClientWindowResolution } from '../../../types/general';
 
 const generalInfoMenuTabs: menuTab[] = [
     { name: 'generalInfo', caption: 'О персонаже' },

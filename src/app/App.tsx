@@ -13,8 +13,8 @@ import CharacterView from './pages/characterView/CharacterView';
 import './App.sass'
 import { connect } from 'react-redux';
 import { setWindowAction } from './redux/actions/windowActions';
-import { ClientWindowResolution } from './types/window/window';
 import SideMenu from './common/SideMenu/SideMenu';
+import { ClientWindowResolution } from './types/general';
 
 interface AppProps {
     windowData: ClientWindowResolution;

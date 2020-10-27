@@ -1,6 +1,6 @@
-import { User } from '../../types/user/User';
+import { ClientWindowResolution } from '../../types/general';
+import { User } from '../../types/user';
 import { actions } from '../constants';
-import { ClientWindowResolution } from '../../types/window/window';
 
 const { userActionTypes, windowActionTypes } = actions;
 

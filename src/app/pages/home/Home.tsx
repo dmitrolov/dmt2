@@ -4,7 +4,7 @@ import { AppState } from '../../../store';
 import firebase from '../../api/firebase';
 import './Home.sass';
 import { setUserAction } from '../../redux/actions/userActions';
-import { User } from '../../types/user/User';
+import { User } from '../../types/user';
 
 interface Home {
   userData: User,

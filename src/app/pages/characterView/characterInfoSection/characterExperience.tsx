@@ -1,6 +1,6 @@
 import { Table } from "antd"
 import React from "react"
-import { CharacterAction, CharacterClass, CharacterInfo } from "../../../types/character/Character"
+import { CharacterAction, CharacterClass, CharacterInfo } from "../../../types/adventure/character"
 
 interface CharacterExperienceSectionProps {
     classes: CharacterClass[];

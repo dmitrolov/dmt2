@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { useHistory } from 'react-router';
 import { CreateAdventure } from '../../api/firebase';
-import { Adventure } from '../../types/adventure/Adventure';
+import { Adventure } from '../../types/adventure/adventure';
 import * as ROUTES from '../../routes';
 import './AdventureCreate.sass';
 

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { GetAllUserAdventures } from '../../api/firebase';
-import { Adventure } from '../../types/adventure/Adventure';
+import { Adventure } from '../../types/adventure/adventure';
 import './AdventureList.sass';
 
 export const AdventureList = () => {

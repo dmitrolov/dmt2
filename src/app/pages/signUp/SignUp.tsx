@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { useHistory } from 'react-router';
 import { SignUpEmail } from '../../api/firebase';
 import { setUserAction } from '../../redux/actions/userActions';
-import { User } from '../../types/user/User';
+import { User } from '../../types/user';
 import './SignUp.sass';
 
 interface ISignUp {

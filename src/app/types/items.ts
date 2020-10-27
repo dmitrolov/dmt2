@@ -1,6 +1,24 @@
-import {Item} from './item/item.model';
+import { Multilanguage } from "./general";
+import { Damage } from "./adventure/mechanics";
 
-export const EquipmentData: Item[] = [
+export interface Item {
+  value: string;
+  title: Multilanguage;
+  type: string;
+  weight: number;               // Вес предмета в фунтах
+  cost: number;                 // Стоимость предмета в самых дешевых монетах (прим. медные)
+  rarity: number;               // Редкость предмета
+  description: Multilanguage;   // Описание предмета
+}
+
+export interface Weapon extends Item {
+  attack: {
+    melee: Damage;
+    range: Damage;
+  };
+}
+
+export const items: Item[] = [
   {
     value: 'greatAxe',
     title: {

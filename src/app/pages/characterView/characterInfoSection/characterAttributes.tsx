@@ -1,6 +1,6 @@
 import { Table } from "antd"
 import React from "react"
-import { CharacterAttributes, SkillsProficiency } from "../../../types/character/Character"
+import { CharacterAttributes, SkillsProficiency } from "../../../types/adventure/character"
 import { calculateAttributeBonus } from "./helpers"
 
 interface CharacterAttributesSectionProps {

@@ -1,4 +1,4 @@
-import { ActionReducer } from "../../types/General";
+import { ActionReducer } from "../../types/general";
 import { actions } from "../constants";
 
 interface ClientWindowResolution {

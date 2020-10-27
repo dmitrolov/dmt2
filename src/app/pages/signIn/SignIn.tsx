@@ -4,7 +4,7 @@ import { useHistory } from 'react-router';
 import { SignInEmail } from '../../api/firebase';
 import './SignIn.sass';
 import { setUserAction } from '../../redux/actions/userActions';
-import { User } from '../../types/user/User';
+import { User } from '../../types/user';
 
 interface ISignUp {
   setUser: (user: User) => void;

@@ -1,6 +1,6 @@
 import { Table } from "antd"
 import React from "react"
-import { CharacterProficiency } from "../../../types/character/Character"
+import { CharacterProficiency } from "../../../types/adventure/character"
 
 interface CharacterProficiencySectionProps {
     proficiency: CharacterProficiency;

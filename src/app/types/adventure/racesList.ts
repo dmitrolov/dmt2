@@ -1,8 +1,20 @@
-import { DomLocalization } from '../dom/Dom';
-import { characterMock } from './Character';
-import { CharacterRace } from './characterRace';
+import { Multilanguage } from '../general';
+import { CharacterAttributes, CharacterEffects, characterMock, CharacterProficiency, CharacterStats } from './character';
+
+export interface CharacterRace {
+  value: string;
+  title: Multilanguage;
+  stats: CharacterStats;
+  effects: CharacterEffects;
+  attributes: CharacterAttributes;
+  proficiency: CharacterProficiency;
+  abilities: string[];
+  subRaces?: CharacterRace[];
+}
 
 interface RacesList extends CharacterRace {
+  value: string;
+  title: Multilanguage;
   generatorData: {
     height: {
       min: number;
@@ -14,8 +26,8 @@ interface RacesList extends CharacterRace {
     };
     ageModifier: number;
     names: {
-      male: DomLocalization;
-      female: DomLocalization;
+      male: Multilanguage[];
+      female: Multilanguage[];
     };
     image: string;
   };
@@ -41,40 +53,8 @@ export const racesList: RacesList[] = [
       },
       ageModifier: 4,
       names: {
-        male: {
-          en: [
-            'Adrik', 'Alberich', 'Baern', 'Barendd', 'Brottor',
-            'Bruenor', 'Dain', 'Darrak', 'Delg', 'Eberk',
-            'Einkil', 'Fargrim', 'Flint', 'Gardain', 'Harbek',
-            'Kildrak', 'Morgran', 'Orsik', 'Oskar', 'Rangrim',
-            'Rurik', 'Taklinn', 'Thoradin', 'Thorin', 'Tordek',
-            'Traubon', 'Travok', 'Ulfgar', 'Veit', 'Vondal',
-          ],
-          ru: [
-            'Адрик', 'Альберих', 'Баренд', 'Баэрн', 'Броттор',
-            'Бруенор', 'Вондал', 'Вэйт', 'Гардаин', 'Даин',
-            'Даррак', 'Делг', 'Килдрак', 'Моргран', 'Орсик',
-            'Оскар', 'Рангрим', 'Рюрик', 'Таклинн', 'Торадин',
-            'Тордек', 'Торин', 'Травок', 'Траубон', 'Ульфгар',
-            'Фаргрим', 'Флинт', 'Харбек', 'Эберк', 'Эйнкиль',
-          ],
-        },
-        female: {
-          en: [
-            'Amber', 'Artin', 'Audhild', 'Bardryn', 'Dagnal',
-            'Diesa', 'Eldeth', 'Falkrunn', 'Finellen', 'Gunnloda',
-            'Gurdis', 'Helja', 'Hlin', 'Kathra', 'Kristryd',
-            'Ilde', 'Liftrasa', 'Mardred', 'Riswynn', 'Sannl',
-            'Torbera', 'Torgga', 'Vistra'
-          ],
-          ru: [
-            'Артин', 'Бардрин', 'Вистра', 'Гуннлода', 'Гурдис',
-            'Дагнал', 'Диеза', 'Илде', 'Катра', 'Кристид',
-            'Лифтраса', 'Мардред', 'Одхильд', 'Рисвин', 'Саннл',
-            'Торбера', 'Торгга', 'Фалкрунн', 'Финеллен', 'Хельджа',
-            'Хлин', 'Эльдет', 'Эмбер',
-          ],
-        },
+        male: [],
+        female: []
       },
       image: 'https://vignette.wikia.nocookie.net/forgottenrealms/images/b/b6/Dwarf-5e.png',
     },
@@ -195,37 +175,8 @@ export const racesList: RacesList[] = [
       },
       ageModifier: 5,
       names: {
-        male: {
-          en: [
-            'Alston', 'Alvyn', 'Boddynock', 'Brocc', 'Burgell',
-            'Dimble', 'Eldon', 'Erky', 'Fonkin', 'Frug',
-            'Gerbo', 'Gimble', 'Glim', 'Jebeddo', 'Kellen',
-            'Namfoodle', 'Orryn', 'Roondar', 'Seebo', 'Sindri',
-            'Warryn', 'Wrenn', 'Zook'
-          ],
-          ru: [
-            'Алвин', 'Алстон', 'Боддинок', 'Брок', 'Бюргел',
-            'Варрин', 'Вренн', 'Гербо', 'Гимбл', 'Глим',
-            'Джебеддо', 'Димбл', 'Зук', 'Келлен', 'Намфудл',
-            'Оррин', 'Рундар', 'Сибо', 'Синдри', 'Фонкин',
-            'Фрюг', 'Элдон', 'Эрки'
-          ],
-        },
-        female: {
-          en: [
-            'Bimpnottin', 'Breena', 'Caramip', 'Carlin', 'Donella',
-            'Duvamil', 'Ella', 'Ellyjobell', 'Ellywick', 'Lilli',
-            'Loopmottin', 'Lorilla', 'Mardnab', 'Nissa', 'Nyx',
-            'Oda', 'Orla', 'Roywyn', 'Shamil', 'Tana',
-            'Waywocket', 'Zanna'
-          ],
-          ru: [
-            'Бимпноттин', 'Брина', 'Вейуокет', 'Донелла', 'Дувамил',
-            'Занна', 'Карамип', 'Карлин', 'Лилли', 'Лорилла',
-            'Лупмоттин', 'Маднаб', 'Никс', 'Нисса', 'Ода',
-            'Орла', 'Ройвин', 'Тана', 'Шамил', 'Эливик',
-            'Элиджобелл', 'Элла'],
-        }
+        male: [],
+        female: []
       },
       image: 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/334/420/618/636272671553055253.png'
     },

@@ -1,7 +1,9 @@
-import { DomItem } from '../dom/Dom';
-import { CharacterProficiency, CharacterEffects, CharacterEquipment, characterMock } from './Character';
+import { Multilanguage } from '../general';
+import { CharacterProficiency, CharacterEffects, CharacterEquipment, characterMock } from './character';
 
-export interface CharacterClass extends DomItem {
+export interface CharacterClass {
+  value: string;
+  title: Multilanguage;
   proficiency: CharacterProficiency;
   effects: CharacterEffects;
   equipment: CharacterEquipment[];

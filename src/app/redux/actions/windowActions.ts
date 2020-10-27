@@ -1,6 +1,6 @@
 import { Dispatch } from "redux";
 import { setWindowActionConverter } from ".";
-import { ClientWindowResolution } from "../../types/window/window";
+import { ClientWindowResolution } from "../../types/general";
 
 export const setWindowAction: () => (dispatch: Dispatch) => (Promise<void>) = () => async (dispatch) => {
     document.documentElement.style.setProperty('--vh', `${document.documentElement.clientHeight * 0.01}px`);

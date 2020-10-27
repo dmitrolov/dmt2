@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import './CharacterView.sass';
 import { getCharacter } from '../../api/firebase';
-import { Character } from '../../types/character/Character';
+import { Character } from '../../types/adventure/character';
 import { CharacterGeneralInfoSection } from './characterInfoSection/characterGeneralInfo';
 import GameMenu from './GameMenu/GameMenu';
-import { ClientWindowResolution } from '../../types/window/window';
 import { CharacterAttributesSection } from './characterInfoSection/characterAttributes';
 import { CharacterExperienceSection } from './characterInfoSection/characterExperience';
 import { CharacterProficiencySection } from './characterInfoSection/characterProficiency';
 import { CharacterCombatSection } from './characterInfoSection/characterCombat';
+import { ClientWindowResolution } from '../../types/general';
 
 export type CharacterViewTabName = 'generalInfo' | 'attributes' | 'experience' | 'proficiency' | 'combat' | 'equipment' | 'backpack' | 'valut'
 

@@ -100,8 +100,6 @@ export interface CharacterPersonalQualities {
   flaws: string[];
 }
 
-
-
 export interface CharacterStats {  // Информация необходимая для приключений и сражений
   speed: number;                   // Скорость
   initiative: number;              // Бонус инициативы
@@ -126,7 +124,7 @@ export interface CharacterAbout {
 }
 
 export interface CharacterEquipment {
-  value: string;
+  id: string;
   count: number;
 }
 
@@ -231,10 +229,10 @@ export const characterMock: Character = {
     }
   },
   equipment: [
-    { count: 1, value: "greatAxe" },
-    { count: 2, value: "handAxe" },
-    { count: 1, value: "explorersPack" },
-    { value: 'javelin', "count": 4 }
+    { count: 1, id: "greatAxe" },
+    { count: 2, id: "handAxe" },
+    { count: 1, id: "explorersPack" },
+    { id: 'javelin', "count": 4 }
   ],
   abilities: []
 }

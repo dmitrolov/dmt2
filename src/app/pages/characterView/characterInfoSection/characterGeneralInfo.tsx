@@ -1,6 +1,6 @@
 import { Table } from "antd"
 import React from "react"
-import { CharacterInfo, CharacterDescription } from "../../../types/character/Character"
+import { CharacterInfo, CharacterDescription } from "../../../types/adventure/character"
 
 interface CharacterGeneralInfoSectionProps {
     info: CharacterInfo

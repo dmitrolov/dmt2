@@ -1,6 +1,6 @@
-import { ActionReducer } from '../../types/General';
+import { ActionReducer } from '../../types/general';
 import { actions } from '../constants';
-import { User } from '../../types/user/User';
+import { User } from '../../types/user';
 
 const initialState: User = {
   email: ''

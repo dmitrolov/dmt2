@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 import * as ROUTES from '../../routes';
 import './SideMenu.sass';
 import { connect } from 'react-redux';
-import { ClientWindowResolution } from '../../types/window/window';
+import { ClientWindowResolution } from '../../types/general';
 
 interface SideMenuProps {
   windowData?: ClientWindowResolution;
