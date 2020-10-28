@@ -1,7 +1,7 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
-import { Adventure } from '../types/adventure/adventure';
+import { Adventure } from '../types/adventure';
 import { Character } from '../types/adventure/character';
 
 const config = {
@@ -15,6 +15,7 @@ const config = {
 
 firebase.initializeApp(config);
 
+// Autorization
 export const SignUpEmail = (email: string, password: string) => {
   return firebase.auth()
     .createUserWithEmailAndPassword(email, password)
@@ -31,12 +32,21 @@ export const SignInEmail = (email: string, password: string) => {
     });
 };
 
+// Adventures
 export const CreateAdventure = (newAdventure: Adventure) => {
   return firebase.firestore()
     .collection('adventures')
     .doc(newAdventure.name)
     .set({ ...newAdventure })
 };
+
+export const getAdventure: (docName: string) => Promise<Adventure | undefined> = async (docName) => {
+  const character = await firebase.firestore()
+    .collection('adventures')
+    .doc(docName)
+    .get();
+  return character.data() as Adventure;
+}
 
 export const GetAllUserAdventures: () => Promise<Adventure[]> = () => {
   return firebase.firestore()
@@ -49,6 +59,15 @@ export const GetAllUserAdventures: () => Promise<Adventure[]> = () => {
     })
 };
 
+export const setAdventureToDB = (docName: string, data: Adventure) => {
+  console.log(data)
+  firebase.firestore()
+    .collection('adventures')
+    .doc(docName)
+    .set(data)
+}
+
+// Characters
 export const getCharacter: (docName: string) => Promise<Character | undefined> = async (docName) => {
   const character = await firebase.firestore()
     .collection('playerCharacters')
