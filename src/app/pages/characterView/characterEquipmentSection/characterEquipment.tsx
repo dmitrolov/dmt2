@@ -29,24 +29,42 @@ const initialItem: Item = {
     weight: 0
 }
 
+interface AddItemFormFields {
+    name: string
+    description?: string
+    count?: number
+    cost?: number
+}
+
 export const CharacterEquipmentSection: React.FC<CharacterEquipmentSectionProps> = ({ equipment }) => {
     const [adventure, setAdventure] = useState<Adventure>();
-    const [newItem, setNewItem] = useState<Item>(initialItem)
     const [isButtonOpen, setIsButtonOpen] = useState(false);
 
     useEffect(() => {
         getAdventure('Djadame').then((data) => setAdventure(data))
     }, [])
 
-    const addItem = () => {
+    const addItem = (values: AddItemFormFields) => {
         if (adventure) {
-            // debugger
             const nextAdventure = adventure;
             nextAdventure.customCounter++;
-            newItem.id = `DjadameCustomItem${nextAdventure.customCounter}`;
+            const newItem: Item = {
+                id: `DjadameCustomItem${nextAdventure.customCounter}`,
+                cost: values.cost || 0,
+                description: {
+                    en: '',
+                    ru: values.description || '',
+                },
+                name: {
+                    en: '',
+                    ru: values.name,
+                },
+                rarity: 'common',
+                type: 'itemsPack',
+                weight: 0
+            }
             nextAdventure.itemsList.push(newItem);
             setAdventure(nextAdventure);
-            setNewItem({ ...initialItem });
             setIsButtonOpen(false);
             setAdventureToDB('Djadame', adventure);
         }
@@ -54,38 +72,32 @@ export const CharacterEquipmentSection: React.FC<CharacterEquipmentSectionProps>
     return <>
         <div className={'openButtonWrap'}><div className={`openButton ${isButtonOpen ? 'active' : ''}`} onClick={() => { setIsButtonOpen(!isButtonOpen) }}><AddIcon /></div></div>
         {
-            isButtonOpen && <div className={'addItemSection'}>
-                <Form>
-                    <Form.Item validateStatus={'error'} required>
-                        <Input
-                            placeholder={'Название предмета'}
-                            value={newItem.name.ru}
-
-                            onChange={(event) => setNewItem({ ...newItem, name: { en: '', ru: event.target.value } })} />
-                    </Form.Item>
-                </Form>
-                <Input
-                            placeholder={'Название предмета'}
-                            value={newItem.name.ru}
-
-                            onChange={(event) => setNewItem({ ...newItem, name: { en: '', ru: event.target.value } })} />
-                <TextArea
-                    placeholder={'Описание предмета'}
-                    value={newItem.description.ru}
-                    onChange={(event) => setNewItem({ ...newItem, description: { en: '', ru: event.target.value } })}
-                    autoSize />
+            isButtonOpen && <Form
+                className={'addItemSection'}
+                name={'addItem'}
+                onFinish={addItem}
+                onFinishFailed={(errors) => { console.log(errors) }}>
+                <Form.Item
+                    name={'name'}
+                    rules={[{ required: true, message: 'Название не должно быть пустым' }]}>
+                    <Input placeholder={'Название предмета'} />
+                </Form.Item>
+                <Form.Item name={'description'}>
+                    <TextArea placeholder={'Описание предмета'} autoSize />
+                </Form.Item>
                 <div className="addItemFooter">
-                    <Input
-                        placeholder={'Количество'}
-                        disabled
-                    />
-                    <Input
-                        placeholder={'Цена'}
-                        value={newItem.cost ? newItem.cost : ''}
-                        onChange={(event) => setNewItem({ ...newItem, cost: Number(event.target.value) })} />
-                    <Button type={'primary'} onClick={() => { addItem() }}>Add</Button>
+                    <Form.Item name={'count'}>
+                        <Input placeholder={'Количество'} disabled
+                        />
+                    </Form.Item>
+                    <Form.Item name={'cost'}>
+                        <Input placeholder={'Цена'} />
+                    </Form.Item>
+                    <Form.Item>
+                        <Button type={'primary'} htmlType="submit">Add</Button>
+                    </Form.Item>
                 </div>
-            </div>
+            </Form>
         }
         <Table
             title={() => 'Инвентарь'}
