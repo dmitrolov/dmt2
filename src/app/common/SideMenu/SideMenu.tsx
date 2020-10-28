@@ -1,5 +1,3 @@
-import { Drawer } from '@material-ui/core';
-import Switch from '@material-ui/core/Switch';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import AddIcon from '@material-ui/icons/Add';
 import FaceIcon from '@material-ui/icons/Face';
@@ -12,6 +10,7 @@ import * as ROUTES from '../../routes';
 import './SideMenu.sass';
 import { connect } from 'react-redux';
 import { ClientWindowResolution } from '../../types/general';
+import { Drawer, Switch } from 'antd';
 
 interface SideMenuProps {
   windowData?: ClientWindowResolution;
@@ -70,7 +69,7 @@ const SideMenu = (props: SideMenuProps) => {
 
   return props.windowData?.isMobile
     ? <Drawer
-      open={props.isMenuOpened}
+      visible={props.isMenuOpened}
       onClose={props.onClose}>
       <div
         className='side-menu side-menu--mobile'

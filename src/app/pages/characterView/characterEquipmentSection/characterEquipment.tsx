@@ -1,6 +1,5 @@
-import { Button, Checkbox, Form, Input, Table } from "antd";
+import { Button, Form, Input, Table } from "antd";
 import React, { useEffect, useState } from "react"
-import { allItems } from "../../../api/allitems";
 import { getAdventure, setAdventureToDB } from "../../../api/firebase";
 import { Adventure } from "../../../types/adventure";
 import { CharacterEquipment } from "../../../types/adventure/character";
@@ -56,7 +55,7 @@ export const CharacterEquipmentSection: React.FC<CharacterEquipmentSectionProps>
         <div className={'openButtonWrap'}><div className={`openButton ${isButtonOpen ? 'active' : ''}`} onClick={() => { setIsButtonOpen(!isButtonOpen) }}><AddIcon /></div></div>
         {
             isButtonOpen && <div className={'addItemSection'}>
-                {/* <Form>
+                <Form>
                     <Form.Item validateStatus={'error'} required>
                         <Input
                             placeholder={'Название предмета'}
@@ -64,7 +63,7 @@ export const CharacterEquipmentSection: React.FC<CharacterEquipmentSectionProps>
 
                             onChange={(event) => setNewItem({ ...newItem, name: { en: '', ru: event.target.value } })} />
                     </Form.Item>
-                </Form> */}
+                </Form>
                 <Input
                             placeholder={'Название предмета'}
                             value={newItem.name.ru}

@@ -20,7 +20,7 @@
     "@types/redux-devtools-extension": "^2.13.2",
     "@types/redux-logger": "^3.0.8",
     "@types/redux-thunk": "^2.1.0",
-    "antd": "^3.26.18",
+    "antd": "^4.6.6",
     "firebase": "^7.15.5",
     "hammerjs": "^2.0.8",
     "node-sass": "^4.13.1",
