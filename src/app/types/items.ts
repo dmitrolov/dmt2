@@ -12,6 +12,7 @@ export interface Item {
   cost: number;                 // Стоимость предмета в самых дешевых монетах (прим. медные)
   rarity: ItemRarity;           // Редкость предмета
   description: Multilanguage;   // Описание предмета
+  count?: number; // TODO: remove after personal inventory implementation
 }
 
 export interface Weapon extends Item {
@@ -20,6 +21,8 @@ export interface Weapon extends Item {
     range: Damage;
   };
 }
+
+export type ItemList = Record<string, Item>
 
 export const items: Item[] = [
   {

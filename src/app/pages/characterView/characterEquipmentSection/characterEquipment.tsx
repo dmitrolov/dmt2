@@ -13,22 +13,6 @@ interface CharacterEquipmentSectionProps {
     equipment: CharacterEquipment[]
 }
 
-const initialItem: Item = {
-    id: '',
-    cost: 0,
-    description: {
-        en: '',
-        ru: '',
-    },
-    name: {
-        en: '',
-        ru: '',
-    },
-    rarity: 'common',
-    type: 'itemsPack',
-    weight: 0
-}
-
 interface AddItemFormFields {
     name: string
     description?: string
@@ -45,6 +29,7 @@ export const CharacterEquipmentSection: React.FC<CharacterEquipmentSectionProps>
     }, [])
 
     const addItem = (values: AddItemFormFields) => {
+        // TODO fix bug if simultaneously try to save items
         if (adventure) {
             const nextAdventure = adventure;
             nextAdventure.customCounter++;
@@ -61,7 +46,8 @@ export const CharacterEquipmentSection: React.FC<CharacterEquipmentSectionProps>
                 },
                 rarity: 'common',
                 type: 'itemsPack',
-                weight: 0
+                weight: 0,
+                count: values.count
             }
             nextAdventure.itemsList.push(newItem);
             setAdventure(nextAdventure);
@@ -87,7 +73,7 @@ export const CharacterEquipmentSection: React.FC<CharacterEquipmentSectionProps>
                 </Form.Item>
                 <div className="addItemFooter">
                     <Form.Item name={'count'}>
-                        <Input placeholder={'Количество'} disabled
+                        <Input placeholder={'Количество'}
                         />
                     </Form.Item>
                     <Form.Item name={'cost'}>
@@ -109,16 +95,22 @@ export const CharacterEquipmentSection: React.FC<CharacterEquipmentSectionProps>
                     title: 'Название',
                     dataIndex: 'name',
                     key: 'name',
+                    sorter: (a, b) => a.name[0] > b.name[0] ? 1 : -1
                     // render: (text: React.ReactNode) => <a>text</a>
                 },
                 {
                     title: 'Количество',
                     dataIndex: 'count',
                     key: 'count',
+                    sorter: (a, b) => {
+                        if (a.count && b.count) {
+                            return a.count - b.count
+                        } else return 0
+                    }
                 },
             ]}
             expandedRowRender={((record: any) => <>
-                {record.cost && <p>Цена {record.cost}</p>}
+                {record.cost !== 0 && <p>{`Цена ${Math.trunc(record.cost / 10000)} ЗМ ${Math.trunc(record.cost / 100 % 100)} СМ ${record.cost % 100} ММ`}</p>}
                 {record.description && <p>{record.description}</p>}
             </>)}
             dataSource={
@@ -126,7 +118,7 @@ export const CharacterEquipmentSection: React.FC<CharacterEquipmentSectionProps>
                     return {
                         key: item.id,
                         name: item.name.ru,
-                        count: 1,
+                        count: item.count,
                         cost: item.cost,
                         description: item.description.ru
                     }
