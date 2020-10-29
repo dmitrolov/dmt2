@@ -14,8 +14,8 @@ interface CharacterEquipmentSectionProps {
 }
 
 interface AddItemFormFields {
-    name: string
-    description?: string
+    name: string | string[]
+    description?: string | string[]
     count?: number
     cost?: number
 }
@@ -109,8 +109,10 @@ export const CharacterEquipmentSection: React.FC<CharacterEquipmentSectionProps>
                     }
                 },
             ]}
-            expandedRowRender={((record: any) => <>
-                {record.cost !== 0 && <p>{`Цена ${Math.trunc(record.cost / 10000)} ЗМ ${Math.trunc(record.cost / 100 % 100)} СМ ${record.cost % 100} ММ`}</p>}
+            expandedRowRender={((record: AddItemFormFields) => <>
+                {record.cost && record.cost !== 0
+                    ? <p>{`Цена ${Math.trunc(record.cost / 10000)} ЗМ ${Math.trunc(record.cost / 100 % 100)} СМ ${record.cost % 100} ММ`}</p>
+                    : undefined}
                 {record.description && <p>{record.description}</p>}
             </>)}
             dataSource={
