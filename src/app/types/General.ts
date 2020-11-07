@@ -1,3 +1,10 @@
+export interface PlayerAccount {
+  displayName?: string;
+  email?: string;
+  photoURL?: string;
+  emailVerified?: boolean;
+}
+
 export interface ClientWindowResolution {
   width: number;
   height: number;

@@ -1,5 +1,4 @@
-import { ClientWindowResolution } from '../../types/general';
-import { User } from '../../types/user';
+import { ClientWindowResolution, PlayerAccount } from '../../types/general';
 import { actions } from '../constants';
 
 const { userActionTypes, windowActionTypes } = actions;
@@ -11,5 +10,5 @@ const createAction = (type: string, payload: any = null) => {
   };
 };
 
-export const setUserActionConverter = (user: User) => createAction(userActionTypes.SET_USER, user);
+export const setUserActionConverter = (user: PlayerAccount) => createAction(userActionTypes.SET_USER, user);
 export const setWindowActionConverter = (resolution: ClientWindowResolution) => createAction(windowActionTypes.GET_RESOLUTION, resolution);

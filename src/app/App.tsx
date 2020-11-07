@@ -3,8 +3,6 @@ import React, { useState, useEffect } from 'react';
 import { Route } from 'react-router-dom';
 import * as ROUTES from './routes';
 import Home from './pages/home/Home';
-import SignIn from './pages/signIn/SignIn';
-import SignUp from './pages/signUp/SignUp';
 import AdventureCreate from './pages/adventureCreate/AdventureCreate';
 import AdventureList from './pages/adventureList/AdventureList';
 import AdventureView from './pages/adventureView/AdventureView';
@@ -13,32 +11,35 @@ import CharacterView from './pages/characterView/CharacterView';
 import './App.sass'
 import { connect } from 'react-redux';
 import { setWindowAction } from './redux/actions/windowActions';
-import SideMenu from './common/SideMenu/SideMenu';
-import { ClientWindowResolution } from './types/general';
+import { ClientWindowResolution, PlayerAccount } from './types/general';
+import { SignInModal } from './common/signInModal';
+import { SideMenu } from './common/sideMenu';
+import { setUserAction } from './redux/actions/userActions';
 
 interface AppProps {
     windowData: ClientWindowResolution;
-    userData: string;
+    userData: PlayerAccount;
     setWindow: () => void;
-}
-
-interface AppState {
-    isMenuOpened: boolean;
+    setUser: (player: PlayerAccount) => void;
 }
 
 const App: React.FC<AppProps> = (props) => {
     const headerHeight = 30;
-    const [state, setState] = useState<AppState>({
-        isMenuOpened: false
-    });
+    const [isMenuOpened, setIsMenuOpened] = useState(false);
+    const [isSignInModalOpened, setIsSignInModalOpened] = useState(false);
+
+    const style = {
+        header: props.windowData?.isMobile ? { height: headerHeight } : { display: 'none' },
+        content: {
+            height: props.windowData?.isMobile ? props.windowData.height - headerHeight : props.windowData.height,
+            overflow: 'auto',
+        }
+    }
 
     useEffect(() => {
         window.onresize = props.setWindow;
         props.setWindow();
-
-        return () => {
-            window.onresize = null;
-        };
+        return () => { window.onresize = null; };
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
@@ -46,23 +47,18 @@ const App: React.FC<AppProps> = (props) => {
         <>
             <div className={'app'}>
                 <SideMenu
-                    isMenuOpened={state.isMenuOpened}
-                    onClose={() => setState({ isMenuOpened: false })} />
+                    windowData={props.windowData}
+                    userData={props.userData}
+                    isMenuOpened={isMenuOpened}
+                    onSignInButtonClick={() => setIsSignInModalOpened(true)}
+                    onClose={() => setIsMenuOpened(false)} />
 
-                <div className='header' style={props.windowData?.isMobile ? { height: headerHeight } : { display: 'none' }}>
-                    <button className="menu-button" onClick={() => setState({ isMenuOpened: true })}>menu</button>
+                <div className='header' style={style.header}>
+                    <button className="menu-button" onClick={() => setIsMenuOpened(true)}>menu</button>
                 </div>
 
-                <div
-                    className={'app-site'}
-                    style={{
-                        height: props.windowData?.isMobile ? props.windowData.height - headerHeight : props.windowData.height,
-                        overflow: 'auto',
-                    }}
-                >
-                    <Route exact path={ROUTES.DASHBOARD} component={Home} />
-                    <Route path={ROUTES.SIGN_IN} component={SignIn} />
-                    <Route path={ROUTES.SIGN_UP} component={SignUp} />
+                <div className={'content'} style={style.content}>
+                    <Route exact path={ROUTES.ROOT} component={Home} />
                     <Route path={ROUTES.ADVENTURE_CREATE} component={AdventureCreate} />
                     <Route path={ROUTES.ADVENTURE_LIST} component={AdventureList} />
                     <Route exact path={ROUTES.ADVENTURE_VIEW} component={AdventureView} />
@@ -70,6 +66,12 @@ const App: React.FC<AppProps> = (props) => {
                     <Route path={ROUTES.CHARACTER_VIEW} component={CharacterView} />
                 </div>
             </div>
+            <SignInModal
+                isOpened={isSignInModalOpened}
+                onOk={() => {
+                    setIsSignInModalOpened(false);
+                }}
+                onClose={() => setIsSignInModalOpened(false)} />
         </>
     );
 };
@@ -82,5 +84,6 @@ const mapStateToProps = (state: AppProps) => {
 }
 
 export default connect(mapStateToProps, {
-    setWindow: setWindowAction
+    setWindow: setWindowAction,
+    setUser: setUserAction
 })(App);

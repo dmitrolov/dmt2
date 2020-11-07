@@ -14,34 +14,54 @@ const config = {
 };
 
 firebase.initializeApp(config);
+export const auth: firebase.auth.Auth = firebase.auth();
+const firestore = firebase.firestore();
+const provider = new firebase.auth.GoogleAuthProvider();
+
 
 // Autorization
 export const SignUpEmail = (email: string, password: string) => {
-  return firebase.auth()
+  return auth
     .createUserWithEmailAndPassword(email, password)
-    .catch((e: any) => {
-      return e;
+    .catch((e) => {
+      console.log(e);
+      // alert(e);
+      return e
     });
 };
 
 export const SignInEmail = (email: string, password: string) => {
-  return firebase.auth()
+  return auth
     .signInWithEmailAndPassword(email, password)
-    .catch((e: any) => {
-      return e;
+    .catch((e) => {
+      console.log(e);
+      // alert(e);
+      return e
     });
 };
 
+export const SignInGoogleAccount = () => {
+  
+  return auth
+    .signInWithPopup(provider)
+    .catch((e) => {
+      console.log(e);
+      alert(e);
+      return e
+    });
+
+}
+
 // Adventures
 export const CreateAdventure = (newAdventure: Adventure) => {
-  return firebase.firestore()
+  return firestore
     .collection('adventures')
     .doc(newAdventure.name)
     .set({ ...newAdventure })
 };
 
 export const getAdventure: (docName: string) => Promise<Adventure | undefined> = async (docName) => {
-  const character = await firebase.firestore()
+  const character = await firestore
     .collection('adventures')
     .doc(docName)
     .get();
@@ -49,7 +69,7 @@ export const getAdventure: (docName: string) => Promise<Adventure | undefined> =
 }
 
 export const GetAllUserAdventures: () => Promise<Adventure[]> = () => {
-  return firebase.firestore()
+  return firestore
     .collection('adventures')
     .get()
     .then(adventures => {
@@ -61,7 +81,7 @@ export const GetAllUserAdventures: () => Promise<Adventure[]> = () => {
 
 export const setAdventureToDB = (docName: string, data: Adventure) => {
   console.log(data)
-  firebase.firestore()
+  firestore
     .collection('adventures')
     .doc(docName)
     .set(data)
@@ -69,7 +89,7 @@ export const setAdventureToDB = (docName: string, data: Adventure) => {
 
 // Characters
 export const getCharacter: (docName: string) => Promise<Character | undefined> = async (docName) => {
-  const character = await firebase.firestore()
+  const character = await firestore
     .collection('playerCharacters')
     .doc(docName)
     .get();
@@ -77,14 +97,14 @@ export const getCharacter: (docName: string) => Promise<Character | undefined> =
 }
 
 export const setCharacterToDB = (docName: string, data: Character) => {
-  firebase.firestore()
+  firestore
     .collection('playerCharacters')
     .doc(docName)
     .set(data)
 }
 
 export const getAllChars = () => {
-  return firebase.firestore()
+  return firestore
     .collection('playerCharacters')
     .get()
     .then((characters) => {

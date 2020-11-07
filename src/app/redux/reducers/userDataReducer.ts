@@ -1,12 +1,11 @@
-import { ActionReducer } from '../../types/general';
+import { ActionReducer, PlayerAccount } from '../../types/general';
 import { actions } from '../constants';
-import { User } from '../../types/user';
 
-const initialState: User = {
+const initialState: PlayerAccount = {
   email: ''
 };
 
-export const userDataReducer: (state: User, action: ActionReducer<User>) => User = (state = initialState, action) => {
+export const userDataReducer: (state: PlayerAccount, action: ActionReducer<PlayerAccount>) => PlayerAccount = (state = initialState, action) => {
   const { SET_USER } = actions.userActionTypes;
 
   if (action.type === SET_USER) {
