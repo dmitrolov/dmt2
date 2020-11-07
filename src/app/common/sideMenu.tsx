@@ -51,8 +51,9 @@ export const SideMenu: React.FC<SideMenuProps> = (props) => {
     return <div className='menu-list'>
       <div>
         {renderMenuItem({ icon: <HomeIcon />, text: 'Главная', route: ROUTES.ROOT })}
+        {renderMenuItem({ icon: <ListIcon />, text: 'Приключения', route: ROUTES.ADVENTURE })}
+
         {renderMenuItem({ icon: <AddIcon />, text: 'Создать приключение', route: ROUTES.ADVENTURE_CREATE })}
-        {renderMenuItem({ icon: <ListIcon />, text: 'Мои приключения', route: ROUTES.ADVENTURE_LIST })}
         {renderMenuItem({ icon: <PersonAddIcon />, text: 'Создать персонажа', route: '/game/adventure/view/Djadame/character/create' })}
         {renderMenuItem({ icon: <FaceIcon />, text: 'gremmy', route: '/game/adventure/view/Djadame/character/view/gremmy' })}
         {renderMenuItem({ icon: <FaceIcon />, text: 'klinfort char', route: '/game/adventure/view/Djadame/character/view/klinfort' })}

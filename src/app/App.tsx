@@ -65,8 +65,9 @@ const App: React.FC<AppProps> = (props) => {
 
                 <div className={'content'} style={style.content}>
                     <Route exact path={ROUTES.ROOT} component={Home} />
+                    <Route exact path={ROUTES.ADVENTURE} component={AdventureList} />
+
                     <Route path={ROUTES.ADVENTURE_CREATE} component={AdventureCreate} />
-                    <Route path={ROUTES.ADVENTURE_LIST} component={AdventureList} />
                     <Route exact path={ROUTES.ADVENTURE_VIEW} component={AdventureView} />
                     <Route path={ROUTES.CHARACTER_CREATE} component={CharacterCreate} />
                     <Route path={ROUTES.CHARACTER_VIEW} component={CharacterView} />

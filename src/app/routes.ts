@@ -1,7 +1,7 @@
 export const ROOT = '/';
-export const DASHBOARD = '/dashboard';
+
+export const ADVENTURE = '/adventure';
 export const ADVENTURE_CREATE = '/adventure/create';
-export const ADVENTURE_LIST = '/adventure/list';
 export const ADVENTURE_VIEW = '/adventure/view/:id';
 
 export const GAME = '/game';

@@ -36,7 +36,7 @@ const AdventureCreate = () => {
     if (currentErrors.length === 0) {
       newAdventure.dungeonMaster = newAdventure.playersList[0];
       CreateAdventure(newAdventure).then(response => console.log('[AdventureCreate response]:', response));
-      history.push(ROUTES.ADVENTURE_LIST);
+      history.push(ROUTES.ADVENTURE);
     }
   };
 
