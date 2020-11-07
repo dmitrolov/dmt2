@@ -25,6 +25,7 @@ interface AppProps {
 
 const App: React.FC<AppProps> = (props) => {
     const headerHeight = 30;
+    const vh = window.innerHeight * 0.01;
     const [isMenuOpened, setIsMenuOpened] = useState(false);
     const [isSignInModalOpened, setIsSignInModalOpened] = useState(false);
 
@@ -36,9 +37,14 @@ const App: React.FC<AppProps> = (props) => {
         }
     }
 
-    useEffect(() => {
-        window.onresize = props.setWindow;
+    const onResize = () => {
         props.setWindow();
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
+
+    useEffect(() => {
+        window.onresize = onResize;
+        onResize()
         return () => { window.onresize = null; };
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
