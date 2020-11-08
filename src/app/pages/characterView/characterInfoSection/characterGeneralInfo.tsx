@@ -32,7 +32,7 @@ export const CharacterGeneralInfoSection: React.FC<CharacterGeneralInfoSectionPr
                 {
                     key: 'playerName',
                     name: 'Имя игрока',
-                    value: info.playerName
+                    value: 'Owner'
                 },
                 {
                     key: 'characterName',

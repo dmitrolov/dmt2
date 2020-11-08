@@ -4,7 +4,6 @@ export interface CharacterClass { // Класс
 }
 
 export interface CharacterInfo { // Основная и обязательная информация о персонаже
-  playerName: string;        // Имя игрока
   characterName: string;     // Имя персонажа
   race: string;              // Расса
   subRace?: string;          // Подрасса
@@ -131,12 +130,17 @@ export interface CharacterEquipment {
 }
 
 export interface Character {
+  id: string;
+  owner: string;
+
   about: CharacterAbout;
   abilities: string[];
   equipment: CharacterEquipment[];
 }
 
 export const characterMock: Character = {
+  id: '',
+  owner: '',
   about: {
     proficiency: {
       languages: ["dwarvish", "common"],
@@ -178,7 +182,6 @@ export const characterMock: Character = {
     },
     info: {
       subRace: "Скальный Гном",
-      playerName: "Оксана",
       characterName: "Гремми",
       feats: [],
       race: "Гном",

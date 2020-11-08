@@ -63,8 +63,8 @@ export const setAdventure: (id: string, data: Adventure) => Promise<void> = (id,
   })
 }
 
-export const getAdventure: (docName: string) => Promise<Adventure | undefined> = async (docName) => {
-  const character = await firestore.collection('adventures').doc(docName).get();
+export const getAdventure: (id: string) => Promise<Adventure | undefined> = async (id) => {
+  const character = await firestore.collection('adventures').doc(id).get();
   return character.data() as Adventure;
 }
 
@@ -115,7 +115,7 @@ export const getAllChars = () => {
     .get()
     .then((characters) => {
       return characters.docs.map((doc) => {
-        return { id: doc.id, ...doc.data() };
+        return doc.data() as Character;
       });
     });
 };

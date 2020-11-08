@@ -15,6 +15,7 @@ export const AdventureList = () => {
 
   useEffect(() => {
     GetAllUserAdventures().then((adventures: Adventure[]) => {
+      console.log('adventures', adventures)
       setAdventuresList(adventures);
     });
   }, [])
