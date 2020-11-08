@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { connect } from 'react-redux';
+import React, { useState } from 'react';
 import './CharacterView.sass';
-import { getCharacter } from '../../api/firebase';
 import { Character } from '../../types/adventure/character';
 import { CharacterGeneralInfoSection } from './characterInfoSection/characterGeneralInfo';
 import GameMenu from './GameMenu/GameMenu';
@@ -16,24 +14,11 @@ export type CharacterViewTabName = 'generalInfo' | 'attributes' | 'experience' |
 
 interface CharacterViewProps {
     windowData: ClientWindowResolution;
-    match: any
+    character: Character;
 }
 
-const CharacterView = (props: CharacterViewProps) => {
-    const [character, setCharacter] = useState<Character>();
+export const CharacterView: React.FC<CharacterViewProps> = (props) => {
     const [currentTab, setCurrentTab] = useState<CharacterViewTabName>('generalInfo')
-
-    useEffect(() => {
-        getCharacter(props.match.params.id)
-            .then((data) => {
-                if (data) {
-                    setCharacter(data)
-                    console.log('[characterData]', data);
-                }
-            })
-    }, [props.match.params.id]);
-
-    // console.log('[state.character]', JSON.stringify(character));
 
     const renderTab = (currentTab: CharacterViewTabName, character: Character) => {
         const tab: Record<CharacterViewTabName, JSX.Element> = {
@@ -51,35 +36,15 @@ const CharacterView = (props: CharacterViewProps) => {
 
     return (
         <>
-            {
-                character
-                    ? <div style={{
-                        display: 'flex',
-                        flexDirection: props.windowData.isMobile ? 'column' : 'row',
-                        justifyContent: 'space-between'
-                    }}>
-                        <div
-                            style={{
-                                height: props.windowData.isMobile ? props.windowData.height - 30 - 60 : props.windowData.height,
-                                overflow: 'auto'
-                            }}
-                            children={renderTab(currentTab, character)}
-                        />
-                        <GameMenu setCharacterViewTab={setCurrentTab} windowData={props.windowData} />
-                    </div>
-                    : <div>Loading . . .</div>
-            }
-            {/* <button onClick={
-                () => setCharacterToDB('gremmy', characterMock)
-            }>set</button> */}
+            <div
+                style={{
+                    // height: props.windowData.isMobile ? props.windowData.height - 32 - 60 : props.windowData.height,
+                    height: props.windowData.height - 32 - 60,
+                    overflow: 'auto'
+                }}
+                children={renderTab(currentTab, props.character)}
+            />
+            <GameMenu setCharacterViewTab={setCurrentTab} windowData={props.windowData} />
         </>
     );
 };
-
-const mapStateToProps = (state: CharacterViewProps) => {
-    return ({
-        windowData: state.windowData,
-    })
-}
-
-export default connect(mapStateToProps, null)(CharacterView);

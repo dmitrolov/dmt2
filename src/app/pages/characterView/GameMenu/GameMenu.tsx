@@ -48,7 +48,8 @@ interface menuTab {
 }
 
 const GameMenu = (props: GameMenuProps) => {
-    const { isLandscape, isMobile } = props.windowData;
+    // const { isLandscape, isMobile } = props.windowData;
+    const { isLandscape } = props.windowData;
 
     const renderSubmenu = (tabs: menuTab[]) =>
         <Menu className={'submenu'}>
@@ -64,28 +65,39 @@ const GameMenu = (props: GameMenuProps) => {
     )
 
     return (
+        // <div
+        //     className={'game-menu'}
+        //     style={(isLandscape && !isMobile)
+        //         ? { width: 180, flexDirection: 'column', justifyContent: 'space-between' }
+        //         : { height: 60, flexDirection: 'row' }
+        //     }>
+        //     {(isLandscape && !isMobile)
+        //         ? (<>
+        //             {renderSubmenu(generalInfoMenuTabs)}
+        //             {renderSubmenu(journalMenuTabs)}
+        //             {renderSubmenu(equipmentMenuTabs)}
+        //             {renderSubmenu(abilitiesMenuTabs)}
+        //             {/* TODO: add favorites sections */}
+        //         </>)
+        //         : (<>
+        //             {portraitMenu('generalInfoMenu', renderSubmenu(generalInfoMenuTabs), <FaceIcon />)}
+        //             {portraitMenu('journalMenuTabs', renderSubmenu(journalMenuTabs), <MenuBookIcon />, true)}
+        //             {portraitMenu('equipmentMenuTabs', renderSubmenu(equipmentMenuTabs), <AccountBalanceWalletIcon />)}
+        //             {portraitMenu('abilitiesMenuTabs', renderSubmenu(abilitiesMenuTabs), <WhatshotIcon />, true)}
+        //             {/* TODO: add favorites sections <FavoriteBorderIcon /> */}
+        //         </>)
+        //     }
+        // </div>
         <div
             className={'game-menu'}
-            style={isLandscape && !isMobile
-                ? { width: 180, flexDirection: 'column', justifyContent: 'space-between' }
-                : { height: 60, flexDirection: 'row' }
-            }>
-            {isLandscape && !isMobile
-                ? (<>
-                    {renderSubmenu(generalInfoMenuTabs)}
-                    {renderSubmenu(journalMenuTabs)}
-                    {renderSubmenu(equipmentMenuTabs)}
-                    {renderSubmenu(abilitiesMenuTabs)}
-                    {/* TODO: add favorites sections */}
-                </>)
-                : (<>
-                    {portraitMenu('generalInfoMenu', renderSubmenu(generalInfoMenuTabs), <FaceIcon />)}
-                    {portraitMenu('journalMenuTabs', renderSubmenu(journalMenuTabs), <MenuBookIcon />, true)}
-                    {portraitMenu('equipmentMenuTabs', renderSubmenu(equipmentMenuTabs), <AccountBalanceWalletIcon />)}
-                    {portraitMenu('abilitiesMenuTabs', renderSubmenu(abilitiesMenuTabs), <WhatshotIcon />, true)}
-                    {/* TODO: add favorites sections <FavoriteBorderIcon /> */}
-                </>)
-            }
+            style={{ height: 60, flexDirection: 'row' }}>
+            <>
+                {portraitMenu('generalInfoMenu', renderSubmenu(generalInfoMenuTabs), <FaceIcon />)}
+                {portraitMenu('journalMenuTabs', renderSubmenu(journalMenuTabs), <MenuBookIcon />, true)}
+                {portraitMenu('equipmentMenuTabs', renderSubmenu(equipmentMenuTabs), <AccountBalanceWalletIcon />)}
+                {portraitMenu('abilitiesMenuTabs', renderSubmenu(abilitiesMenuTabs), <WhatshotIcon />, true)}
+                {/* TODO: add favorites sections <FavoriteBorderIcon /> */}
+            </>
         </div>
     )
 }

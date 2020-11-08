@@ -4,8 +4,6 @@ import { AppState } from '../../../store';
 import './Home.sass';
 import { setUserAction } from '../../redux/actions/userActions';
 import { PlayerAccount } from '../../types/general';
-import { getAdventure, getAllChars, setAdventure } from '../../api/firebase';
-import { Adventure } from '../../types/adventure';
 
 interface Home {
   userData: PlayerAccount,

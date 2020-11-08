@@ -1,5 +1,4 @@
 import AddIcon from '@material-ui/icons/Add';
-import FaceIcon from '@material-ui/icons/Face';
 import HomeIcon from '@material-ui/icons/Home';
 import ListIcon from '@material-ui/icons/List';
 import PersonAddIcon from '@material-ui/icons/PersonAdd';
@@ -9,7 +8,7 @@ import * as ROUTES from '../routes';
 import './sideMenu.sass'
 import { ClientWindowResolution, PlayerAccount } from '../types/general';
 import { Avatar, Drawer, Switch } from 'antd';
-import { UserOutlined } from '@ant-design/icons';
+import { BookOutlined, UserOutlined } from '@ant-design/icons';
 import { auth } from 'firebase';
 
 interface SideMenuProps {
@@ -55,9 +54,7 @@ export const SideMenu: React.FC<SideMenuProps> = (props) => {
 
         {renderMenuItem({ icon: <AddIcon />, text: 'Создать приключение', route: ROUTES.ADVENTURE_CREATE })}
         {renderMenuItem({ icon: <PersonAddIcon />, text: 'Создать персонажа', route: '/game/adventure/view/Djadame/character/create' })}
-        {renderMenuItem({ icon: <FaceIcon />, text: 'gremmy', route: '/game/adventure/view/Djadame/character/view/gremmy' })}
-        {renderMenuItem({ icon: <FaceIcon />, text: 'klinfort char', route: '/game/adventure/view/Djadame/character/view/klinfort' })}
-        {renderMenuItem({ icon: <FaceIcon />, text: 'skarlet char', route: '/game/adventure/view/Djadame/character/view/skarlet' })}
+        {renderMenuItem({ icon: <BookOutlined />, text: 'Jadame', route: '/adventure/G9MSzXmwTIe16ttfHEv3' })}
       </div>
       <div>
         {renderMenuItem({

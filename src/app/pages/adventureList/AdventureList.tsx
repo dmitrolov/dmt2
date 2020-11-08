@@ -48,9 +48,9 @@ export const AdventureList = () => {
       hoverable
       key={adventure.id}
       className={'adventure-item'}
-      cover={<img className={'adventure-item__image'} alt="adventure" src={adventure.image || "https://picsum.photos/400/200"} />}
+      cover={adventure.image ? <img className={'adventure-item__image'} alt="adventure" src={adventure.image} /> : undefined}
       actions={[
-        <Button><Link to={`${ADVENTURE}/${adventure.name}`}>Войти <RightCircleOutlined key={'enter'} /></Link></Button>
+        <Button><Link to={`${ADVENTURE}/${adventure.id}`}>Войти <RightCircleOutlined key={'enter'} /></Link></Button>
       ]}
     >
       <Meta

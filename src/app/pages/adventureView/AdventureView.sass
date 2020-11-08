@@ -1,4 +1,18 @@
+@import './../../mixins'
+    
 .adventure-view
-    padding: 1em
+    // padding: 1em
+    display: flex
+    flex-direction: column
+
+    +for-desktop-up
+        flex-direction: row
+        flex-wrap: wrap
+
+.adventure-view-container
+    // width: 320px
+    // height: 50vh
+
+.character-picker
     display: flex
     flex-direction: column
