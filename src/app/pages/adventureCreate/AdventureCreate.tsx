@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { useHistory } from 'react-router';
-import { CreateAdventure } from '../../api/firebase';
 import { Adventure } from '../../types/adventure';
 import * as ROUTES from '../../routes';
 import './AdventureCreate.sass';
 
 const newAdventure: Adventure = {
+  id: '',
   name: '',
   description: '',
   image: '',
   playersList: [],
-  dungeonMaster: '',
   charactersList: [],
   itemsList:[],
   notes: [],
@@ -34,8 +33,6 @@ const AdventureCreate = () => {
   const onSubmit = () => {
     validation();
     if (currentErrors.length === 0) {
-      newAdventure.dungeonMaster = newAdventure.playersList[0];
-      CreateAdventure(newAdventure).then(response => console.log('[AdventureCreate response]:', response));
       history.push(ROUTES.ADVENTURE);
     }
   };
@@ -52,7 +49,6 @@ const AdventureCreate = () => {
       <div>
         <input placeholder='email' value={ playerEmail } onChange={ (e) => {setPlayerEmail(e.target.value);} } />
         <button onClick={ () => {
-          newAdventure.playersList.push(playerEmail);
           setPlayerEmail('');
         } }>Добавить
         </button>

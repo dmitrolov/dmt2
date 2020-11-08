@@ -40,7 +40,7 @@ export const SignInEmail = (email: string, password: string) => {
 };
 
 export const SignInGoogleAccount = () => {
-  
+
   return auth
     .signInWithPopup(provider)
     .catch((e) => {
@@ -52,19 +52,26 @@ export const SignInGoogleAccount = () => {
 }
 
 // Adventures
-export const CreateAdventure = (newAdventure: Adventure) => {
-  return firestore
-    .collection('adventures')
-    .doc(newAdventure.name)
-    .set({ ...newAdventure })
-};
+export const addAdventure: () => Promise<string> = async () => {
+  const result = await firestore.collection('adventures').add({});
+  return result.id
+}
+
+export const setAdventure: (id: string, data: Adventure) => Promise<void> = (id, data) => {
+  return firestore.collection('adventures').doc(id).set(data).catch(error => {
+    console.log(error);
+  })
+}
 
 export const getAdventure: (docName: string) => Promise<Adventure | undefined> = async (docName) => {
-  const character = await firestore
-    .collection('adventures')
-    .doc(docName)
-    .get();
+  const character = await firestore.collection('adventures').doc(docName).get();
   return character.data() as Adventure;
+}
+
+export const deleteAdventure: (id: string) => Promise<void> = (id) => {
+  return firestore.collection('adventures').doc(id).delete().catch(error => {
+    console.log(error);
+  })
 }
 
 export const GetAllUserAdventures: () => Promise<Adventure[]> = () => {
