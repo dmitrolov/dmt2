@@ -57,8 +57,8 @@ const GameMenu = (props: GameMenuProps) => {
             }
         </Menu>
 
-    const portraitMenu = (key: string, overlay: JSX.Element, icon: JSX.Element) => (
-        <Dropdown key={key} overlay={overlay} overlayStyle={isLandscape ? {} : { width: '100%' }}>
+    const portraitMenu = (key: string, overlay: JSX.Element, icon: JSX.Element, isDisabled?: boolean) => (
+        <Dropdown disabled={isDisabled} key={key} overlay={overlay} overlayStyle={isLandscape ? {} : { width: '100%' }}>
             <Button className={'game-menu__button'} children={icon} />
         </Dropdown>
     )
@@ -80,9 +80,9 @@ const GameMenu = (props: GameMenuProps) => {
                 </>)
                 : (<>
                     {portraitMenu('generalInfoMenu', renderSubmenu(generalInfoMenuTabs), <FaceIcon />)}
-                    {portraitMenu('journalMenuTabs', renderSubmenu(journalMenuTabs), <MenuBookIcon />)}
+                    {portraitMenu('journalMenuTabs', renderSubmenu(journalMenuTabs), <MenuBookIcon />, true)}
                     {portraitMenu('equipmentMenuTabs', renderSubmenu(equipmentMenuTabs), <AccountBalanceWalletIcon />)}
-                    {portraitMenu('abilitiesMenuTabs', renderSubmenu(abilitiesMenuTabs), <WhatshotIcon />)}
+                    {portraitMenu('abilitiesMenuTabs', renderSubmenu(abilitiesMenuTabs), <WhatshotIcon />, true)}
                     {/* TODO: add favorites sections <FavoriteBorderIcon /> */}
                 </>)
             }

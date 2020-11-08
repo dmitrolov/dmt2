@@ -36,7 +36,7 @@ export const AdventureList = () => {
           notes: [],
         }
         setAdventure(id, initialAdventure).then(() => {
-          history.push(ADVENTURE + '/' + id);
+          history.push(`/adventure/${id}/settings`);
         })
       });
     } else alert('no access');
