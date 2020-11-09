@@ -1,0 +1,30 @@
+@import './../../mixins';
+
+.adventure-view {
+    display: flex;
+    flex-direction: column;
+
+    @include for-desktop-up {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }  
+}
+
+.character-wrap {
+    width: 100%;
+    height: 100%;
+    
+    @include for-desktop-up {
+        padding: .5rem;
+    }
+}
+
+.character-picker {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-content-item-button {
+    width: 100%;
+    height: 100%;
+}

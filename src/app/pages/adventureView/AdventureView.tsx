@@ -1,13 +1,11 @@
-import { Button } from 'antd';
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { RouteComponentProps } from 'react-router-dom';
 import { getAdventure } from '../../api/firebase';
 import { Adventure } from '../../types/adventure';
-import { Character } from '../../types/adventure/character';
 import { ClientWindowResolution } from '../../types/general';
-import { CharacterView } from '../characterView/CharacterView';
-import './AdventureView.sass';
+import './AdventureView.scss';
+import { ContentItemPicker } from './contentItemPicker';
 
 interface MatchParams {
 	id: string;
@@ -20,17 +18,16 @@ interface AdventureViewProps extends RouteComponentProps<MatchParams> {
 const AdventureView: React.FC<AdventureViewProps> = (props) => {
 	// const adventureUrl = props.match.url;
 	const adventureId = props.match.params.id;
+	const { height, width, isMobile } = props.windowData
 	const [adventure, setAdventure] = useState<Adventure>();
-	const [containers, setContainers] = useState<JSX.Element[]>()
 
 	const countGridParams = () => {
 		const sideMenuWidth = 214;
 		const headerHeight = 32;
-		const { height, width, isMobile } = props.windowData
 
 		const widthContainersCount = isMobile
-			? Math.trunc((width - sideMenuWidth)) / 320
-			: Math.trunc((width)) / 320
+			? Math.trunc(width / 320)
+			: Math.trunc((width - sideMenuWidth) / 320)
 		const heightContainersCount = Math.trunc(height / 450)
 
 		return {
@@ -50,12 +47,10 @@ const AdventureView: React.FC<AdventureViewProps> = (props) => {
 			if (!adventure && response) {
 				setAdventure(response);
 			}
-		}).then(() => {
-			if (adventure) setContainers([renderContentPicker()])
 		})
 	}, [adventure, adventureId])
 
-	const renderContainer = (content: JSX.Element) => {
+	const renderContentWrap = (content: JSX.Element) => {
 		return <div
 			className={'character-wrap'}
 			style={{
@@ -70,44 +65,21 @@ const AdventureView: React.FC<AdventureViewProps> = (props) => {
 		</div>
 	}
 
-	const renderContentPicker = () => {
-		return <div className="content-picker">
-			<div className="character-picker">
-				{adventure?.charactersList.map((character: Character) => {
-					return <Button onClick={() => {
-						addContainer(<CharacterView character={character} windowData={props.windowData} />)
-					}}>{character.about.info.characterName}</Button>
-				})}
-			</div>
-		</div>
+	const renderGrid = (adventure: Adventure) => {
+		const containersArray: JSX.Element[] = [];
+		for (let i = 0; i < gridParams.maxContainersCount; i++) {
+			containersArray.push(renderContentWrap(<ContentItemPicker adventure={adventure} windowData={props.windowData} />))
+		}
+		return containersArray;
 	}
-
-	const addContainer = (content: JSX.Element) => {
-		console.log('containers', containers)
-		containers
-			? setContainers([...containers, ...[content, renderContentPicker()]])
-			: setContainers([...[content, renderContentPicker()]])
-	}
-
-	console.log('adventure', adventure);
-	console.log('containers', containers);
 
 	return (<>{
-		adventure && containers
+		adventure
 			? <div className='adventure-view'>
-				<button onClick={() => { addContainer(renderContentPicker()) }}>add</button>
 				{
-					props.windowData.isMobile
-						? <>{renderContainer(<CharacterView character={adventure.charactersList[0]} windowData={props.windowData} />)}</>
-						: <>
-							{/* {renderContainer(<CharacterView character={adventure.charactersList[0]} windowData={props.windowData} />)} */}
-							{/* {renderContainer(renderContentPicker())} */}
-							{containers.map(container => {
-								console.log(container);
-								return renderContainer(container);
-							})}
-
-						</>
+					isMobile
+						? <>{renderContentWrap(<ContentItemPicker adventure={adventure} windowData={props.windowData} initialStep={'itemPicker'} />)}</>
+						: <>{renderGrid(adventure)}</>
 				}
 			</div>
 			: <div>Loading . . .</div>
