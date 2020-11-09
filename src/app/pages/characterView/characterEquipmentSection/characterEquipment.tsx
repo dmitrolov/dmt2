@@ -1,4 +1,4 @@
-import { Button, Form, Input, Table } from "antd";
+import { Button, Form, Input, Space, Table } from "antd";
 import React, { useEffect, useState } from "react"
 import { getAdventure, setAdventureToDB } from "../../../api/firebase";
 import { Adventure } from "../../../types/adventure";
@@ -6,6 +6,7 @@ import { CharacterEquipment } from "../../../types/adventure/character";
 import { Item } from "../../../types/items";
 import AddIcon from '@material-ui/icons/Add';
 import './characterEquipment.sass'
+import { DeleteOutlined, SendOutlined } from "@ant-design/icons";
 
 const { TextArea } = Input;
 
@@ -90,6 +91,7 @@ export const CharacterEquipmentSection: React.FC<CharacterEquipmentSectionProps>
             showHeader={true}
             pagination={false}
             style={{ width: '100%' }}
+            size='small'
             columns={[
                 {
                     title: 'Название',
@@ -99,7 +101,7 @@ export const CharacterEquipmentSection: React.FC<CharacterEquipmentSectionProps>
                     // render: (text: React.ReactNode) => <a>text</a>
                 },
                 {
-                    title: 'Количество',
+                    title: 'Кол-во',
                     dataIndex: 'count',
                     key: 'count',
                     sorter: (a, b) => {
@@ -108,6 +110,15 @@ export const CharacterEquipmentSection: React.FC<CharacterEquipmentSectionProps>
                         } else return 0
                     }
                 },
+                {
+                    key: 'action',
+                    render: () => (
+                      <Space size='small'>
+                        <SendOutlined />
+                        <DeleteOutlined />
+                      </Space>
+                    ),
+                  },
             ]}
             expandedRowRender={((record: AddItemFormFields) => <>
                 {record.cost && record.cost !== 0

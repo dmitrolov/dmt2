@@ -15,6 +15,7 @@ export const CharacterAttributesSection: React.FC<CharacterAttributesSectionProp
             showHeader={false}
             pagination={false}
             style={{ width: '100%' }}
+            size={'small'}
             columns={[
                 {
                     title: 'Name',
