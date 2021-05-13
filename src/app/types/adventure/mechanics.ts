@@ -1,4 +1,4 @@
-import { Multilanguage } from "../general";
+import { Multilanguage } from "../General";
 
 // Категории размеров
 interface CreatureSizes {

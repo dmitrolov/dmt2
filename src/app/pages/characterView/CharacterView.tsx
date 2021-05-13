@@ -7,7 +7,7 @@ import { CharacterAttributesSection } from './characterInfoSection/characterAttr
 import { CharacterExperienceSection } from './characterInfoSection/characterExperience';
 import { CharacterProficiencySection } from './characterInfoSection/characterProficiency';
 import { CharacterCombatSection } from './characterInfoSection/characterCombat';
-import { ClientWindowResolution } from '../../types/general';
+import { ClientWindowResolution } from '../../types/General';
 import { CharacterEquipmentSection } from './characterEquipmentSection/characterEquipment';
 
 export type CharacterViewTabName = 'generalInfo' | 'attributes' | 'experience' | 'proficiency' | 'combat' | 'equipment';

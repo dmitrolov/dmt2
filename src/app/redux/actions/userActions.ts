@@ -1,5 +1,5 @@
 import { Dispatch } from 'redux';
-import { PlayerAccount } from '../../types/general';
+import { PlayerAccount } from '../../types/General';
 import { setUserActionConverter } from './index';
 
 export const setUserAction: (user: PlayerAccount) => (dispatch: Dispatch) => Promise<void> = (user) => async (dispatch) => {

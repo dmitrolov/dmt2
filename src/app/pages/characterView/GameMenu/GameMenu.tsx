@@ -7,7 +7,7 @@ import WhatshotIcon from '@material-ui/icons/Whatshot';
 import AccountBalanceWalletIcon from '@material-ui/icons/AccountBalanceWallet';
 import { Menu, Dropdown, Button } from 'antd';
 import { CharacterViewTabName } from '../CharacterView';
-import { ClientWindowResolution } from '../../../types/general';
+import { ClientWindowResolution } from '../../../types/General';
 
 const generalInfoMenuTabs: menuTab[] = [
     { name: 'generalInfo', caption: 'О персонаже' },

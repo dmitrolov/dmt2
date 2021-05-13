@@ -2,7 +2,7 @@ import { Button } from "antd";
 import React, { useState } from "react"
 import { Adventure } from "../../types/adventure";
 import { Character } from "../../types/adventure/character";
-import { ClientWindowResolution } from "../../types/general";
+import { ClientWindowResolution } from "../../types/General";
 import { CharacterView } from "../characterView/CharacterView";
 
 type contentItems = 'addButton' | 'itemPicker' | 'customItem';

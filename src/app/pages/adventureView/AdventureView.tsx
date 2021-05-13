@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { RouteComponentProps } from 'react-router-dom';
 import { getAdventure } from '../../api/firebase';
 import { Adventure } from '../../types/adventure';
-import { ClientWindowResolution } from '../../types/general';
+import { ClientWindowResolution } from '../../types/General';
 import './AdventureView.scss';
 import { ContentItemPicker } from './contentItemPicker';
 

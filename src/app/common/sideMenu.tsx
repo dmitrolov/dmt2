@@ -6,7 +6,7 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import * as ROUTES from '../routes';
 import './sideMenu.sass'
-import { ClientWindowResolution, PlayerAccount } from '../types/general';
+import { ClientWindowResolution, PlayerAccount } from '../types/General';
 import { Avatar, Drawer, Switch } from 'antd';
 import { BookOutlined, UserOutlined } from '@ant-design/icons';
 import { auth } from 'firebase';

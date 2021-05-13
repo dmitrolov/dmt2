@@ -1,4 +1,4 @@
-import { ClientWindowResolution, PlayerAccount } from '../../types/general';
+import { ClientWindowResolution, PlayerAccount } from '../../types/General';
 import { actions } from '../constants';
 
 const { userActionTypes, windowActionTypes } = actions;

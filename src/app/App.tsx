@@ -10,7 +10,7 @@ import CharacterCreate from './pages/characterCreate/CharacterCreate';
 import './App.sass'
 import { connect } from 'react-redux';
 import { setWindowAction } from './redux/actions/windowActions';
-import { ClientWindowResolution, PlayerAccount } from './types/general';
+import { ClientWindowResolution, PlayerAccount } from './types/General';
 import { SignInModal } from './common/signInModal';
 import { SideMenu } from './common/sideMenu';
 import { setUserAction } from './redux/actions/userActions';

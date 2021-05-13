@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { AppState } from '../../../store';
 import './Home.sass';
 import { setUserAction } from '../../redux/actions/userActions';
-import { PlayerAccount } from '../../types/general';
+import { PlayerAccount } from '../../types/General';
 
 interface Home {
   userData: PlayerAccount,

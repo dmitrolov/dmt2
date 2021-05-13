@@ -1,4 +1,4 @@
-import { Multilanguage } from '../general';
+import { Multilanguage } from '../General';
 import { CharacterProficiency, CharacterEffects, CharacterEquipment, characterMock } from './character';
 
 export interface CharacterClass {

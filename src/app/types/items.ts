@@ -1,4 +1,4 @@
-import { Multilanguage } from "./general";
+import { Multilanguage } from "./General";
 import { Damage } from "./adventure/mechanics";
 
 type ItemType = 'weapon' | 'itemsPack';
